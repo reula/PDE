@@ -5,3 +5,6 @@ El curso intenta abordar el estudio de las ecuaciones en derivadas parciales de 
 
 Estas notas tendrán, además de notas propiamente dichas, notebooks con código, guías con problemas de cada capítulo y algunos videos con partes de clases. Probablemente también incluiremos notas y videos con los trabajos finales presentados en años anteriores ya que cada uno de ellos fué un trabajo original y pueden servir de ejemplos complejos para incursionar en problemas similares.
 
+Los notebooks están hechos en Julia. El primer año teníamos mucho material en Python, pero al comenzar con Julia nos pareció un lenguaje mucho más adaptado a las intenciones del curso ya que a las facilidades para prototipar código de Python, la cual a su vez incrementa, le suma la velocidad de los lenguajes compilados. Naturalmente los notebooks son lo suficientemente simples que se pueden entender fácilmente sin tener un gran dominio de Julia o si fuera deseable pasarlos a Python o algún otro lenguaje deseado. 
+
+
