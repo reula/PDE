@@ -59,5 +59,5 @@
     3. Variaciones. Sistemas no-elípticos (min-max).
 11. Ecuaciones en derivadas parciales del tipo estacionario - estudios numéricos.
     1. La teoría de los elementos finitos. El teorema de convergencia de Lax. Teoría de aproximación en elementos finitos. 
-    2. Resolviendo problemas con Gridap/Fenics.
+    2. Resolviendo problemas en su formulación débil con con Gridap/Fenics.
     
