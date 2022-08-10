@@ -61,9 +61,6 @@
     1. La teoría de los elementos finitos. El teorema de convergencia de Lax. Teoría de aproximación en elementos finitos. 
     2. Resolviendo problemas en su formulación débil con con Gridap/Fenics.
     
-
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 <table border="0">
  <tr>
     <td><b style="font-size:20px">Teoría</b></td>
