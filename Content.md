@@ -80,8 +80,8 @@
    </td>
    <td>
 
-   1. Tarea 0 a: familiarizándose con Julia y su entorno.
-   2. Tarea 0 b: El mapa logístico.
+   1. Tarea_0A: Familiarizándose con Julia y su entorno.
+   2. Tarea_0B: El mapa logístico.
 
    </td>
  </tr>
