@@ -1,6 +1,6 @@
 ## Contenido
 
-1. Tolología.
+1. Topología.
    1. Espacios Topológicos
    2. Ejemplos
    3. Continuidad
@@ -61,3 +61,31 @@
     1. La teoría de los elementos finitos. El teorema de convergencia de Lax. Teoría de aproximación en elementos finitos. 
     2. Resolviendo problemas en su formulación débil con con Gridap/Fenics.
     
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<table border="0">
+ <tr>
+    <td><b style="font-size:20px">Teoría</b></td>
+    <td><b style="font-size:20px">Numérico</b></td>
+ </tr>
+ <tr>
+   <td>
+
+   1. Topología.
+      1. Espacios Topológicos
+      2. Ejemplos
+      3. Continuidad
+      4. Compacidad
+      5. Sucesiones, convergencia
+      6. Familias monoparamétricas de mapas contínuos, estabilidad de puntos fijos
+   
+   </td>
+   <td>
+
+   1. Tarea 0 a: familiarizándose con Julia y su entorno.
+   2. Tarea 0 b: El mapa logístico.
+
+   </td>
+ </tr>
+</table>
