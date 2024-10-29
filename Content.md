@@ -50,7 +50,7 @@
    2. The Cauchy problem
    3. Symmetric-hyperbolic systems. Wave equations, Maxwell's equations, Einstein's equations, etc. Propagation cones
    4. Existence and uniqueness, maximum propagation speed
-   5. Links
+   5. Constraints
    6. Parabolic systems
    7. Schrödinger equation
    8. Boundary conditions
