@@ -85,6 +85,14 @@
       4. Compactness
       5. Sequences, convergence
       6. One-parameter families of continuous maps, stability of fixed points
+
+   2. Concepts of Linear Algebra
+      1. Vectors, covectors, tensors (symmetries), complexification
+      2. Quotient spaces
+      3. Norms, induced norms
+      4. Inner product
+      5. Linear maps, invariant subspaces, eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
+      
    
    </td>
    <td>
@@ -93,5 +101,28 @@
    2. Task_0B: The logistic map
 
    </td>
+<tr> 
+   
+   <td>
+3. Ordinary Differential Equations - Analytical Studies
+   1. Definition, examples, uniqueness, existence
+   2. Reduction to first-order systems
+   3. Geometric interpretation
+   4. First integrals
+   5. Fundamental theorem, dependence on parameters, variational equation
+   6. Linear systems, general solution
+   7. Stability
+
+4. Ordinary Differential Equations - Numerical Studies
+   1. Defining the problem
+   2. Various approximation methods
+   3. Existence proof using Euler's method
+      
+   </td>
+   <td>
+      Task_1A: Solving ordinary differential equations with numerical methods
+      Task_1B: Computing the stability region of some numerical integration schemes
+   </td>
+
  </tr>
 </table>
