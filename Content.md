@@ -104,19 +104,19 @@
 <tr> 
    
    <td>
-3. Ordinary Differential Equations - Analytical Studies
-   1. Definition, examples, uniqueness, existence
-   2. Reduction to first-order systems
-   3. Geometric interpretation
-   4. First integrals
-   5. Fundamental theorem, dependence on parameters, variational equation
-   6. Linear systems, general solution
-   7. Stability
+   3. Ordinary Differential Equations - Analytical Studies 
+      1. Definition, examples, uniqueness, existence
+      2. Reduction to first-order systems
+      3. Geometric interpretation
+      4. First integrals
+      5. Fundamental theorem, dependence on parameters, variational equation
+      6. Linear systems, general solution
+      7. Stability
 
-4. Ordinary Differential Equations - Numerical Studies
-   1. Defining the problem
-   2. Various approximation methods
-   3. Existence proof using Euler's method
+   4. Ordinary Differential Equations - Numerical Studies 
+      1. Defining the problem
+      2. Various approximation methods
+      3. Existence proof using Euler's method
       
    </td>
    <td>
@@ -125,4 +125,5 @@
    </td>
 
  </tr>
+ 
 </table>
