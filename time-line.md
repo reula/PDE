@@ -179,7 +179,7 @@ Task 5 (Heat)
 Weak solutions, Shocks (clases 20 y 21)
 </td>
 <td>
-Approximating Weak solutions
+Approximating Weak solutions (clases 22 y 23)
 </td>
 </tr>
 
@@ -206,10 +206,10 @@ Task 6 (Burgers)
 <tr>
 
    <td>
-Stationary Partial Differential Equations - Analytical Studies
+Stationary Partial Differential Equations - Analytical Studies (clases 24 y 25)
 </td>
 <td>
-Stationary Partial Differential Equations - Numerical Studies
+Stationary Partial Differential Equations - Numerical Studies (clases 26 y 27)
 </td>
 </tr>
 <tr>
@@ -233,12 +233,12 @@ Task 7
 
 <tr>
 <td>
-Further topics on hyperbolic systems
+Further topics on hyperbolic systems (clases 28 y 29)
 </td>
 
 <td>
    
-1.  Further topics on stationary systems
+1.  Further topics on stationary systems (clases 30 y 31)
     
 </td>
 </tr>
