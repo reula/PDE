@@ -31,16 +31,16 @@
    </td>
 </tr>
    <td>
-1- Topological Spaces, 2) Examples, 3) Continuity, 4) Compactness, 5) Sequences, convergence, 6) One-parameter families of continuous maps, 7) stability of fixed points
+1- Topological Spaces, 2. Examples, 3. Continuity, 4. Compactness, 5. Sequences, convergence, 6. One-parameter families of continuous maps, 7. stability of fixed points
 
-1- Vectors, covectors, tensors (symmetries), complexification, 2) Quotient spaces, 3) Norms, induced norms, 4) Inner product, 5) Linear maps, invariant subspaces,eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
+1- Vectors, covectors, tensors (symmetries., complexification, 2. Quotient spaces, 3. Norms, induced norms, 4. Inner product, 5. Linear maps, invariant subspaces,eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
 
 </td>
 <td>
 
-1- Basic Elements of Functional Analysis 2) Completing a normed space 3) Hilbert spaces, 4) Riesz Representation Theorem, 5) Sobolev spaces of positive integer indices and the Poincaré-Hardy theorem
+1- Basic Elements of Functional Analysis 2. Completing a normed space 3. Hilbert spaces, 4. Riesz Representation Theorem, 5. Sobolev spaces of positive integer indices and the Poincaré-Hardy theorem
 
-1- Fourier Series and Sobolev Spaces, 2) Basic properties of Fourier Series, 3) Sobolev spaces of real indices, 4) Two important theorems
+1- Fourier Series and Sobolev Spaces, 2. Basic properties of Fourier Series, 3. Sobolev spaces of real indices, 4. Two important theorems
    
 </td>
 
@@ -81,10 +81,12 @@ Ordinary Differential Equations - Numerical Studies   (clases 6 and 7)
 
 <td>
       
-   Task_1A: Solving ordinary differential equations with numerical methods
+   Task_1A: 
+   Solving ordinary differential equations with numerical methods
    
-   Task_1B: Computing the stability region of some numerical integration schemes
-   </td>
+   Task_1B: 
+   Computing the stability region of some numerical integration schemes
+</td>
 
 <tr>
 
@@ -114,9 +116,11 @@ Asigment 3
 
 <td>
 
-   Task_2A: Solving a single wave equation in a periodic domain
+   Task_2A: 
+   Solving a single wave equation in a periodic domain
 
-   Task_2B: Solving a simple hyperbolic system 
+   Task_2B: 
+   Solving a simple hyperbolic system 
 </td>
 
 </tr>
@@ -141,7 +145,8 @@ Evolution Partial Differential Equations - Numerical Studies (Bundary Conditons)
 Asigment 4
 </td>
 <td>
-Task 4
+Task 4:
+Solving the second order wave equation with boundaries and discontinuous interfases.
 </td>
 </tr>
 
@@ -166,7 +171,8 @@ Other evolutionary equations (clases 18 and 19)
 Asigment 5
 </td>
 <td>
-Task 5 (Heat)
+Task 5: 
+Solvind the heat equation
 </td>
 </tr>
 
@@ -194,7 +200,7 @@ Lax-Friedrich and Weno algorithms for approximating weak solutions.
 Asigment 6
 </td>
 <td>
-Task 6 (Burgers)
+Task 6: Solving Burgers equation
 </td>
 </tr>
 
@@ -224,7 +230,8 @@ Asigment 7
 </td>
 
 <td>
-Task 7
+Task 7: 
+Solving the Laplacian with Dirichlet boundary conditions. 
 </td>
 </tr>
 
@@ -243,17 +250,18 @@ Further topics on hyperbolic systems (clases 28 y 29)
 </td>
 </tr>
 <tr>
-   <td>
-   1- Strongly Hyperbolic Systems, 2. Constraints
-    
-   </td>
-   <td>
-1- Lax convergence theorem. Finite element approximation theory, 2. Variations, 3.Non-elliptic systems (min-max)
-   </td>
+
 <td>
-   </td>
-   <td>
-   </td>
+1- Strongly Hyperbolic Systems, 2. Constraints
+    
+</td>
+<td>
+1- Lax convergence theorem. Finite element approximation theory, 2. Variations, 3.Non-elliptic systems (min-max)
+</td>
+<td>
+</td>
+<td>
+</td>
 
  </tr>
  
