@@ -31,9 +31,10 @@
    </td>
 </tr>
    <td>
-1- Topological Spaces, 2. Examples, 3. Continuity, 4. Compactness, 5. Sequences, convergence, 6. One-parameter families of continuous maps, 7. stability of fixed points
 
-1- Vectors, covectors, tensors (symmetries., complexification, 2. Quotient spaces, 3. Norms, induced norms, 4. Inner product, 5. Linear maps, invariant subspaces,eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
+1- Vectors, covectors, tensors (symmetries., complexification, 2. Quotient spaces, 3. Norms, induced norms, 4. Inner product, 5. Linear maps, invariant subspaces, eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
+
+1- Topological Spaces, 2. Examples, 3. Continuity, 4. Compactness, 5. Sequences, convergence, 6. One-parameter families of continuous maps, 7. stability of fixed points
 
 </td>
 <td>
