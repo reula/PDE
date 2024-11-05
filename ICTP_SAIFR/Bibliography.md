@@ -2,7 +2,7 @@ Course Bibliography
 
 A book on mathematical methods will cover most of the analytical material in the course.
 
-![Mathematical Methods of Physics (in spanish)]()
+![Mathematical Methods of Physics (in spanish)](Images/libro_metodos.png)
 
 
  
