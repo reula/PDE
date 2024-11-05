@@ -22,3 +22,10 @@ Julia, we found it to be a much better-suited language for the course’s intent
 Julia combines the ease of prototyping found in Python with the speed of compiled languages. 
 Naturally, the notebooks are simple enough to be easily understood without a deep mastery of Julia, and can 
 also be converted to Python or any other desired language if needed.
+
+## On editing the book
+
+The book is built with the [Franklin.jl](https://github.com/tlienart/Franklin.jl") package using the [TufteCSS](https://tlienart.github.io/FranklinTemplates.jl/templates/tufte/) template.
+
+In the [Franklin.jl documentation](https://franklinjl.org/) you can find a quick start guide on how to render the site locally.
+In the [template website](https://tlienart.github.io/FranklinTemplates.jl/templates/tufte/) you can find some tips on how to write in markdown and how to use the Franklin.jl package.
