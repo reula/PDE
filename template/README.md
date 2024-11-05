@@ -1,0 +1,1 @@
+The Franklin.jl template source files are in this folder for reference. The rendered template can be found here: https://tlienart.github.io/FranklinTemplates.jl/templates/tufte/index.html.
