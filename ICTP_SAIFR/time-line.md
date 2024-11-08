@@ -279,3 +279,10 @@ Solving the Laplacian with Dirichlet boundary conditions.
  </tr>
  
 </table>
+
+
+### Comentarios Joaquin
+
+1. El primer bloque de numerico es analitico, no? Queda raro
+2. La numeracion de asignments esta desfasada con la de tasks. 
+3. Por que ponerle "-- Numerical Studies" a los titulos de las clases? No es redundante con el titulo de la columna?
