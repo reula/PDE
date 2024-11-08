@@ -1,19 +1,19 @@
 ## Content
 
-1. Topology
+1. Concepts of Linear Algebra
+   1. Vectors, covectors, tensors (symmetries), complexification
+   2. Quotient spaces
+   3. Norms, induced norms
+   4. Inner product
+   5. Linear maps, invariant subspaces, eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
+   
+2. Topology
    1. Topological Spaces
    2. Examples
    3. Continuity
    4. Compactness
    5. Sequences, convergence
    6. One-parameter families of continuous maps, stability of fixed points
-
-2. Concepts of Linear Algebra
-   1. Vectors, covectors, tensors (symmetries), complexification
-   2. Quotient spaces
-   3. Norms, induced norms
-   4. Inner product
-   5. Linear maps, invariant subspaces, eigenvalues-eigenvectors, exponentials, adjoint and unitary operators
 
 3. Ordinary Differential Equations - Analytical Studies
    1. Definition, examples, uniqueness, existence
@@ -45,7 +45,7 @@
    1. Definition and basic properties of Fourier Series
    2. Sobolev spaces of real indices
 
-8. Evolution Partial Differential Equations - Analytical Studies
+8.  Evolution Partial Differential Equations - Analytical Studies
    1. Examples: advection and Burgers' equation
    2. The Cauchy problem
    3. Symmetric-hyperbolic systems. Wave equations, Maxwell's equations, Einstein's equations, etc. Propagation cones
@@ -55,7 +55,7 @@
    7. Schrödinger equation
    8. Boundary conditions
 
-9. Evolution Partial Differential Equations - Numerical Studies
+9.  Evolution Partial Differential Equations - Numerical Studies
    1. Method of lines
    2. Discretizing space, finite differences, operators satisfying summation by parts
    3. Discretizing time. Stability of evolution operators and the CFL condition
