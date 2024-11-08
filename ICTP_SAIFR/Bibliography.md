@@ -25,12 +25,12 @@ A book on mathematical physics which I enjoyed reading. Several chapters in the 
 
 #### For elliptic theory (analitical)
 
-![](images/elliptic.png)
+<img src="Images/elliptic.png" alt="Mathematical Physics" width="200">
+
 
 #### Finite elements theory with applications in Fenix, Firedrake or Gridap.
 
-![](images/finite_elements.png)
-
+<img src="Images/finite_elements.png" alt="Mathematical Physics" width="400">
 
 #### Finite elements notes by D. Arnold 
 [download from here](https://www-users.cse.umn.edu/~arnold/8445-8446.14-15/notes.pdf)
