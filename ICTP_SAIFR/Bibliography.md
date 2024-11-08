@@ -2,33 +2,36 @@ Course Bibliography
 
 A book on mathematical methods will cover most of the analytical material in the course.
 
-![Mathematical Methods of Physics (in spanish)](Images/libro_metodos.png)
+<img src="Images/libro_metodos.png" alt="Mathematical Methods of Physics (in spanish)" width="200">
 
 
  
-baje de aquí
+#### [Download from here:](https://github.com/reula/libro_metodos/blob/master/Current_garamond/libro_gar.pdf)
 
-Libros de ecuaciones de evolución (contienen parte numérica)
+A book on mathematical physics which I enjoyed reading. Several chapters in the book above are inspired on it.
 
-
-
-
-Reviews
-- Continuum and Discrete Initial-Boundary Value Problems and Einstein’s Field Equations, Oliver Sarbach & Manuel Tiglio (teoría matemática y numérica para ecuaciones hiperbólicas, aplicaciones a relatividad general). Living Reviews in Relativity.
+<img src="Images/geroch_book.png" alt="Mathematical Physics" width="200">
 
 
+#### Books on Evolutionary Equations with numerical methods
+
+![](images/evolution.png)
 
 
-
-Libros sobre teoría elíptica (sin parte numérica)
-
+#### Reviews
+- Continuum and Discrete Initial-Boundary Value Problems and Einstein’s Field Equations, Oliver Sarbach & Manuel Tiglio (analytical and numerical theory, mostly hyperbolic, with applications to general relativity. Living Reviews in Relativity.
 
 
 
+#### For elliptic theory (analitical)
 
-Libros sobre elementos finitos implementados en fenics o firedrake
+![](images/elliptic.png)
+
+#### Finite elements theory with applications in Fenix, Firedrake or Gridap.
+
+![](images/finite_elements.png)
 
 
-
-
+#### Finite elements notes by D. Arnold 
+[download from here](https://www-users.cse.umn.edu/~arnold/8445-8446.14-15/notes.pdf)
 
