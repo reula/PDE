@@ -15,7 +15,7 @@ A book on mathematical physics which I enjoyed reading. Several chapters in the 
 
 #### Books on Evolutionary Equations with numerical methods
 
-![](images/evolution.png)
+<img src="Images/evolution.png" alt="Mathematical Physics" width="500">
 
 
 #### Reviews
