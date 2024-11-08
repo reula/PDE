@@ -61,11 +61,11 @@
    
 <td>
 
-**Ordinary Differential Equations - Analytical Studies** (clases 4 and 5)
+**Ordinary Differential Equations - Analytical Studies** (clases 5 and 6)
 </td>
 <td>
 
-**Ordinary Differential Equations - Numerical Studies**   (clases 6 and 7)
+**Ordinary Differential Equations - Numerical Studies**   (clases 7 and 8)
 </td>
 </tr><tr>
 <td>
@@ -95,12 +95,12 @@
 
 <td>
 
-**Evolutionary Partial Differential Equations - Analytical Studies** (clases 8 and 9)
+**Evolutionary Partial Differential Equations - Analytical Studies** (clases 9 and 10)
    
 </td>
 <td>
 
-**Evolution Partial Differential Equations - Numerical Studies (Periodic Case)** (clases 10 and 11)
+**Evolution Partial Differential Equations - Numerical Studies (Periodic Case)** (clases 11 and 12)
 </td>
 </tr>
 <td>
@@ -132,11 +132,11 @@ Asigment 3
 
 <td>
 
-**Evolutionary Partial Differential Equations** (clases 12 and 13)
+**Evolutionary Partial Differential Equations** (clases 13 and 14)
 </td>
 <td>
 
-**Evolution Partial Differential Equations - Numerical Studies (Bundary Conditons)** (clases 14 and 15)
+**Evolution Partial Differential Equations - Numerical Studies (Bundary Conditons)** (clases 15 and 16)
 </td>
 </tr>
 <tr>
@@ -162,11 +162,11 @@ Solving the second order wave equation with boundaries and discontinuous interfa
 <tr>
 <td>
 
-**Non-linear Theory** (clases 16 and 17)
+**Non-linear Theory** (clases 17 and 18)
 </td>
 <td>
 
-**Other evolutionary equations** (clases 18 and 19)
+**Other evolutionary equations** (clases 19 and 20)
 </td>
 </tr>
 <td>
@@ -191,11 +191,11 @@ Solvind the heat equation
 <tr>
 <td>
 
-**Weak solutions, Shocks** (clases 20 y 21)
+**Weak solutions, Shocks** (clases 21 y 22)
 </td>
 <td>
 
-**Approximating Weak solutions** (clases 22 y 23)
+**Approximating Weak solutions** (clases 23 y 24)
 </td>
 </tr>
 
@@ -223,11 +223,11 @@ Task 6: Solving Burgers equation
 
 <td>
 
-**Stationary Partial Differential Equations - Analytical Studies** (clases 24 y 25)
+**Stationary Partial Differential Equations - Analytical Studies** (clases 25 y 26)
 </td>
 <td>
 
-**Stationary Partial Differential Equations - Numerical Studies** (clases 26 y 27)
+**Stationary Partial Differential Equations - Numerical Studies** (clases 27 y 28)
 </td>
 </tr>
 <tr>
@@ -253,12 +253,12 @@ Solving the Laplacian with Dirichlet boundary conditions.
 <tr>
 <td>
 
-**Further topics on hyperbolic systems** (clases 28 y 29)
+**Further topics on hyperbolic systems** (clases 29 y 30)
 </td>
 
 <td>
    
-**Further topics on stationary systems** (clases 30 y 31)
+**Further topics on stationary systems** (clases 31 y 32)
     
 </td>
 </tr>
