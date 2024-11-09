@@ -8,7 +8,7 @@ A book on mathematical methods will cover most of the analytical material in the
  
 #### [Download from here:](https://github.com/reula/libro_metodos/blob/master/Current_garamond/libro_gar.pdf)
 
-A book on mathematical physics which I enjoyed reading. Several chapters in the book above are inspired on it.
+A book on mathematical physics which I enjoyed reading. Several chapters in the book above are inspired by it.
 
 <img src="Images/geroch_book.png" alt="Mathematical Physics" width="200">
 
@@ -28,7 +28,7 @@ A book on mathematical physics which I enjoyed reading. Several chapters in the 
 <img src="Images/elliptic.png" alt="Mathematical Physics" width="200">
 
 
-#### Finite elements theory with applications in Fenix, Firedrake or Gridap.
+#### Finite elements theory with applications in Fenix, Firedrake and Gridap.
 
 <img src="Images/finite_elements.png" alt="Mathematical Physics" width="400">
 
