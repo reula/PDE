@@ -13,3 +13,7 @@ The course will be very intensive, and will be structured with approximately 4 h
 The program of the couse can be found here: (link to program) and an approximate time line of 8 weeks can be found here: (link to time-line).
 
 A minimal bibliographical set is listed here: (link to Bibliography)
+
+### Prerequisites
+
+Notions of Calculus and Linear Algebra, preferably some exposure to Mathematical methods. Some experience with computers and computer languages. It is expected that the students have previously installed [Julia](https://julialang.org/downloads/) and adquiere minimal experience with it. We will help with this but only in solving problems or specific questions.
