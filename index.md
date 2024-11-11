@@ -1,4 +1,4 @@
-@def title = "Franklin Example"
+@def title = "PDE Course Book"
 @def tags = ["syntax", "code"]
 
 # Partial Differential Equations: Analyitical and Numerical Methods
