@@ -2,7 +2,7 @@
 
 julia_version = "1.10.1"
 manifest_format = "2.0"
-project_hash = "b0e358d3081ca7069d2b5bbf15b60dda43a06af3"
+project_hash = "c4d8515cfcbc306ae4712e797bc2441c0918984a"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -257,6 +257,12 @@ version = "1.2.0"
 
 [[deps.Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
+
+[[deps.StyledStrings]]
+deps = ["PrecompileTools", "TOML"]
+git-tree-sha1 = "711c9650010c95814911c2005ea04e70e70e65ed"
+uuid = "f489334b-da3d-4c2e-b8f0-e476e12c162b"
+version = "1.0.3"
 
 [[deps.TOML]]
 deps = ["Dates"]
