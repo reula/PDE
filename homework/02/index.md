@@ -71,6 +71,7 @@ Let $ϕ : X → Y$ and $ψ : Y → Z$ be continuous maps, prove that $ψ ∘ ϕ 
 Prove that compact sets in the real line are closed and bounded.
 
 **Answer 6.** 
+
 **Exercise 7.** (optional)
 
 a. Prove that if a space is Hausdorff then if a sequence has a limit point, it is unique.
