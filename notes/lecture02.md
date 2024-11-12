@@ -1,16 +1,22 @@
 +++
-title = "02: Second topic"
+title = "02: Basic concepts of topology"
 hascode = true
-rss = "A short description of the page which would serve as **blurb** in a `RSS` feed; you can use basic markdown here but the whole description string must be a single line (not a multiline string). Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don't expect maths or fancy styling to work; images should be ok though: ![](https://upload.wikimedia.org/wikipedia/en/3/32/Rick_and_Morty_opening_credits.jpeg)"
+rss = ""
 +++
 
-# Second topic
+# Basic concepts of topology
 
 \toc
 
-## First subtopic
+## Introduction
 
-This is a first subtopic.
+The notion of a set, while indicating that certain objects —the elements that comprise it— have something in common, does not give us any sense of the *closeness* between these elements. On the other hand, if we consider, for instance, the real numbers, this notion of closeness is evident. We know, for example, that the number 2 is much closer to 1 than 423 is. The concept of a topology on a set, which we will define below, aims to precisely capture this notion of closeness, which, as we will see, allows for many gradations.
+
+<!-- \defi:  -->
+
+Un **espacio topológico** consiste en un par $(X, \cT)$, donde $X$
+es un conjunto y $\cT$ es una colección de subconjuntos de $X$ satisfaciendo
+las siguientes condiciones:
 
 ## Second subtopic
 
