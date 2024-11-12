@@ -23,6 +23,8 @@ Julia combines the ease of prototyping found in Python with the speed of compile
 Naturally, the notebooks are simple enough to be easily understood without a deep mastery of Julia, and can 
 also be converted to Python or any other desired language if needed.
 
+### Access to the [book](https://reula.github.io/PDE/)
+
 ## On editing the book
 
 The book is built with the [Franklin.jl](https://github.com/tlienart/Franklin.jl) package using the [TufteCSS](https://tlienart.github.io/FranklinTemplates.jl/templates/tufte/) template.
