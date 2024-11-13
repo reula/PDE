@@ -8,6 +8,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/template/menu3/index.html</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/Bibliograf%C3%ADa/index.html</loc>
     <lastmod>2024-11-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -116,13 +122,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/template/menu1/index.html</loc>
+    <loc>https://oreula.github.io/PDE/notes/lecture05/index.html</loc>
     <lastmod>2024-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/template/menu3/index.html</loc>
+    <loc>https://oreula.github.io/PDE/template/menu1/index.html</loc>
     <lastmod>2024-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
