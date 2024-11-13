@@ -1,7 +1,7 @@
 +++
 title = "02: Basic concepts of topology"
 hascode = true
-rss = ""
+rss = "Basic concepts of topology"
 +++
 
 # Basic concepts of topology
@@ -14,8 +14,8 @@ The notion of a set, while indicating that certain objects —the elements that 
 
 <!-- \defi:  -->
 
-Un **espacio topológico** consiste en un par $(X, \cT)$, donde $X$
-es un conjunto y $\cT$ es una colección de subconjuntos de $X$ satisfaciendo
+Un **espacio topológico** consiste en un par $(X, \mathcal{T})$, donde $X$
+es un conjunto y $\mathcal{T}$ es una colección de subconjuntos de $X$ satisfaciendo
 las siguientes condiciones:
 
 ## Second subtopic
