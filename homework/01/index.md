@@ -1,9 +1,10 @@
 +++
-title = "Homework 01 Overview"
+title = "Homework 01 Linear Algebra"
 weave = false
 +++
 
-# Homework Overview
+# Homework 01
 
-- [LinearAlgebra](LinearAlgebra.ipynb)
-- [LinearAlgebra (md)](LinearAlgebra.md)
+- [LinearAlgebra.ipynb](LinearAlgebra.ipynb)
+  
+- \textinput{homeworks/LinearAlgebra.md}
