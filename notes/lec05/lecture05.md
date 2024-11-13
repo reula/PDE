@@ -10,9 +10,9 @@ rss = "Ordinary Differential Equations"
 
 ## algo
 
-- [Fundamental Theorem](notes/ODE_Fundamental_Euler.pdf)
+- [Fundamental Theorem](../ODE_Fundamental_Euler.pdf)
 
 ## otra cosa
 
-- [ODES Demo (notebook)](notes/ODES_Demo.ipynb)
+- [ODES Demo (notebook)](../ODES_Demo.ipynb)
 
