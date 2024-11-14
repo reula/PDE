@@ -15,7 +15,5 @@ rss = "Ordinary Differential Equations"
 ## otra cosa
 
 - [ODES Demo (notebook)](../ODES.ipynb)
-  
-<li><p><a href="ODES.ipynb" download>ODES Demo notebook</a></p>
-</li>
 
+- [Fundamental Theorem](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_Fundamental_Euler.pdf?ref_type=heads)
