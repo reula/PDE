@@ -14,5 +14,8 @@ rss = "Ordinary Differential Equations"
 
 ## otra cosa
 
-- [ODES Demo (notebook)](../ODES_Demo.ipynb)
+- [ODES Demo (notebook)](../ODES.ipynb)
+  
+<li><p><a href="ODES.ipynb" download>ODES Demo notebook</a></p>
+</li>
 

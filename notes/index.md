@@ -5,6 +5,6 @@ weave = false
 
 # Notes Overview
 
-- [Lecture 01](/notes/lec01/)
-- [Lecture 02](/notes/lec02/)
-- [Lecture 05](/notes/lec05/)
+- [Lecture 01](/notes/lecture01/)
+- [Lecture 02](/notes/lecture02/)
+- [Lecture 05](/notes/lecture05/)
