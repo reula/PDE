@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>https://oreula.github.io/PDE/notes/lecture05/lecture05/index.html</loc>
-    <lastmod>2024-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://oreula.github.io/PDE/template/index.html</loc>
     <lastmod>2024-11-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,6 +26,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/notes/lecture05/index.html</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/homework/02/index.html</loc>
     <lastmod>2024-11-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -50,12 +50,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/notes/lecture02/lecture02/index.html</loc>
-    <lastmod>2024-11-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://oreula.github.io/PDE/index.html</loc>
     <lastmod>2024-11-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -63,6 +57,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/schedule/index.html</loc>
+    <lastmod>2024-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/notes/lecture02/index.html</loc>
     <lastmod>2024-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
