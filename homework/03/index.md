@@ -1,10 +1,10 @@
 +++
-title = "Homework 03 Ordinary Differential Equations"
+title = "Homework 03 Functional Spaces"
 weave = false
 +++
 
-# Homework 02
+# Homework 03
 
-- [Topology (notebook version)](ODEs.ipynb)
+- [Functional Spaces(notebook version)](FS.ipynb)
   
-- \textinput{homeworks/ODEs.md}
+- \textinput{homeworks/FS.md}

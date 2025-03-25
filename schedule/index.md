@@ -1,6 +1,5 @@
 ## Course Schedule
 
-
 |    **Theory**        |         **Numerical**      |      **Exercises**   | **Labs**      |
 |------------|---------------|---------------|----------|
 | **Topology and Linear Algebra** (Classes 1 and 2) | **Functional Analysis and Fourier Theory** (Classes 3 and 4) | Exercise Sheet 1 | Lab 1A: Getting familiar with Julia and its environment Lab 1B: The logistic map |
