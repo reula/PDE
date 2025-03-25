@@ -92,7 +92,19 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/homework/index%20copy/index.html</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/ICTP_SAIFR/time-line/index.html</loc>
+    <lastmod>2025-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/homework/04/index.html</loc>
     <lastmod>2025-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
