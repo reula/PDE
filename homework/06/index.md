@@ -1,10 +1,10 @@
 +++
-title = "Homework 03 Fourier Spaces"
+title = "Homework 06 Hyperbolic Equations"
 weave = false
 +++
 
-# Homework 04
+# Homework 06
 
-- [Fourier Spaces(notebook version)](FourierS.ipynb)
+- [Hyperbolic Equations(notebook version)](Hiperbolic_equations.ipynb)
   
-- \textinput{homeworks/FourierS.md}
+- \textinput{homeworks/Hiperbolic_equations.md}
