@@ -26,6 +26,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/homework/09/index.html</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/notes/lecture05/index.html</loc>
     <lastmod>2025-04-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,6 +45,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/homework/05/index.html</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/homework/10/index.html</loc>
     <lastmod>2025-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -92,13 +104,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/homework/index.html</loc>
+    <loc>https://oreula.github.io/PDE/homework/08/index.html</loc>
     <lastmod>2025-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/homework/index%20copy/index.html</loc>
+    <loc>https://oreula.github.io/PDE/homework/index.html</loc>
     <lastmod>2025-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -123,6 +135,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/notes/index.html</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/homework/07/index.html</loc>
     <lastmod>2025-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
