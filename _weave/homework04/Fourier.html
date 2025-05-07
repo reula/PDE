@@ -664,13 +664,22 @@ div.title {text-align: center;}
 <p><strong>Exercise 1.</strong></p>
 <p>a.- Find the Fourier series of the function <span class="math">$f(x) := x$</span> in the interval <span class="math">$[-\pi,\pi]$</span>.</p>
 <p>b.- Use Parseval&#39;s relation to prove that </p>
-<p>\begin&#123;equation<em>&#125;   \sum_&#123;n&#61;1&#125;^&#123;\infty&#125; \frac&#123;1&#125;&#123;n^2&#125; &#61; \pi^2/6 \end&#123;equation</em>&#125;</p>
+<p class="math">\[
+  \sum_{n=1}^{\infty} \frac{1}{n^2} = \pi^2/6
+\]</p>
 <p><strong>Exercise 2.</strong></p>
 <p>a.- Find the Fourier series of the function <span class="math">$f(x):= e^{sx}$</span> in the interval <span class="math">$[-\pi, \pi]$</span>.</p>
 <p>b.- Use Parseval&#39;s relation to prove that </p>
-<p>\begin&#123;equation<em>&#125;   \pi coth&#40;\pi s&#41;/s &#61; \sum_&#123;n&#61;-\infty&#125;^&#123;\infty&#125; \frac&#123;1&#125;&#123;s^2&#43;n^2&#125; \end&#123;equation</em>&#125;</p>
+<p class="math">\[
+  \pi coth(\pi s)/s = \sum_{n=-\infty}^{\infty} \frac{1}{s^2+n^2}
+\]</p>
 <p><strong>Exercise 3.</strong></p>
-<p>Let <span class="math">$S_n: L^2 \to L^2$</span> be the map that sends <span class="math">$f \in L^2$</span> to the partial Fourier series, \begin&#123;equation<em>&#125;   S<em>n&#40;f&#41; :&#61; \sum</em>&#123;m&#61;-n&#125;^&#123;n&#125; c<em>m e^&#123;imx&#125;, \;\;\;\;\;\;\;                   c</em>m:&#61; \frac&#123;1&#125;&#123;2\pi&#125;\langle e^&#123;imx&#125;,f&#40;x&#41; \rangle. \end&#123;equation</em>&#125; Show that the <span class="math">$S_n$</span> are orthogonal projections and that  <span class="math">$S_n S_m = S_m S_n = S_m$</span> if <span class="math">$m \leq n$</span>.</p>
+<p>Let <span class="math">$S_n: L^2 \to L^2$</span> be the map that sends <span class="math">$f \in L^2$</span> to the partial Fourier series,</p>
+<p class="math">\[
+  S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}, \;\;\;\;\;\;\; 
+                 c_m:= \frac{1}{2\pi}\langle e^{imx},f(x) \rangle.
+\]</p>
+<p>Show that the <span class="math">$S_n$</span> are orthogonal projections and that  <span class="math">$S_n S_m = S_m S_n = S_m$</span> if <span class="math">$m \leq n$</span>.</p>
 <p><strong>Exercise 4. Use of the Fourier Interpolation</strong></p>
 <p>Compute the Fourier Interpolation of the functions: <span class="math">$|x|$</span>, <span class="math">$sign(x)$</span>, and <span class="math">$sin(x)+ 3cos(x)$</span> and  <span class="math">$e^{sx}$</span> &#40;for <span class="math">$s= 1, 3, 3i$</span>&#41; and plot it along the Fourier series coefficients. Below is an example:</p>
 
@@ -679,10 +688,19 @@ div.title {text-align: center;}
 <span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Pkg</span><span class='hljl-t'>
 </span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>instantiate</span><span class='hljl-p'>()</span><span class='hljl-t'>
 </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>FFTW</span><span class='hljl-t'>
-</span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Plots</span><span class='hljl-sb'>```
+</span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Plots</span>
+</pre>
 
-```</span><span class='hljl-n'>julia</span><span class='hljl-t'>
-</span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>64</span><span class='hljl-t'>
+
+<pre class="julia-error">
+ERROR: ArgumentError: Package FFTW not found in current path.
+- Run &#96;import Pkg; Pkg.add&#40;&quot;FFTW&quot;&#41;&#96; to install the FFTW package.
+</pre>
+
+
+
+<pre class='hljl'>
+<span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>64</span><span class='hljl-t'>
 </span><span class='hljl-nf'>f</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#f(x) = x*sign(x)</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#f(x) = exp(2*x)</span><span class='hljl-t'>
@@ -690,11 +708,21 @@ div.title {text-align: center;}
 </span><span class='hljl-n'>xf</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>π</span><span class='hljl-t'>
 </span><span class='hljl-n'>xv</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-n'>xi</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>xf</span><span class='hljl-oB'>-</span><span class='hljl-n'>xi</span><span class='hljl-p'>)</span><span class='hljl-oB'>*</span><span class='hljl-p'>(</span><span class='hljl-n'>i</span><span class='hljl-oB'>-</span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-k'>for</span><span class='hljl-t'> </span><span class='hljl-n'>i</span><span class='hljl-t'> </span><span class='hljl-kp'>in</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-oB'>:</span><span class='hljl-n'>N</span><span class='hljl-p'>]</span><span class='hljl-t'>
 </span><span class='hljl-n'>fv</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>f</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>)</span><span class='hljl-t'>
-</span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>,</span><span class='hljl-n'>fv</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)=x&quot;</span><span class='hljl-p'>)</span><span class='hljl-sb'>```
+</span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>,</span><span class='hljl-n'>fv</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)=x&quot;</span><span class='hljl-p'>)</span>
+</pre>
 
-The Fourier coefficients of </span><span class='hljl-si'>$f</span><span class='hljl-sb'>(x)=x$ in the interval $[-π,π]$ are </span><span class='hljl-si'>$b_n</span><span class='hljl-sb'>=i/n$, </span><span class='hljl-si'>$n</span><span class='hljl-sb'>\neq 0$, </span><span class='hljl-si'>$b_0</span><span class='hljl-sb'> = 0$. While the Fourier Interpolant is: </span><span class='hljl-si'>$i_n</span><span class='hljl-sb'> = 1/(e^{-i2πn}-1)$. 
 
-```</span><span class='hljl-n'>juliafreq</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fftshift</span><span class='hljl-p'>(</span><span class='hljl-nf'>rfftfreq</span><span class='hljl-p'>(</span><span class='hljl-n'>N</span><span class='hljl-p'>))</span><span class='hljl-oB'>*</span><span class='hljl-n'>N</span><span class='hljl-t'>
+<pre class="julia-error">
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
+Suggestion: check for spelling errors or missing imports.
+</pre>
+
+
+<p>The Fourier coefficients of <span class="math">$f(x)=x$</span> in the interval <span class="math">$[-π,π]$</span> are <span class="math">$b_n=i/n$</span>, <span class="math">$n\neq 0$</span>, <span class="math">$b_0 = 0$</span>. While the Fourier Interpolant is: <span class="math">$i_n = 1/(e^{-i2πn}-1)$</span>. </p>
+
+
+<pre class='hljl'>
+<span class='hljl-n'>freq</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fftshift</span><span class='hljl-p'>(</span><span class='hljl-nf'>rfftfreq</span><span class='hljl-p'>(</span><span class='hljl-n'>N</span><span class='hljl-p'>))</span><span class='hljl-oB'>*</span><span class='hljl-n'>N</span><span class='hljl-t'>
 </span><span class='hljl-n'>rft</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>rfft</span><span class='hljl-p'>(</span><span class='hljl-n'>fv</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#fftf = fft(fv)</span><span class='hljl-t'>
 </span><span class='hljl-n'>bn</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>./</span><span class='hljl-n'>freq</span><span class='hljl-t'>  </span><span class='hljl-cs'>#for f(x)=x</span><span class='hljl-t'>
@@ -710,8 +738,8 @@ The Fourier coefficients of </span><span class='hljl-si'>$f</span><span class='h
 
 
 <pre class="julia-error">
-ERROR: ArgumentError: Package FFTW not found in current path.
-- Run &#96;import Pkg; Pkg.add&#40;&quot;FFTW&quot;&#41;&#96; to install the FFTW package.
+ERROR: UndefVarError: &#96;fftshift&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
+Suggestion: check for spelling errors or missing imports.
 </pre>
 
 
@@ -727,7 +755,7 @@ ERROR: ArgumentError: Package FFTW not found in current path.
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
@@ -770,7 +798,7 @@ Compute the Fourier interpolant `P(x)` of a periodic signal sampled uniformly ov
 
 
 <pre class="output">
-Main.var&quot;##WeaveSandBox#231&quot;.fourier_interpolant
+Main.var&quot;##WeaveSandBox#232&quot;.fourier_interpolant
 </pre>
 
 
@@ -795,7 +823,7 @@ Main.var&quot;##WeaveSandBox#231&quot;.fourier_interpolant
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;fft&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+ERROR: UndefVarError: &#96;fft&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
@@ -815,7 +843,7 @@ Suggestion: check for spelling errors or missing imports.
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;fourier_interpolant_1&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+ERROR: UndefVarError: &#96;fourier_interpolant_1&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
@@ -884,7 +912,7 @@ f_n &#40;generic function with 1 method&#41;
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
