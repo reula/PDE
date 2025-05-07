@@ -90,7 +90,7 @@ f(x) = sign(mod(x,2π)-π) #it works fine with this, except at zero (because of 
 plot(f, 0, 2π, label="f(x)")
 ```
 
-```julia
+```julia; results = "hidden"
 """
     fourier_interpolant(f::Vector, T=2π)
 
@@ -145,7 +145,7 @@ xlabel!("x")
 
 ```julia
 f_sampled = f.(x_sampled)
-P = fourier_interpolant_1(f_sampled, T)
+P = fourier_interpolant(f_sampled, T)
 P_eval = P.(x_eval)
 
 plot(x_eval, P_eval, label="Fourier Interpolant (N=$N)", linewidth=2)
@@ -194,7 +194,13 @@ f9(x) = f_n(x,x0,9)
 f18(x) = f_n(x,x0,18)
 plot(f1, label="f_1(x)", linewidth=2)
 plot!(f2, label="f_2(x)", linewidth=2)
-plot!(f3, label="f_3(x)", linewidth=2)```The real parts get higher and higher frequency components. ```juliascatter(real.(rfft(f1.(xv))), label="Ff_1(x)")
+plot!(f3, label="f_3(x)", linewidth=2)
+```
+
+The real parts get higher and higher frequency components. 
+
+```julia
+scatter(real.(rfft(f1.(xv))), label="Ff_1(x)")
 plot!(real.(rfft(f1.(xv))), label="Ff_1(x)")
 #scatter!(real.(rfft(f2.(xv))), label="Ff_2(x)")
 plot!(real.(rfft(f2.(xv))), label="Ff_2(x)")
