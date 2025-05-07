@@ -5,6 +5,4 @@ weave = false
 
 # Homework 04
 
-- [Fourier Spaces(notebook version)](FourierS.ipynb)
-  
-- \textinput{homeworks/FourierS.md}
+{{ insert ../_weave/homework04/Fourier.html }}
