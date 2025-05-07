@@ -671,7 +671,7 @@ div.title {text-align: center;}
 <p>a.- Find the Fourier series of the function <span class="math">$f(x):= e^{sx}$</span> in the interval <span class="math">$[-\pi, \pi]$</span>.</p>
 <p>b.- Use Parseval&#39;s relation to prove that </p>
 <p class="math">\[
-  \pi coth(\pi s)/s = \sum_{n=-\infty}^{\infty} \frac{1}{s^2+n^2}
+  \pi \mathrm{coth}(\pi s)/s = \sum_{n=-\infty}^{\infty} \frac{1}{s^2+n^2}
 \]</p>
 <p><strong>Exercise 3.</strong></p>
 <p>Let <span class="math">$S_n: L^2 \to L^2$</span> be the map that sends <span class="math">$f \in L^2$</span> to the partial Fourier series,</p>
@@ -692,12 +692,6 @@ div.title {text-align: center;}
 </pre>
 
 
-<pre class="julia-error">
-ERROR: ArgumentError: Package FFTW not found in current path.
-- Run &#96;import Pkg; Pkg.add&#40;&quot;FFTW&quot;&#41;&#96; to install the FFTW package.
-</pre>
-
-
 
 <pre class='hljl'>
 <span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>64</span><span class='hljl-t'>
@@ -709,12 +703,6 @@ ERROR: ArgumentError: Package FFTW not found in current path.
 </span><span class='hljl-n'>xv</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-n'>xi</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>xf</span><span class='hljl-oB'>-</span><span class='hljl-n'>xi</span><span class='hljl-p'>)</span><span class='hljl-oB'>*</span><span class='hljl-p'>(</span><span class='hljl-n'>i</span><span class='hljl-oB'>-</span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-k'>for</span><span class='hljl-t'> </span><span class='hljl-n'>i</span><span class='hljl-t'> </span><span class='hljl-kp'>in</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-oB'>:</span><span class='hljl-n'>N</span><span class='hljl-p'>]</span><span class='hljl-t'>
 </span><span class='hljl-n'>fv</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>f</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>,</span><span class='hljl-n'>fv</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)=x&quot;</span><span class='hljl-p'>)</span>
-</pre>
-
-
-<pre class="julia-error">
-ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
-Suggestion: check for spelling errors or missing imports.
 </pre>
 
 
@@ -737,12 +725,6 @@ Suggestion: check for spelling errors or missing imports.
 </pre>
 
 
-<pre class="julia-error">
-ERROR: UndefVarError: &#96;fftshift&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
-Suggestion: check for spelling errors or missing imports.
-</pre>
-
-
 <h3>For future use we construct an Fourier interpolant for functions in &#91;0,2π&#93;</h3>
 
 
@@ -751,12 +733,6 @@ Suggestion: check for spelling errors or missing imports.
 </span><span class='hljl-cs'>#f(x) = -(x*(1-sign(x-π)) + (x-2π)*(sign(x-π)+1)) /2/π #it does not work with this.</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#f(x) = sin(x) + sin(3*x)/3 + sin(5*x)/5 #it works fine with this.</span><span class='hljl-t'>
 </span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>f</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>0</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)&quot;</span><span class='hljl-p'>)</span>
-</pre>
-
-
-<pre class="julia-error">
-ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
-Suggestion: check for spelling errors or missing imports.
 </pre>
 
 
@@ -797,11 +773,6 @@ Compute the Fourier interpolant `P(x)` of a periodic signal sampled uniformly ov
 </pre>
 
 
-<pre class="output">
-Main.var&quot;##WeaveSandBox#232&quot;.fourier_interpolant
-</pre>
-
-
 
 <pre class='hljl'>
 <span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-t'>
@@ -822,12 +793,6 @@ Main.var&quot;##WeaveSandBox#232&quot;.fourier_interpolant
 </pre>
 
 
-<pre class="julia-error">
-ERROR: UndefVarError: &#96;fft&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
-Suggestion: check for spelling errors or missing imports.
-</pre>
-
-
 
 <pre class='hljl'>
 <span class='hljl-n'>f_sampled</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>f</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_sampled</span><span class='hljl-p'>)</span><span class='hljl-t'>
@@ -839,12 +804,6 @@ Suggestion: check for spelling errors or missing imports.
 </span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>x_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>f_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Sampled Points&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>color</span><span class='hljl-oB'>=:</span><span class='hljl-n'>red</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-nf'>title!</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;Fourier Interpolation&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-nf'>xlabel!</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;x&quot;</span><span class='hljl-p'>)</span>
-</pre>
-
-
-<pre class="julia-error">
-ERROR: UndefVarError: &#96;fourier_interpolant_1&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
-Suggestion: check for spelling errors or missing imports.
 </pre>
 
 
@@ -872,11 +831,6 @@ f(x,x_0,n) = \left(\begin{align}
         </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-ni'>0</span><span class='hljl-t'>
     </span><span class='hljl-k'>end</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
-</pre>
-
-
-<pre class="output">
-f_n &#40;generic function with 1 method&#41;
 </pre>
 
 
@@ -908,12 +862,6 @@ f_n &#40;generic function with 1 method&#41;
 </span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>imag</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-nf'>rfft</span><span class='hljl-p'>(</span><span class='hljl-n'>f3</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>))),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Ff_3(x)&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>imag</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-nf'>rfft</span><span class='hljl-p'>(</span><span class='hljl-n'>f6</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>))),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Ff_6(x)&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>imag</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-nf'>rfft</span><span class='hljl-p'>(</span><span class='hljl-n'>f9</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>))),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Ff_9(x)&quot;</span><span class='hljl-p'>)</span>
-</pre>
-
-
-<pre class="julia-error">
-ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#232&quot;&#96;
-Suggestion: check for spelling errors or missing imports.
 </pre>
 
 
