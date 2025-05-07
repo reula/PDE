@@ -1,12 +1,3 @@
----
-title: "Homework 4: Fourier Analysis"
-weave_options:
-  doctype: md2html
-  highlight: pygments
-  template: "../../pde.tpl"
----
-
-
 ## Homework 4: Fourier Analysis
 
 ## Due date: 
