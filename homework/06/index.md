@@ -1,10 +1,10 @@
 +++
 title = "Homework 06 Hyperbolic Equations"
-weave = false
+weave = true
 +++
 
 # Homework 06
 
 - [Hyperbolic Equations(notebook version)](Hiperbolic_equations.ipynb)
   
-- \textinput{homeworks/Hiperbolic_equations.md}
+{{ insert ../_weave/homework06/Hyperbolic_equations.html }}
