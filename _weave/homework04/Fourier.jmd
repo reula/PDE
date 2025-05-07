@@ -212,7 +212,14 @@ scatter!(real.(rfft(f9.(xv))), label="Ff_9(x)")
 plot!(real.(rfft(f9.(xv))), label="Ff_9(x)")
 scatter!(real.(rfft(f18.(xv))), label="Ff_18(x)")
 plot!(real.(rfft(f18.(xv))), label="Ff_18(x)")
-scatter!(real.(rfft(f1.(xv))), label="Ff_1(x)")```The imaginary parts are all very small.```juliascatter(imag.(rfft(f1.(xv))), label="Ff_1(x)")
+scatter!(real.(rfft(f1.(xv))), label="Ff_1(x)")
+```
+
+The imaginary parts are all very small.
+
+```julia
+
+scatter(imag.(rfft(f1.(xv))), label="Ff_1(x)")
 #scatter!(imag.(rfft(f2.(xv))), label="Ff_2(x)")    
 scatter!(imag.(rfft(f3.(xv))), label="Ff_3(x)")
 scatter!(imag.(rfft(f6.(xv))), label="Ff_6(x)")
