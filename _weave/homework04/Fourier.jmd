@@ -1,9 +1,16 @@
-with open(OutputFile, "w", encoding="utf-8") as f:## Homework 4: Fourier Analysis## Due date: ### Student Name:**Exercise 1.**
+## Homework 4: Fourier Analysis
+
+## Due date: 
+
+### Student Name:
+
+**Exercise 1.**
 
 a.- Find the Fourier series of the function $f(x) := x$ in the
 interval $[-\pi,\pi]$.
 
 b.- Use Parseval's relation to prove that 
+
 \begin{equation*}
   \sum_{n=1}^{\infty} \frac{1}{n^2} = \pi^2/6
 \end{equation*}
@@ -15,6 +22,7 @@ a.- Find the Fourier series of the function $f(x):= e^{sx}$ in the
 interval $[-\pi, \pi]$.
 
 b.- Use Parseval's relation to prove that 
+
 \begin{equation*}
   \pi coth(\pi s)/s = \sum_{n=-\infty}^{\infty} \frac{1}{s^2+n^2}
 \end{equation*}
@@ -33,10 +41,17 @@ $S_n S_m = S_m S_n = S_m$ if $m \leq n$.
 
 **Exercise 4. Use of the Fourier Interpolation**
 
-Compute the Fourier Interpolation of the functions: $|x|$, $sign(x)$, and $sin(x)+ 3cos(x)$ and  $e^{sx}$ (for $s= 1, 3, 3i$) and plot it along the Fourier series coefficients. Below is an example:```juliausing Pkg
+Compute the Fourier Interpolation of the functions: $|x|$, $sign(x)$, and $sin(x)+ 3cos(x)$ and  $e^{sx}$ (for $s= 1, 3, 3i$) and plot it along the Fourier series coefficients. Below is an example:
+
+```julia
+
+using Pkg
 Pkg.instantiate()
 using FFTW
-using Plots``````juliaN = 64
+using Plots```
+
+```julia
+N = 64
 f(x) = x
 #f(x) = x*sign(x)
 #f(x) = exp(2*x)
@@ -44,7 +59,11 @@ xi = -π
 xf = π
 xv = [xi + (xf-xi)*(i-1)/N for i in 1:N]
 fv = f.(xv)
-plot(xv,fv, label="f(x)=x")```The Fourier coefficients of $f(x)=x$ in the interval $[-π,π]$ are $b_n=i/n$, $n\neq 0$, $b_0 = 0$. While the Fourier Interpolant is: $i_n = 1/(e^{-i2πn}-1)$. ```juliafreq = fftshift(rfftfreq(N))*N
+plot(xv,fv, label="f(x)=x")```
+
+The Fourier coefficients of $f(x)=x$ in the interval $[-π,π]$ are $b_n=i/n$, $n\neq 0$, $b_0 = 0$. While the Fourier Interpolant is: $i_n = 1/(e^{-i2πn}-1)$. 
+
+```juliafreq = fftshift(rfftfreq(N))*N
 rft = rfft(fv)
 #fftf = fft(fv)
 bn = N ./freq  #for f(x)=x
@@ -55,11 +74,20 @@ scatter!(freq,imag.(rft), label="imag")
 scatter!(freq,bn, label = "1/n" )
 #scatter!(freq,an, label="2N/π/n^2")
 scatter!(freq,real.(in), label="real_fi", markersize=2)
-scatter!(freq,imag.(in), label="imag_fi", markersize=2)```### For future use we construct an Fourier interpolant for functions in [0,2π]```juliaf(x) = sign(mod(x,2π)-π) #it works fine with this, except at zero (because of periodicity issues)
+scatter!(freq,imag.(in), label="imag_fi", markersize=2)
+```
+
+### For future use we construct an Fourier interpolant for functions in [0,2π]
+
+```julia
+f(x) = sign(mod(x,2π)-π) #it works fine with this, except at zero (because of periodicity issues)
 #f(x) = -(x*(1-sign(x-π)) + (x-2π)*(sign(x-π)+1)) /2/π #it does not work with this.
 #f(x) = sin(x) + sin(3*x)/3 + sin(5*x)/5 #it works fine with this.
 plot(f, 0, 2π, label="f(x)")
-``````julia"""
+```
+
+```julia
+"""
     fourier_interpolant(f::Vector, T=2π)
 
 Compute the Fourier interpolant `P(x)` of a periodic signal sampled uniformly over [0, T).
@@ -90,7 +118,11 @@ function fourier_interpolant(f::Vector, T=2π)
     end
     
     return P
-end``````juliaN = 32
+end
+```
+
+```julia
+N = 32
 T = 2π
 ff(x) = cos(x) + 0.5*sin.(5*x)
 x_sampled = range(0, 2π, length=N+1)[1:N]  # Sample over [0, 2π)
@@ -104,7 +136,11 @@ plot(x_eval, P_eval, label="Fourier Interpolant (N=$N)", linewidth=2)
 plot!(x_eval, ff.(x_eval), label="True f(x)", linestyle=:dash)
 scatter!(x_sampled, f_sampled, label="Sampled Points", color=:red)
 title!("Fourier Interpolation")
-xlabel!("x")``````juliaf_sampled = f.(x_sampled)
+xlabel!("x")
+```
+
+```julia
+f_sampled = f.(x_sampled)
 P = fourier_interpolant_1(f_sampled, T)
 P_eval = P.(x_eval)
 
@@ -112,7 +148,10 @@ plot(x_eval, P_eval, label="Fourier Interpolant (N=$N)", linewidth=2)
 plot!(x_eval, f.(x_eval), label="Exact function", linestyle=:dash)
 scatter!(x_sampled, f_sampled, label="Sampled Points", color=:red)
 title!("Fourier Interpolation")
-xlabel!("x")```**Exercise 5. Use of the Fourier Interpolation**
+xlabel!("x")
+```
+
+**Exercise 5. Use of the Fourier Interpolation**
 
 Play around and interpolate different functions with the tool just introduced.
 
