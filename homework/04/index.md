@@ -1,5 +1,5 @@
 +++
-title = "Homework 04 Fourier Spaces"
+title = "Homework 04 Fourier Analysis"
 weave = true
 +++
 
