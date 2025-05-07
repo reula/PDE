@@ -658,49 +658,169 @@ div.title {text-align: center;}
           
         </div>
 
-        <p>with open&#40;OutputFile, &quot;w&quot;, encoding&#61;&quot;utf-8&quot;&#41; as f:## Homework 4: Fourier Analysis## Due date: ### Student Name:<strong>Exercise 1.</strong></p>
+        <h2>Homework 4: Fourier Analysis</h2>
+<h2>Due date:</h2>
+<h3>Student Name:</h3>
+<p><strong>Exercise 1.</strong></p>
 <p>a.- Find the Fourier series of the function <span class="math">$f(x) := x$</span> in the interval <span class="math">$[-\pi,\pi]$</span>.</p>
-<p>b.- Use Parseval&#39;s relation to prove that  \begin&#123;equation<em>&#125;   \sum_&#123;n&#61;1&#125;^&#123;\infty&#125; \frac&#123;1&#125;&#123;n^2&#125; &#61; \pi^2/6 \end&#123;equation</em>&#125;</p>
+<p>b.- Use Parseval&#39;s relation to prove that </p>
+<p>\begin&#123;equation<em>&#125;   \sum_&#123;n&#61;1&#125;^&#123;\infty&#125; \frac&#123;1&#125;&#123;n^2&#125; &#61; \pi^2/6 \end&#123;equation</em>&#125;</p>
 <p><strong>Exercise 2.</strong></p>
 <p>a.- Find the Fourier series of the function <span class="math">$f(x):= e^{sx}$</span> in the interval <span class="math">$[-\pi, \pi]$</span>.</p>
-<p>b.- Use Parseval&#39;s relation to prove that  \begin&#123;equation<em>&#125;   \pi coth&#40;\pi s&#41;/s &#61; \sum_&#123;n&#61;-\infty&#125;^&#123;\infty&#125; \frac&#123;1&#125;&#123;s^2&#43;n^2&#125; \end&#123;equation</em>&#125;</p>
+<p>b.- Use Parseval&#39;s relation to prove that </p>
+<p>\begin&#123;equation<em>&#125;   \pi coth&#40;\pi s&#41;/s &#61; \sum_&#123;n&#61;-\infty&#125;^&#123;\infty&#125; \frac&#123;1&#125;&#123;s^2&#43;n^2&#125; \end&#123;equation</em>&#125;</p>
 <p><strong>Exercise 3.</strong></p>
 <p>Let <span class="math">$S_n: L^2 \to L^2$</span> be the map that sends <span class="math">$f \in L^2$</span> to the partial Fourier series, \begin&#123;equation<em>&#125;   S<em>n&#40;f&#41; :&#61; \sum</em>&#123;m&#61;-n&#125;^&#123;n&#125; c<em>m e^&#123;imx&#125;, \;\;\;\;\;\;\;                   c</em>m:&#61; \frac&#123;1&#125;&#123;2\pi&#125;\langle e^&#123;imx&#125;,f&#40;x&#41; \rangle. \end&#123;equation</em>&#125; Show that the <span class="math">$S_n$</span> are orthogonal projections and that  <span class="math">$S_n S_m = S_m S_n = S_m$</span> if <span class="math">$m \leq n$</span>.</p>
 <p><strong>Exercise 4. Use of the Fourier Interpolation</strong></p>
-<p>Compute the Fourier Interpolation of the functions: <span class="math">$|x|$</span>, <span class="math">$sign(x)$</span>, and <span class="math">$sin(x)+ 3cos(x)$</span> and  <span class="math">$e^{sx}$</span> &#40;for <span class="math">$s= 1, 3, 3i$</span>&#41; and plot it along the Fourier series coefficients. Below is an example:<code>juliausing Pkg Pkg.instantiate&#40;&#41; using FFTW using Plots</code><code>juliaN &#61; 64 f&#40;x&#41; &#61; x #f&#40;x&#41; &#61; x*sign&#40;x&#41; #f&#40;x&#41; &#61; exp&#40;2*x&#41; xi &#61; -π xf &#61; π xv &#61; &#91;xi &#43; &#40;xf-xi&#41;*&#40;i-1&#41;/N for i in 1:N&#93; fv &#61; f.&#40;xv&#41; plot&#40;xv,fv, label&#61;&quot;f&#40;x&#41;&#61;x&quot;&#41;</code>The Fourier coefficients of <span class="math">$f(x)=x$</span> in the interval <span class="math">$[-π,π]$</span> are <span class="math">$b_n=i/n$</span>, <span class="math">$n\neq 0$</span>, <span class="math">$b_0 = 0$</span>. While the Fourier Interpolant is: <span class="math">$i_n = 1/(e^{-i2πn}-1)$</span>. <code>juliafreq &#61; fftshift&#40;rfftfreq&#40;N&#41;&#41;*N rft &#61; rfft&#40;fv&#41; #fftf &#61; fft&#40;fv&#41; bn &#61; N ./freq  #for f&#40;x&#41;&#61;x an &#61; 1 ./ &#40;freq.^2&#41;/N/π*2 #for f&#40;x&#41;&#61;x*sign&#40;x&#41; in &#61; 2*π ./&#40; exp.&#40;-im*2*π*freq/N&#41; .- 1&#41; scatter&#40;freq,real.&#40;rft&#41;, label&#61;&quot;real&quot;, markersize&#61;4&#41; scatter&#33;&#40;freq,imag.&#40;rft&#41;, label&#61;&quot;imag&quot;&#41; scatter&#33;&#40;freq,bn, label &#61; &quot;1/n&quot; &#41; #scatter&#33;&#40;freq,an, label&#61;&quot;2N/π/n^2&quot;&#41; scatter&#33;&#40;freq,real.&#40;in&#41;, label&#61;&quot;real_fi&quot;, markersize&#61;2&#41; scatter&#33;&#40;freq,imag.&#40;in&#41;, label&#61;&quot;imag_fi&quot;, markersize&#61;2&#41;</code>### For future use we construct an Fourier interpolant for functions in &#91;0,2π&#93;<code>juliaf&#40;x&#41; &#61; sign&#40;mod&#40;x,2π&#41;-π&#41; #it works fine with this, except at zero &#40;because of periodicity issues&#41; #f&#40;x&#41; &#61; -&#40;x*&#40;1-sign&#40;x-π&#41;&#41; &#43; &#40;x-2π&#41;*&#40;sign&#40;x-π&#41;&#43;1&#41;&#41; /2/π #it does not work with this. #f&#40;x&#41; &#61; sin&#40;x&#41; &#43; sin&#40;3*x&#41;/3 &#43; sin&#40;5*x&#41;/5 #it works fine with this. plot&#40;f, 0, 2π, label&#61;&quot;f&#40;x&#41;&quot;&#41;</code>&#96;&#96;&#96;julia&quot;&quot;&quot;     fourier_interpolant&#40;f::Vector, T&#61;2π&#41;</p>
-<p>Compute the Fourier interpolant <code>P&#40;x&#41;</code> of a periodic signal sampled uniformly over &#91;0, T&#41;.</p>
-<h1>Arguments</h1>
-<ul>
-<li><p><code>f</code>: Vector of function values <code>&#91;f₁, f₂, ..., f_N&#93;</code> sampled at <code>xₙ &#61; &#40;n-1&#41; * T/N</code>.</p>
-</li>
-<li><p><code>T</code>: Period of the signal &#40;default: <code>2π</code>&#41;.</p>
-</li>
-</ul>
-<h1>Returns</h1>
-<ul>
-<li><p>A function <code>P&#40;x&#41;</code> that evaluates the Fourier interpolant at any <code>x</code>.</p>
-</li>
-</ul>
-<p>&quot;&quot;&quot; function fourier_interpolant&#40;f::Vector, T&#61;2π&#41;     N &#61; length&#40;f&#41;     Δx &#61; T / N</p>
-<pre><code># Compute normalized DFT coefficients
-F &#61; fft&#40;f&#41; / N
+<p>Compute the Fourier Interpolation of the functions: <span class="math">$|x|$</span>, <span class="math">$sign(x)$</span>, and <span class="math">$sin(x)+ 3cos(x)$</span> and  <span class="math">$e^{sx}$</span> &#40;for <span class="math">$s= 1, 3, 3i$</span>&#41; and plot it along the Fourier series coefficients. Below is an example:</p>
 
-# Frequencies in FFT order &#40;0, 1, ..., N/2, -N/2&#43;1, ..., -1&#41;
-k &#61; fftfreq&#40;N&#41; * N  # Integer frequencies
 
-# Precompute coefficients for the interpolant
-function P&#40;x&#41;
-    # Map x to &#91;0, T&#41; for periodicity
-    x_mod &#61; mod&#40;x, T&#41;
-    # Sum over all frequency components
-    sum&#40;F&#91;m&#43;1&#93; * exp&#40;2π * im * k&#91;m&#43;1&#93; * x_mod / T&#41; for m in 0:N-1&#41; |&gt; real
-end
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Pkg</span><span class='hljl-t'>
+</span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>instantiate</span><span class='hljl-p'>()</span><span class='hljl-t'>
+</span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>FFTW</span><span class='hljl-t'>
+</span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Plots</span><span class='hljl-sb'>```
 
-return P</code></pre>
-<p>end&#96;&#96;&#96;&#96;&#96;&#96;juliaN &#61; 32 T &#61; 2π ff&#40;x&#41; &#61; cos&#40;x&#41; &#43; 0.5<em>sin.&#40;5</em>x&#41; x<em>sampled &#61; range&#40;0, 2π, length&#61;N&#43;1&#41;&#91;1:N&#93;  # Sample over &#91;0, 2π&#41; f</em>sampled &#61; ff.&#40;x_sampled&#41;  # Sampled function values</p>
-<p>P &#61; fourier<em>interpolant&#40;f</em>sampled, T&#41; x<em>eval &#61; range&#40;-π, 3π, length&#61;1000&#41;  # Test periodicity P</em>eval &#61; P.&#40;x_eval&#41;</p>
-<p>plot&#40;x<em>eval, P</em>eval, label&#61;&quot;Fourier Interpolant &#40;N&#61;N&#41;&quot;, linewidth&#61;2&#41; plot&#33;&#40;x<em>eval, ff.&#40;x</em>eval&#41;, label&#61;&quot;True f&#40;x&#41;&quot;, linestyle&#61;:dash&#41; scatter&#33;&#40;x<em>sampled, f</em>sampled, label&#61;&quot;Sampled Points&quot;, color&#61;:red&#41; title&#33;&#40;&quot;Fourier Interpolation&quot;&#41; xlabel&#33;&#40;&quot;x&quot;&#41;&#96;&#96;&#96;&#96;&#96;&#96;juliaf<em>sampled &#61; f.&#40;x</em>sampled&#41; P &#61; fourier<em>interpolant</em>1&#40;f<em>sampled, T&#41; P</em>eval &#61; P.&#40;x_eval&#41;</p>
-<p>plot&#40;x<em>eval, P</em>eval, label&#61;&quot;Fourier Interpolant &#40;N&#61;N&#41;&quot;, linewidth&#61;2&#41; plot&#33;&#40;x<em>eval, f.&#40;x</em>eval&#41;, label&#61;&quot;Exact function&quot;, linestyle&#61;:dash&#41; scatter&#33;&#40;x<em>sampled, f</em>sampled, label&#61;&quot;Sampled Points&quot;, color&#61;:red&#41; title&#33;&#40;&quot;Fourier Interpolation&quot;&#41; xlabel&#33;&#40;&quot;x&quot;&#41;&#96;&#96;&#96;<strong>Exercise 5. Use of the Fourier Interpolation</strong></p>
+```</span><span class='hljl-n'>julia</span><span class='hljl-t'>
+</span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>64</span><span class='hljl-t'>
+</span><span class='hljl-nf'>f</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#f(x) = x*sign(x)</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#f(x) = exp(2*x)</span><span class='hljl-t'>
+</span><span class='hljl-n'>xi</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-n'>π</span><span class='hljl-t'>
+</span><span class='hljl-n'>xf</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>π</span><span class='hljl-t'>
+</span><span class='hljl-n'>xv</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-n'>xi</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>xf</span><span class='hljl-oB'>-</span><span class='hljl-n'>xi</span><span class='hljl-p'>)</span><span class='hljl-oB'>*</span><span class='hljl-p'>(</span><span class='hljl-n'>i</span><span class='hljl-oB'>-</span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-k'>for</span><span class='hljl-t'> </span><span class='hljl-n'>i</span><span class='hljl-t'> </span><span class='hljl-kp'>in</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-oB'>:</span><span class='hljl-n'>N</span><span class='hljl-p'>]</span><span class='hljl-t'>
+</span><span class='hljl-n'>fv</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>f</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>xv</span><span class='hljl-p'>,</span><span class='hljl-n'>fv</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)=x&quot;</span><span class='hljl-p'>)</span><span class='hljl-sb'>```
+
+The Fourier coefficients of </span><span class='hljl-si'>$f</span><span class='hljl-sb'>(x)=x$ in the interval $[-π,π]$ are </span><span class='hljl-si'>$b_n</span><span class='hljl-sb'>=i/n$, </span><span class='hljl-si'>$n</span><span class='hljl-sb'>\neq 0$, </span><span class='hljl-si'>$b_0</span><span class='hljl-sb'> = 0$. While the Fourier Interpolant is: </span><span class='hljl-si'>$i_n</span><span class='hljl-sb'> = 1/(e^{-i2πn}-1)$. 
+
+```</span><span class='hljl-n'>juliafreq</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fftshift</span><span class='hljl-p'>(</span><span class='hljl-nf'>rfftfreq</span><span class='hljl-p'>(</span><span class='hljl-n'>N</span><span class='hljl-p'>))</span><span class='hljl-oB'>*</span><span class='hljl-n'>N</span><span class='hljl-t'>
+</span><span class='hljl-n'>rft</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>rfft</span><span class='hljl-p'>(</span><span class='hljl-n'>fv</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#fftf = fft(fv)</span><span class='hljl-t'>
+</span><span class='hljl-n'>bn</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>./</span><span class='hljl-n'>freq</span><span class='hljl-t'>  </span><span class='hljl-cs'>#for f(x)=x</span><span class='hljl-t'>
+</span><span class='hljl-n'>an</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-t'> </span><span class='hljl-oB'>./</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>freq</span><span class='hljl-oB'>.^</span><span class='hljl-ni'>2</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-n'>N</span><span class='hljl-oB'>/</span><span class='hljl-n'>π</span><span class='hljl-oB'>*</span><span class='hljl-ni'>2</span><span class='hljl-t'> </span><span class='hljl-cs'>#for f(x)=x*sign(x)</span><span class='hljl-t'>
+</span><span class='hljl-kp'>in</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-oB'>*</span><span class='hljl-n'>π</span><span class='hljl-t'> </span><span class='hljl-oB'>./</span><span class='hljl-p'>(</span><span class='hljl-t'> </span><span class='hljl-n'>exp</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-oB'>-</span><span class='hljl-n'>im</span><span class='hljl-oB'>*</span><span class='hljl-ni'>2</span><span class='hljl-oB'>*</span><span class='hljl-n'>π</span><span class='hljl-oB'>*</span><span class='hljl-n'>freq</span><span class='hljl-oB'>/</span><span class='hljl-n'>N</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>.-</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter</span><span class='hljl-p'>(</span><span class='hljl-n'>freq</span><span class='hljl-p'>,</span><span class='hljl-n'>real</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>rft</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;real&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>markersize</span><span class='hljl-oB'>=</span><span class='hljl-ni'>4</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>freq</span><span class='hljl-p'>,</span><span class='hljl-n'>imag</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>rft</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;imag&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>freq</span><span class='hljl-p'>,</span><span class='hljl-n'>bn</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;1/n&quot;</span><span class='hljl-t'> </span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#scatter!(freq,an, label=&quot;2N/π/n^2&quot;)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>freq</span><span class='hljl-p'>,</span><span class='hljl-n'>real</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-kp'>in</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;real_fi&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>markersize</span><span class='hljl-oB'>=</span><span class='hljl-ni'>2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>freq</span><span class='hljl-p'>,</span><span class='hljl-n'>imag</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-kp'>in</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;imag_fi&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>markersize</span><span class='hljl-oB'>=</span><span class='hljl-ni'>2</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="julia-error">
+ERROR: ArgumentError: Package FFTW not found in current path.
+- Run &#96;import Pkg; Pkg.add&#40;&quot;FFTW&quot;&#41;&#96; to install the FFTW package.
+</pre>
+
+
+<h3>For future use we construct an Fourier interpolant for functions in &#91;0,2π&#93;</h3>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>f</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sign</span><span class='hljl-p'>(</span><span class='hljl-nf'>mod</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-p'>)</span><span class='hljl-oB'>-</span><span class='hljl-n'>π</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'>#it works fine with this, except at zero (because of periodicity issues)</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#f(x) = -(x*(1-sign(x-π)) + (x-2π)*(sign(x-π)+1)) /2/π #it does not work with this.</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#f(x) = sin(x) + sin(3*x)/3 + sin(5*x)/5 #it works fine with this.</span><span class='hljl-t'>
+</span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>f</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>0</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="julia-error">
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+Suggestion: check for spelling errors or missing imports.
+</pre>
+
+
+
+<pre class='hljl'>
+<span class='hljl-s'>&quot;&quot;&quot;
+    fourier_interpolant(f::Vector, T=2π)
+
+Compute the Fourier interpolant `P(x)` of a periodic signal sampled uniformly over [0, T).
+
+# Arguments
+- `f`: Vector of function values `[f₁, f₂, ..., f_N]` sampled at `xₙ = (n-1) * T/N`.
+- `T`: Period of the signal (default: `2π`).
+
+# Returns
+- A function `P(x)` that evaluates the Fourier interpolant at any `x`.
+&quot;&quot;&quot;</span><span class='hljl-t'>
+</span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>fourier_interpolant</span><span class='hljl-p'>(</span><span class='hljl-n'>f</span><span class='hljl-oB'>::</span><span class='hljl-n'>Vector</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>T</span><span class='hljl-oB'>=</span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>length</span><span class='hljl-p'>(</span><span class='hljl-n'>f</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>Δx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>T</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>N</span><span class='hljl-t'>
+    
+    </span><span class='hljl-cs'># Compute normalized DFT coefficients</span><span class='hljl-t'>
+    </span><span class='hljl-n'>F</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fft</span><span class='hljl-p'>(</span><span class='hljl-n'>f</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>N</span><span class='hljl-t'>
+    
+    </span><span class='hljl-cs'># Frequencies in FFT order (0, 1, ..., N/2, -N/2+1, ..., -1)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>k</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fftfreq</span><span class='hljl-p'>(</span><span class='hljl-n'>N</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>N</span><span class='hljl-t'>  </span><span class='hljl-cs'># Integer frequencies</span><span class='hljl-t'>
+    
+    </span><span class='hljl-cs'># Precompute coefficients for the interpolant</span><span class='hljl-t'>
+    </span><span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>P</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-cs'># Map x to [0, T) for periodicity</span><span class='hljl-t'>
+        </span><span class='hljl-n'>x_mod</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>mod</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>T</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-cs'># Sum over all frequency components</span><span class='hljl-t'>
+        </span><span class='hljl-nf'>sum</span><span class='hljl-p'>(</span><span class='hljl-n'>F</span><span class='hljl-p'>[</span><span class='hljl-n'>m</span><span class='hljl-oB'>+</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-nf'>exp</span><span class='hljl-p'>(</span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>im</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>k</span><span class='hljl-p'>[</span><span class='hljl-n'>m</span><span class='hljl-oB'>+</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>x_mod</span><span class='hljl-t'> </span><span class='hljl-oB'>/</span><span class='hljl-t'> </span><span class='hljl-n'>T</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-k'>for</span><span class='hljl-t'> </span><span class='hljl-n'>m</span><span class='hljl-t'> </span><span class='hljl-kp'>in</span><span class='hljl-t'> </span><span class='hljl-ni'>0</span><span class='hljl-oB'>:</span><span class='hljl-n'>N</span><span class='hljl-oB'>-</span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>|&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>real</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span><span class='hljl-t'>
+    
+    </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>P</span><span class='hljl-t'>
+</span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+Main.var&quot;##WeaveSandBox#231&quot;.fourier_interpolant
+</pre>
+
+
+
+<pre class='hljl'>
+<span class='hljl-n'>N</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>32</span><span class='hljl-t'>
+</span><span class='hljl-n'>T</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-t'>
+</span><span class='hljl-nf'>ff</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>cos</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-nfB'>0.5</span><span class='hljl-oB'>*</span><span class='hljl-n'>sin</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-ni'>5</span><span class='hljl-oB'>*</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>x_sampled</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>range</span><span class='hljl-p'>(</span><span class='hljl-ni'>0</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-n'>π</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>length</span><span class='hljl-oB'>=</span><span class='hljl-n'>N</span><span class='hljl-oB'>+</span><span class='hljl-ni'>1</span><span class='hljl-p'>)[</span><span class='hljl-ni'>1</span><span class='hljl-oB'>:</span><span class='hljl-n'>N</span><span class='hljl-p'>]</span><span class='hljl-t'>  </span><span class='hljl-cs'># Sample over [0, 2π)</span><span class='hljl-t'>
+</span><span class='hljl-n'>f_sampled</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>ff</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_sampled</span><span class='hljl-p'>)</span><span class='hljl-t'>  </span><span class='hljl-cs'># Sampled function values</span><span class='hljl-t'>
+
+</span><span class='hljl-n'>P</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fourier_interpolant</span><span class='hljl-p'>(</span><span class='hljl-n'>f_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>T</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>x_eval</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>range</span><span class='hljl-p'>(</span><span class='hljl-oB'>-</span><span class='hljl-n'>π</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-n'>π</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>length</span><span class='hljl-oB'>=</span><span class='hljl-ni'>1000</span><span class='hljl-p'>)</span><span class='hljl-t'>  </span><span class='hljl-cs'># Test periodicity</span><span class='hljl-t'>
+</span><span class='hljl-n'>P_eval</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>P</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+</span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>P_eval</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Fourier Interpolant (N=</span><span class='hljl-si'>$N</span><span class='hljl-s'>)&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>linewidth</span><span class='hljl-oB'>=</span><span class='hljl-ni'>2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>plot!</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>ff</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;True f(x)&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>linestyle</span><span class='hljl-oB'>=:</span><span class='hljl-n'>dash</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>x_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>f_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Sampled Points&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>color</span><span class='hljl-oB'>=:</span><span class='hljl-n'>red</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>title!</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;Fourier Interpolation&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>xlabel!</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;x&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="julia-error">
+ERROR: UndefVarError: &#96;fft&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+Suggestion: check for spelling errors or missing imports.
+</pre>
+
+
+
+<pre class='hljl'>
+<span class='hljl-n'>f_sampled</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>f</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_sampled</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>P</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>fourier_interpolant_1</span><span class='hljl-p'>(</span><span class='hljl-n'>f_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>T</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>P_eval</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>P</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+</span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>P_eval</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Fourier Interpolant (N=</span><span class='hljl-si'>$N</span><span class='hljl-s'>)&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>linewidth</span><span class='hljl-oB'>=</span><span class='hljl-ni'>2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>plot!</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>f</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>x_eval</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Exact function&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>linestyle</span><span class='hljl-oB'>=:</span><span class='hljl-n'>dash</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>scatter!</span><span class='hljl-p'>(</span><span class='hljl-n'>x_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>f_sampled</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Sampled Points&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>color</span><span class='hljl-oB'>=:</span><span class='hljl-n'>red</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>title!</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;Fourier Interpolation&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-nf'>xlabel!</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;x&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="julia-error">
+ERROR: UndefVarError: &#96;fourier_interpolant_1&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
+Suggestion: check for spelling errors or missing imports.
+</pre>
+
+
+<p><strong>Exercise 5. Use of the Fourier Interpolation</strong></p>
 <p>Play around and interpolate different functions with the tool just introduced.</p>
 <h3>The Fourier Interpolant of a delta function.</h3>
 <p>We approximate a delta function distribution by a sequence of continuous functions;</p>
@@ -764,7 +884,7 @@ f_n &#40;generic function with 1 method&#41;
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#230&quot;&#96;
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#231&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
