@@ -1,6 +1,62 @@
-<h1 class="title">Homework 4: Fourier Analysis</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 4: Fourier Analysis</title>
 
-<h2>Homework 4: Fourier Analysis</h2>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Basic code cell styling -->
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      color: #333;
+    }
+
+    pre code {
+      background-color: #f7f7f7;
+      padding: 0.75em;
+      display: block;
+      overflow-x: auto;
+      border-left: 3px solid #ccc;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9em;
+      color: #888;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+
+    h1.title {
+      font-size: 2em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+  </style>
+
+  <!-- Syntax highlighting (Pygments) -->
+  
+
+  <!-- MathJax (LaTeX support) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+
+<body>
+  <h1 class="title">Homework 4: Fourier Analysis</h1>
+
+  <h2>Homework 4: Fourier Analysis</h2>
 <h2>Due date:</h2>
 <h3>Student Name:</h3>
 <p><strong>Exercise 1.</strong></p>
@@ -28,9 +84,9 @@
 
 <pre class='hljl'>
 <span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Pkg</span><span class='hljl-t'>
-</span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>activate</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;PDE2025&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
-</span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>add</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;Plots&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
-</span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>add</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;FFTW&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-n'>Pkg</span><span class='hljl-oB'>.</span><span class='hljl-nf'>activate</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;../../PDE2025&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#Pkg.add(&quot;Plots&quot;)</span><span class='hljl-t'>
+</span><span class='hljl-cs'>#Pkg.add(&quot;FFTW&quot;)</span><span class='hljl-t'>
 </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>FFTW</span><span class='hljl-t'>
 </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Plots</span>
 </pre>
@@ -125,7 +181,7 @@ Compute the Fourier interpolant `P(x)` of a periodic signal sampled uniformly ov
 
 
 <pre class="output">
-Main.var&quot;##WeaveSandBox#234&quot;.fourier_interpolant
+Main.var&quot;##WeaveSandBox#241&quot;.fourier_interpolant
 </pre>
 
 
@@ -166,7 +222,7 @@ Main.var&quot;##WeaveSandBox#234&quot;.fourier_interpolant
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;fourier_interpolant_1&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#234&quot;&#96;
+ERROR: UndefVarError: &#96;fourier_interpolant_1&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#241&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
@@ -235,7 +291,7 @@ f_n &#40;generic function with 1 method&#41;
 
 
 <pre class="julia-error">
-ERROR: UndefVarError: &#96;juliascatter&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#234&quot;&#96;
+ERROR: UndefVarError: &#96;juliascatter&#96; not defined in &#96;Main.var&quot;##WeaveSandBox#241&quot;&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre>
 
@@ -244,9 +300,11 @@ Suggestion: check for spelling errors or missing imports.
 <p>Try to deduce what is the limiting interpolant. Not only for the case of <span class="math">$x_0=0$</span>, but in general. Then compare with the exact value for it.  </p>
 
 
-<div class="footer">
-  <p>
-    Published from <a href="Fourier.jmd">Fourier.jmd</a>
-    using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.12 on 2025-05-07.
-  </p>
-</div>
+  <div class="footer">
+    <p>
+      Published from <a href="Fourier.jmd">Fourier.jmd</a>
+      using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.12 on 2025-05-07.
+    </p>
+  </div>
+</body>
+</html>
