@@ -54,7 +54,7 @@ Compute the Fourier Interpolation of the functions: $|x|$, $sign(x)$, and $sin(x
 
 ```julia
 using Pkg
-Pkg.activate("PDE2025")
+Pkg.activate("../../PDE2025")
 #Pkg.add("Plots")
 #Pkg.add("FFTW")
 using FFTW
