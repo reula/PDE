@@ -1,3 +1,12 @@
+---
+title: "Homework 4: Fourier Analysis"
+weave_options:
+  doctype: md2html
+  highlight: pygments
+  template: "../../pde.tpl"
+---
+
+
 ## Homework 4: Fourier Analysis
 
 ## Due date: 
@@ -43,14 +52,16 @@ $S_n S_m = S_m S_n = S_m$ if $m \leq n$.
 
 Compute the Fourier Interpolation of the functions: $|x|$, $sign(x)$, and $sin(x)+ 3cos(x)$ and  $e^{sx}$ (for $s= 1, 3, 3i$) and plot it along the Fourier series coefficients. Below is an example:
 
-```julia;eval=false
+```julia
 using Pkg
-Pkg.instantiate()
+Pkg.activate("PDE2025")
+#Pkg.add("Plots")
+#Pkg.add("FFTW")
 using FFTW
 using Plots
 ```
 
-```julia;eval=false
+```julia
 N = 64
 f(x) = x
 #f(x) = x*sign(x)
@@ -64,7 +75,7 @@ plot(xv,fv, label="f(x)=x")
 
 The Fourier coefficients of $f(x)=x$ in the interval $[-π,π]$ are $b_n=i/n$, $n\neq 0$, $b_0 = 0$. While the Fourier Interpolant is: $i_n = 1/(e^{-i2πn}-1)$. 
 
-```julia;eval=false
+```julia
 freq = fftshift(rfftfreq(N))*N
 rft = rfft(fv)
 #fftf = fft(fv)
@@ -81,14 +92,14 @@ scatter!(freq,imag.(in), label="imag_fi", markersize=2)
 
 ### For future use we construct an Fourier interpolant for functions in [0,2π]
 
-```julia;eval=false
+```julia
 f(x) = sign(mod(x,2π)-π) #it works fine with this, except at zero (because of periodicity issues)
 #f(x) = -(x*(1-sign(x-π)) + (x-2π)*(sign(x-π)+1)) /2/π #it does not work with this.
 #f(x) = sin(x) + sin(3*x)/3 + sin(5*x)/5 #it works fine with this.
 plot(f, 0, 2π, label="f(x)")
 ```
 
-```julia;eval=false
+```julia
 """
     fourier_interpolant(f::Vector, T=2π)
 
@@ -123,7 +134,7 @@ function fourier_interpolant(f::Vector, T=2π)
 end
 ```
 
-```julia;eval=false
+```julia
 N = 32
 T = 2π
 ff(x) = cos(x) + 0.5*sin.(5*x)
@@ -141,7 +152,7 @@ title!("Fourier Interpolation")
 xlabel!("x")
 ```
 
-```julia;eval=false
+```julia
 f_sampled = f.(x_sampled)
 P = fourier_interpolant_1(f_sampled, T)
 P_eval = P.(x_eval)
@@ -170,7 +181,7 @@ f(x,x_0,n) = \left(\begin{align}
                  \right.
 $$
 
-```julia;eval=false
+```julia
 function f_n(x,x0,n)
     if x > x0 - 1/n && x <= x0
         return (x-x0+1/n)*n^2
@@ -182,7 +193,7 @@ function f_n(x,x0,n)
 end
 ```
 
-```julia;eval=false
+```julia
 x0 = 0.0
 f1(x) = f_n(x,x0,1)
 f2(x) = f_n(x,x0,2)
