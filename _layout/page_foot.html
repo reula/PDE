@@ -1,6 +1,12 @@
-<div class="page-foot">
-    {{isnotpage /tag/*}}
-    Last modified: {{ fill fd_mtime }}.{{end}}
-    <br>
-    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
-</div>
+<div class="back-to-top">
+    <span><a href="#" title="Back to Top"><i class="fa fa-chevron-circle-up"></i></a></span>
+  </div>
+  {{ if weave }}
+  {{ else }}
+    <div class="page-foot">
+        {{isnotpage /tag/*}}
+        Last modified: {{ fill fd_mtime }}.{{end}}
+        <br>
+        Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    </div>
+{{ end }}
