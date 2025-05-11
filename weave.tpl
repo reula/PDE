@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="/css/adjust.css">
   <link rel="stylesheet" href="/css/latex.css">
   <link rel="stylesheet" href="/css/weave.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+
 
   <style>
   {{:highlight-css}}
