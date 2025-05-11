@@ -8,12 +8,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/schedule/index_old/index.html</loc>
-    <lastmod>2025-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://oreula.github.io/PDE/Bibliograf%C3%ADa/index.html</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -188,13 +182,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/homework/03/FS/</loc>
+    <loc>https://oreula.github.io/PDE/_weave/homework04/Fourier/</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/schedule/schedule/</loc>
+    <loc>https://oreula.github.io/PDE/homework/03/FS/</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
