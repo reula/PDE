@@ -1,4 +1,5 @@
 using Weave
+using Highlights
 
 function hfun_bar(vname)
   val = Meta.parse(vname[1])
@@ -31,7 +32,7 @@ function weaveall()
                 template="weave.tpl", 
                 out_path=:doc, 
                 mod=Main, 
-                highlight_theme="pygments",
+                highlight_theme=Highlights.Themes.PygmentsTheme,
                 args=Dict("mathjax" => true))
             end
         end
