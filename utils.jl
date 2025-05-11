@@ -23,12 +23,23 @@ end
 
 Weave all lecture notes in the `_weave` directory. Run from site root.
 """
-function weaveall()
-    for (root, _, files) in walkdir("_weave")
+function weaveall(; rootdir="_weave", outdir="docs")
+    for (root, _, files) in walkdir(rootdir)
         for file in files
-            if endswith(file, ".ipynb")
-                @info "Weaving Document: $(joinpath(root, file))"
-                weave(joinpath(root, file); out_path=:doc, mod=Main)
+            if endswith(file, ".jmd")
+                input_path = joinpath(root, file)
+
+                # Output file name, preserving relative path
+                relative_dir = relpath(root, rootdir)
+                output_dir = joinpath(outdir, relative_dir)
+                mkpath(output_dir)
+
+                @info "Weaving: $input_path → $output_dir"
+                weave(input_path;
+                      doctype="pandoc",
+                      template="weave.tpl",
+                      out_path=output_dir,
+                      mod=Main)
             end
         end
     end
