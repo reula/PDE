@@ -31,9 +31,7 @@ function weaveall()
                 weave(joinpath(root, file); 
                 template="weave.tpl", 
                 out_path=:doc, 
-                mod=Main, 
-                highlight_theme=Highlights.Themes.PygmentsTheme,
-                args=Dict("mathjax" => true))
+                mod=Main)
             end
         end
     end
