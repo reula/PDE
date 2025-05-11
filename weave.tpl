@@ -25,17 +25,20 @@
 </head>
 
 <body>
-  {{#:title}}<h1 class="title">{{:title}}</h1>{{/:title}}
+  <div class="franklin-content">
+    {{#:title}}<h1 class="title">{{:title}}</h1>{{/:title}}
 
-  {{{ :body }}}
+    {{{ :body }}}
 
-  <footer>
-    <p>
-      Published from <a href="{{{:weave_source}}}">{{{:weave_source}}}</a>
-      using <a href="https://github.com/JunoLab/Weave.jl">Weave.jl</a> {{:weave_version}} on {{:weave_date}}.
-    </p>
-  </footer>
+    <footer>
+      <p>
+        Published from <a href="{{{:weave_source}}}">{{{:weave_source}}}</a>
+        using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> {{:weave_version}} on {{:weave_date}}.
+      </p>
+    </footer>
+  </div>
 </body>
+
 </html>
 
 
