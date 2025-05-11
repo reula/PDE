@@ -8,6 +8,11 @@
   --small: 14px;
   --normal: 19px;
   --text-color: hsv(0, 0%, 20%);
+  --color-red:        #cb3c33;
+  --color-green:      #389826;
+  --color-purple:     #9558b2;
+  --color-blue:       #4063d8;
+  --color-green-light: #c0edd4;
 }
 
 /* ==================================================================
