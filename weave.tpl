@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Use same CSS as the main site -->
-  <link rel="stylesheet" href="/_css/tufte.css">
-  <link rel="stylesheet" href="/_css/weave.css">
-  <link rel="stylesheet" href="/_css/adjust.css">
-  <link rel="stylesheet" href="/_css/franklin.css">
-  <link rel="stylesheet" href="/_css/latex.css">
+  <link rel="stylesheet" href="/css/tufte.css">
+  <link rel="stylesheet" href="/css/weave.css">
+  <link rel="stylesheet" href="/css/adjust.css">
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet" href="/css/latex.css">
   
 
   <!-- Highlight.js and KaTeX are handled by Franklin -->
