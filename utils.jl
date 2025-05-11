@@ -28,13 +28,7 @@ function weaveall()
         for file in files
             if endswith(file, ".ipynb")
                 @info "Weaving Document: $(joinpath(root, file))"
-                weave("_weave/homework04/Fourier.ipynb";
-                doctype="md2html",
-                template="weave.tpl",
-                out_path=:doc,
-                mod=Main,
-                highlight_theme=Highlights.Themes.PygmentsTheme,
-                args=Dict("mathjax" => true))
+                weave(joinpath(root, file); out_path=:doc, mod=Main, template = "weave.tpl")
             end
         end
     end
