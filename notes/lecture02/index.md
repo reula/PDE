@@ -2,8 +2,8 @@
 title = "02: Basic concepts of topology"
 hascode = true
 rss = "Basic concepts of topology"
+weave = false
 +++
-
 # Basic concepts of topology
 
 \toc

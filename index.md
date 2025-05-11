@@ -1,4 +1,5 @@
 @def title = "PDE Course Book"
+@def weave = false
 @def tags = ["syntax", "code"]
 
 # Partial Differential Equations: Analyitical and Numerical Methods

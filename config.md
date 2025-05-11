@@ -21,6 +21,7 @@ website_title = "PDE Course"
 website_descr = "Course Notes on Partial Differential Equations: Analytical and Numerical Methods"
 website_url   = "https://oreula.github.io/PDE/"
 prepath = "PDE"
+weave = false
 +++
 
 <!--

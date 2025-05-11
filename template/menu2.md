@@ -6,8 +6,8 @@ rss_title = "More goodies"
 rss_pubdate = Date(2019, 5, 1)
 
 tags = ["syntax", "code", "image"]
+weave = false
 +++
-
 # More goodies
 
 \toc
