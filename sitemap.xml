@@ -80,12 +80,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/schedule/index.html</loc>
-    <lastmod>2025-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://oreula.github.io/PDE/notes/lecture02/index.html</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -183,6 +177,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/Readme_espa%C3%B1ol/index.html</loc>
+    <lastmod>2025-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/schedule/index/</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
