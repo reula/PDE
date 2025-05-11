@@ -2,8 +2,8 @@
 title = "06: Ordinary Differential Equations"
 hascode = true
 rss = "Ordinary Differential Equations"
+weave = false
 +++
-
 # The Fundamental Theorem for the Ordinary Differential Equations
 
 \toc
