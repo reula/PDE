@@ -1,6 +1,6 @@
 +++
 title = "Homework 04 Fourier Analysis"
-weave = false
+weave = true
 +++
 
 {{ insert ../_weave/homework04/Fourier.html }}
