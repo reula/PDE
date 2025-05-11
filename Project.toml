@@ -1,4 +1,5 @@
 [deps]
 Franklin = "713c75ef-9fc9-4b05-94a9-213340da978e"
+Highlights = "eafb193a-b7ab-5a9e-9068-77385905fa72"
 NodeJS = "2bd173c7-0d6d-553b-b6af-13a54713934c"
 Weave = "44d3d7a6-8a23-5bf8-98c5-b353f8df5ec9"
