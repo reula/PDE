@@ -33,7 +33,7 @@ function weaveall()
                 template="weave.tpl",
                 out_path=:doc,
                 mod=Main,
-                highlight_theme=Highlights.PygmentsTheme(),
+                highlight_theme=Highlights.Themes.PygmentsTheme,
                 args=Dict("mathjax" => true))
             end
         end
