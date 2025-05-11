@@ -1,0 +1,83 @@
+pre.hljl {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    }
+pre.hljl > span.hljl-t { }
+pre.hljl > span.hljl-w { color: rgb(187,187,187); }
+pre.hljl > span.hljl-e { }
+pre.hljl > span.hljl-eB { color: rgb(255,255,255); background-color: rgb(255,51,0); }
+pre.hljl > span.hljl-o { }
+pre.hljl > span.hljl-k { color: rgb(0,128,0); font-weight: bold; }
+pre.hljl > span.hljl-kc { color: rgb(0,128,0); font-weight: bold; }
+pre.hljl > span.hljl-kd { color: rgb(0,128,0); font-weight: bold; }
+pre.hljl > span.hljl-kn { color: rgb(0,128,0); font-weight: bold; }
+pre.hljl > span.hljl-kp { }
+pre.hljl > span.hljl-kr { color: rgb(0,128,0); font-weight: bold; }
+pre.hljl > span.hljl-kt { color: rgb(176,0,64); }
+pre.hljl > span.hljl-n { }
+pre.hljl > span.hljl-na { color: rgb(125,144,41); }
+pre.hljl > span.hljl-nb { color: rgb(0,128,0); }
+pre.hljl > span.hljl-nbp { color: rgb(0,128,0); }
+pre.hljl > span.hljl-nc { color: rgb(0,0,255); font-weight: bold; }
+pre.hljl > span.hljl-ncB { color: rgb(136,0,0); }
+pre.hljl > span.hljl-nd { color: rgb(170,34,255); }
+pre.hljl > span.hljl-ne { color: rgb(153,153,153); font-weight: bold; }
+pre.hljl > span.hljl-neB { color: rgb(210,65,58); font-weight: bold; }
+pre.hljl > span.hljl-nf { color: rgb(0,0,255); }
+pre.hljl > span.hljl-nfm { color: rgb(0,0,255); }
+pre.hljl > span.hljl-np { }
+pre.hljl > span.hljl-nl { color: rgb(160,160,0); }
+pre.hljl > span.hljl-nn { color: rgb(0,0,255); font-weight: bold; }
+pre.hljl > span.hljl-no { }
+pre.hljl > span.hljl-nt { color: rgb(0,128,0); font-weight: bold; }
+pre.hljl > span.hljl-nv { color: rgb(25,23,124); }
+pre.hljl > span.hljl-nvc { color: rgb(25,23,124); }
+pre.hljl > span.hljl-nvg { color: rgb(25,23,124); }
+pre.hljl > span.hljl-nvi { color: rgb(25,23,124); }
+pre.hljl > span.hljl-nvm { color: rgb(25,23,124); }
+pre.hljl > span.hljl-l { }
+pre.hljl > span.hljl-ld { }
+pre.hljl > span.hljl-s { color: rgb(186,33,33); }
+pre.hljl > span.hljl-sa { color: rgb(186,33,33); }
+pre.hljl > span.hljl-sb { color: rgb(186,33,33); }
+pre.hljl > span.hljl-sc { color: rgb(186,33,33); }
+pre.hljl > span.hljl-sd { color: rgb(186,33,33); }
+pre.hljl > span.hljl-sdB { font-style: italic; }
+pre.hljl > span.hljl-sdC { color: rgb(186,33,33); }
+pre.hljl > span.hljl-se { color: rgb(187,102,34); font-weight: bold; }
+pre.hljl > span.hljl-sh { color: rgb(186,33,33); }
+pre.hljl > span.hljl-si { color: rgb(187,102,136); font-weight: bold; }
+pre.hljl > span.hljl-so { color: rgb(0,128,0); }
+pre.hljl > span.hljl-sr { color: rgb(187,102,136); }
+pre.hljl > span.hljl-ss { color: rgb(186,33,33); }
+pre.hljl > span.hljl-ssB { color: rgb(25,23,124); }
+pre.hljl > span.hljl-nB { color: rgb(102,102,102); }
+pre.hljl > span.hljl-nbB { color: rgb(102,102,102); }
+pre.hljl > span.hljl-nfB { color: rgb(102,102,102); }
+pre.hljl > span.hljl-nh { color: rgb(102,102,102); }
+pre.hljl > span.hljl-ni { color: rgb(102,102,102); }
+pre.hljl > span.hljl-nil { color: rgb(102,102,102); }
+pre.hljl > span.hljl-noB { color: rgb(102,102,102); }
+pre.hljl > span.hljl-oB { color: rgb(102,102,102); }
+pre.hljl > span.hljl-ow { font-weight: bold; }
+pre.hljl > span.hljl-p { }
+pre.hljl > span.hljl-c { color: rgb(64,128,128); font-style: italic; }
+pre.hljl > span.hljl-ch { color: rgb(64,128,128); font-style: italic; }
+pre.hljl > span.hljl-cm { color: rgb(64,128,128); font-style: italic; }
+pre.hljl > span.hljl-cp { color: rgb(188,122,0); }
+pre.hljl > span.hljl-cpB { color: rgb(64,128,128); font-style: italic; }
+pre.hljl > span.hljl-cs { color: rgb(64,128,128); font-style: italic; }
+pre.hljl > span.hljl-csB { color: rgb(64,128,128); font-style: italic; }
+pre.hljl > span.hljl-g { }
+pre.hljl > span.hljl-gd { color: rgb(160,0,0); }
+pre.hljl > span.hljl-ge { font-style: italic; }
+pre.hljl > span.hljl-geB { color: rgb(255,0,0); }
+pre.hljl > span.hljl-gh { color: rgb(0,0,128); font-weight: bold; }
+pre.hljl > span.hljl-gi { color: rgb(0,160,0); }
+pre.hljl > span.hljl-go { color: rgb(136,136,136); }
+pre.hljl > span.hljl-gp { color: rgb(0,0,128); font-weight: bold; }
+pre.hljl > span.hljl-gs { font-weight: bold; }
+pre.hljl > span.hljl-gsB { color: rgb(128,0,128); font-weight: bold; }
+pre.hljl > span.hljl-gt { color: rgb(0,68,221); }
