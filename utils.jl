@@ -27,7 +27,12 @@ function weaveall()
         for file in files
             if endswith(file, ".ipynb")
                 @info "Weaving Document: $(joinpath(root, file))"
-                weave(joinpath(root, file); template="weave.tpl", out_path=:doc, mod=Main)
+                weave(joinpath(root, file); 
+                template="weave.tpl", 
+                out_path=:doc, 
+                mod=Main, 
+                highlight_theme="pygments",
+                args=Dict("mathjax" => true))
             end
         end
     end
