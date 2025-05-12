@@ -1,0 +1,9 @@
++++
+title = "Labs Overview"
+weave = false
++++
+
+# Labs Overview
+
+- [Lab 0: The Logistic Map](/labs/00/)
+- [Lab 1: Ordinary Differential Equations](/labs/01/)
