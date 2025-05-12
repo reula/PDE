@@ -21,10 +21,10 @@ end
 """
     weaveall()
 
-Weave all lecture notes in the `_weave` directory. Run from site root.
+Weave all lecture notes in the `weave` directory. Run from site root.
 """
 function weaveall()
-    for (root, _, files) in walkdir("_weave")
+    for (root, _, files) in walkdir("weave")
         for file in files
             if endswith(file, ".ipynb")
                 @info "Weaving Document: $(joinpath(root, file))"
@@ -41,7 +41,7 @@ end
 Cleanup all Weave generated subdirectories. Run from site root.
 """
 function cleanall()
-    for (root, dirs, _) in walkdir("_weave")
+    for (root, dirs, _) in walkdir("weave")
         for dir in dirs
             if startswith(dir, "jl_")
                 @info "Removing Directory: $(joinpath(root, dir))"
