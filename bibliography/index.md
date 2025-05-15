@@ -6,4 +6,4 @@ weave = false
 
 Here are some references that can be useful for this course.
 
-{{ insert bib.html }}
+{{ insert ../bibliography/bib.html }}
