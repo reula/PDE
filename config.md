@@ -161,7 +161,7 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\sr}[2]{\mbox{$\stackrel{#1}{#2}$}}
 \newcommand{\fn}{\footnote}
 \newcommand{\lme}{\lefteqn}
-\newcommand{\nn}{\nonumber \\}
+<!-- \newcommand{\nn}{\nonumber \\} -->
 \newcommand{\fr}[2]{\mbox{$\frac{#1}{#2}$}}
 \newcommand{\rpi}{\right|}
 \newcommand{\lpi}{\left|}

@@ -51,14 +51,14 @@ c. Conclude that the solutions of this system exist for all time.
 Consider the system:
 
 \begin{align*}
-  \dot{x}_1 &=& (a-bx_2)x_1 \nonumber \\
+  \dot{x}_1 &=& (a-bx_2)x_1  \\
   \dot{x}_2 &=& -(c-f x_1)x_2,
 \end{align*}
 $a, b, c, f \geq 0$.
 
 a. Perform a coordinate and time transformation to bring it to the form,
 \begin{align*}
-  \dot{x}_1 &=& (1 - x_2)x_1 \nonumber \\
+  \dot{x}_1 &=& (1 - x_2)x_1  \\
   \dot{x}_2 &=& -(e - x_1)x_2
 \end{align*}
 
