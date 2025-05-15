@@ -5,6 +5,6 @@ weave = false
 
 # Homework 03
 
-- [Functional Spaces(notebook version)](FS.ipynb)
+- [Click here to download this notebook](FS.ipynb)
   
 - \textinput{homeworks/FS.md}

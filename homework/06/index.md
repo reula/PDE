@@ -6,7 +6,7 @@ weave = true
   
 # Homework 6: Hyperbolic Equations
 
-- [Hyperbolic Equations(notebook version)](Hiperbolic_equations.ipynb)
+- [Click here to download this notebook](Hiperbolic_equations.ipynb)
 
 ## Due date: 
 

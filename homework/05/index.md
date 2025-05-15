@@ -5,7 +5,7 @@ weave = false
 
 # Homework 05
 
-- [Ordinary Differential Equations (notebook version)](ODEs.ipynb)
+- [Click here to download this notebook](ODEs.ipynb)
   
 ## Due date: 
 

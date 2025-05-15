@@ -5,7 +5,7 @@ weave = false
 
 # Homework 09
 
-- [Parabolic Equations(notebook version)](Parabolic_equations.ipynb)
+- [Click here to download this notebook](Parabolic_equations.ipynb)
   
 <!-- - \textinput{homeworks/Parabolic_equations.md} -->
 

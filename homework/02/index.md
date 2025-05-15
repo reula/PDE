@@ -5,6 +5,6 @@ weave = false
 
 # Homework 02
 
-- [Topology (notebook version)](Topology.ipynb)
+- [Click here to download this notebook](Topology.ipynb)
   
 - \textinput{homeworks/Topology.md}

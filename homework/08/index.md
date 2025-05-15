@@ -5,7 +5,7 @@ weave = false
 
 # Homework 08
 
-- [Shocks(notebook version)](Shocks.ipynb.ipynb)
+- [Click here to download this notebook](Shocks.ipynb.ipynb)
   
 <!-- - \textinput{homeworks/Shocks.md} -->
 

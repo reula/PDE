@@ -5,6 +5,6 @@ weave = false
 
 # Homework 01
 
-- [LinearAlgebra (notebook version)](LinearAlgebra.ipynb)
+- [Click here to download this notebook](LinearAlgebra.ipynb)
   
 - \textinput{homeworks/LinearAlgebra.md}

@@ -5,7 +5,7 @@ weave = false
 
 # Homework 10
 
-- [Elliptic Equations(notebook version)](Elliptic_equations.ipynb)
+- [Click here to download this notebook](Elliptic_equations.ipynb)
   
 <!-- - \textinput{homeworks/Ellipcit_equations.md} -->
 
