@@ -1,0 +1,226 @@
+%\typeout{**********************************************************}
+%\typeout{***************** Loading PICHU's Macros *****************}
+%\typeout{**********************************************************}
+
+
+%\renewcommand{\@evenhead}{}
+%\renewcommand{\@oddhead}{}
+%\renewcommand{\@evenhead}{hfil\thepage\hfil}
+%\renewcommand{\@oddhead}{\hfil\thepage\hfil}
+
+
+
+
+
+\newcommand{\nc}{\newcommand}
+\newcommand{\rnc}{\renewcommand}
+
+% Use LaTeXML's raw HTML compatibility
+    
+
+
+%{\bf AQUI INGRESA EXTDEF}
+%\message{acents, }
+
+\def\ii{\'\i{}}
+\def\a{\'a}
+\def\e{\'e}
+\def\o{\'o}
+\def\u{\'u}
+
+%\message{greek letters, }
+
+\def\alf{\mbox{$\alpha$}}
+\def\fit{\mbox{$\varphi (t)$}}
+\def\fito{\mbox{$\varphi(t_0)$}}
+\nc{\fip}{\mbox{$\varphi$}}
+\def\fin{\mbox{$\varphi_n$}}
+\nc{\fii}[1]{\mbox{$\varphi{#1}$}}
+\def\gat{\mbox{ $\gamma (t)$}}
+\def\gato{\mbox{ $\gamma(t_0)$}}
+\def\gap{\mbox{ $\gamma$}}
+\nc{\gay}[2]{\gamma_{#1}(#2)}
+\def\lap{\mbox{$\lambda$}}
+\def\lam{\mbox{$\lambda$}}
+\def\eps{\mbox{$\varepsilon$}}
+\def\del{\mbox{$\delta$}}
+\nc{\tita}{\mbox{$\theta$}}
+\nc{\ro}{\mbox{ $\rho$}}
+\nc{\muu}{\mbox{ $\mu$}}
+\nc{\Omeg}{\mbox{ $\Omega$}}
+\nc{\tauu}{\mbox{ $\tau$}}
+\nc{\psii}{\mbox{ $\psi$}}
+\def\na{\nabla}
+\def\Del{\Delta}
+
+%\message{The "real" and ``complex'' symbol,}
+
+\def\re{\mbox{\sl {l$\!\!\!\;\:\!$R}}}
+\def\ren{\mbox{\sl {l$\!\!\!\;\:\!$R}$^n$}}
+\def\Complex{C}
+\def\Rationals{Q}
+\def\Integers{Z}
+
+%\message{The napprox symbol,}
+
+\newcommand{\napprox}{\mbox{ $\approx \!\!\!\!\! / $}}
+
+
+%\message{utilities,}
+
+\def\ti{\tilde}
+\def\ifi{\infty}
+\def\dip{\displaystyle}
+\def\espa{\vskip \baselineskip}
+\def\espc{\vskip 1in}
+\nc{\hs}{\hspace{15mm}}
+\nc{\noi}{\noindent}
+\nc{\su}{\subset}
+\nc{\ve}[1]{\mbox{\boldmath ${#1}$}}
+\nc{\yaya}[1]{\underbar{#1}}
+
+\rnc{\r}[1]{~\ref{#1}}
+\nc{\ron}[1]{ (\ref{#1})}
+\nc{\rtw}[2]{ (\ref{#1},\ref{#2})}
+\nc{\rth}[3]{ (\ref{#1},\ref{#2},\ref{#3})}
+\nc{\rfo}[4]{ (\ref{#1},\ref{#2},\ref{#3},\ref{#4})}
+
+
+
+\nc{\beq}{\begin{equation}}
+\nc{\eeq}{\end{equation}}
+\nc{\barr}{\begin{array}}
+\nc{\earr}{\end{array}}
+\nc{\beqarr}{\begin{eqnarray}}
+\nc{\eeqarr}{\end{eqnarray}}
+
+% \newtheorem{teo}{Theorem}[chapter]
+% \newtheorem{cor}{Corolary}[chapter]
+% \newtheorem{lem}{Lemma}[chapter]
+% \newtheorem{pro}{Problem}[chapter]
+
+% \nc{\bteo}{\begin{teo}}
+% \nc{\eteo}{\end{teo}}
+% \nc{\bcor}{\begin{cor}}
+% \nc{\ecor}{\end{cor}}
+% \nc{\blem}{\begin{lem}}
+% \nc{\elem}{\end{lem}}
+% \nc{\ejem}{\espa \noi \underbar {Example}}
+% \nc{\ejer}{\espa\noi \underbar {Exercise}}
+% \nc{\pru}{\espa\noi \underbar {Proof}}
+% \nc{\defi}{\espa\noi \underbar {Definition}}
+% \nc{\epru}{$\;\;\spadesuit{}$}
+% \nc{\bpru}{\noi \underbar {Proof}: }
+% \nc{\recu}[1]{\begin{center} \fbox{\parbox{11.cm}{\noi \small #1} }\end{center}}
+% \nc{\recubib}[1]{\begin{center} \vspace{0.5cm}\fbox{\parbox{11.cm}{{{\bf Bibliography notes:} {\noi \small #1}}}}\end{center}}
+% %\nc{\recubib}[1]{\vspace{1cm}\fbox{\parbox{15cm}{{{\bf Notas bibliogr\'aficas:} {\noi \small #1}}}}}
+% \nc{\bpro}{\begin{pro}}
+% \nc{\epro}{\end{pro}}
+% \nc{\Pro}{\noi \underbar {Problem}}
+% \nc{\ePro}{\vskip \baselineskip}
+% Sustituciones de entornos y macros para LaTeXML-friendly output
+
+% Reemplazo de entornos theorem-like
+\newcommand{\bteo}{\par\noindent\begin{quote}\textbf{Theorem}\ }
+\newcommand{\eteo}{\end{quote}}
+
+\newcommand{\bcor}{\par\noindent\begin{quote}\textbf{Corollary}\ }
+\newcommand{\ecor}{\end{quote}}
+
+\newcommand{\blem}{\par\noindent\begin{quote}\textbf{Lemma}\ }
+\newcommand{\elem}{\end{quote}}
+
+\newcommand{\bpro}{\par\noindent\begin{quote}\textbf{Problem}\ }
+\newcommand{\epro}{\end{quote}}
+
+% Otros bloques decorativos
+
+% --- Bloques destacados con clases específicas ---
+\newcommand{\ejem}{\par\noindent\textbf{\textsf{Example.}}\ }
+\newcommand{\ejer}{\par\noindent\textbf{\textsf{Exercise.}}\ }
+\newcommand{\pru}{\par\noindent\textit{\textsf{Proof.}}\ }
+\newcommand{\defi}{\par\noindent\textbf{\textsf{Definition.}}\ }
+\newcommand{\bpru}{\par\noindent\textit{\textsf{Proof:}}\ }
+\newcommand{\epru}{\hfill$\spadesuit$}
+
+\newcommand{\Pro}{\par\noindent\textbf{Problem}\ }
+\newcommand{\ePro}{\par\vspace{\baselineskip}}
+
+% Notas enmarcadas (recuadros bibliográficos, etc.)
+\newcommand{\recu}[1]{\par\noindent\begin{quote}\textbf{Note} #1\end{quote}}
+\newcommand{\recubib}[1]{\par\noindent\begin{quote}\textbf{Bibliography notes} #1\end{quote}}
+
+%\message{math definitions,}
+
+
+\nc{\derp}[2]{\frac{\partial #1}{\partial #2}}
+\nc{\dersp}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\nc{\derssp}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\nc{\derc}[2]{\frac{d #1}{d #2}}
+\nc{\dersc}[2]{\frac{d^2 #1}{d #2^2}}
+\nc{\der}[1]{\frac{d}{d #1}}
+\nc{\lapl}[1]{\dersp{#1}{x}+\dersp{#1}{y}+\dersp{#1}{z}}
+\nc{\pa}{\partial}
+
+\nc{\nro}{$^{\mbox{o}}$}
+
+\nc{\vA}{\mbox{$\ve A$}}
+\nc{\vB}{\mbox{$\ve B$}}
+\nc{\vL}{\mbox{$\ve L$}}
+
+\nc{\xto}{\ve X_{t_0}^t}
+\nc{\xot}{\ve X_t^{t_0}}
+\nc{\xoti}{\ve X_{\tilde t}^{t_0}}
+\nc{\x}{\mbox{$\ve X$}}
+\nc{\cif}{\mbox{$C_0^{\ifi}(\re)$}}
+
+
+%\message{more math utilities,}
+
+
+\nc{\sr}[2]{\mbox{$\stackrel{#1}{#2}$}}
+\nc{\fn}{\footnote}
+\nc{\lme}{\lefteqn}
+\nc{\nn}{\nonumber \\}
+\nc{\fr}[2]{\mbox{$\frac{#1}{#2}$}}
+\nc{\rpi}{\right|}
+\nc{\lpi}{\left|}
+\nc{\rp}{\right)}
+\nc{\rdot}{\right.}
+\nc{\ldot}{\left.}
+\nc{\rb}{\right\}}
+\nc{\lb}{\left\{}
+\nc{\rc}{\right]}
+\nc{\lc}{\left[}
+\nc{\lp}{\left(}
+\nc{\bb}{\bibitem}
+
+\nc{\ex}{\mbox{$\exists$}}
+\nc{\Ra}{\mbox{$\Rightarrow$}}
+\nc{\Sii}{\mbox{$\Leftrightarrow$}}
+\nc{\sii}{\mbox{$\leftrightarrow$}}
+\nc{\fig}[2]{\begin{figure}\vspace{#1}\caption{#2}\end{figure}}
+\nc{\mb}{\mbox}
+\nc{\mt}{\mapsto}
+\nc{\mapcomp}{o}
+
+\nc{\cL}{\mbox{$\cal L$}}
+\nc{\cD}{\mbox{$\cal D$}}
+\nc{\cP}{\mbox{$\cal P$}}
+\nc{\cJ}{\mbox{$\cal J$}}
+\nc{\scri}{\mbox{ {$\cal J$}}}
+\nc{\cT}{\mbox{$\cal T$}}
+\nc{\cC}{\mbox{$\cal C$}}
+\nc{\cF}{\mbox{$\cal F$}}
+\nc{\cS}{\mbox{$\cal S$}}
+
+
+\nc{\LR}{\mbox{$L^2(\ren)$}}
+\nc{\cifrn}{\mbox{$C^{\infty}(\ren)$}}
+\nc{\cifrncs}{\mbox{$C^{\infty}_{0}(\ren)$}}
+\nc{\cifo}{\mbox{$C^{\infty}_0$}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 
