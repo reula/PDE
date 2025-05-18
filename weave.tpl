@@ -5,8 +5,8 @@
   <title>{{:title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="/css/tufte.css">
   <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet" href="/css/tufte.css">
   <link rel="stylesheet" href="/css/adjust.css">
   <link rel="stylesheet" href="/css/latex.css">
   <link rel="stylesheet" href="/css/weave.css">
