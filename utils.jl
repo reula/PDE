@@ -1,5 +1,6 @@
 using Weave
 using Highlights
+using Printf
 
 function hfun_bar(vname)
   val = Meta.parse(vname[1])
@@ -50,3 +51,46 @@ function cleanall()
         end
     end
 end
+
+
+
+function latex_to_html_all()
+    for (root, _, files) in walkdir("latex")
+        for file in files
+            if endswith(file, ".tex") && !occursin("_wrap", file) && !occursin("extdef", file)
+                name = splitext(file)[1]
+                wrap_path = joinpath(root, "$(name)_wrap.tex")
+                html_path = joinpath(root, "$(name).html")
+                xml_path = joinpath(root, "$(name).xml")
+
+                # Crear archivo wrapper
+                open(wrap_path, "w") do io
+                    println(io, raw"""
+\documentclass{book}
+\usepackage{amsmath,amssymb,babel}
+\usepackage[utf8]{inputenc}
+
+\let\addtolength\relax
+\let\DeclareFontEncoding\relax
+\let\thesubsection\relax
+
+\input{../extdef_libro}
+
+\begin{document}
+\input{$(name)}
+\end{document}
+""")
+                end
+
+                @info "Converting LaTeX file to HTML" file
+                cd(wrap_dir) do
+                    run(`latexml --dest=$(basename(xml_path)) $(basename(wrap_path))`)
+end
+
+                run(`latexmlpost --format=html5 --destination=$html_path --css=../../_css/latexml.css $xml_path`)
+            end
+        end
+    end
+end
+
+
