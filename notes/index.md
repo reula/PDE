@@ -5,4 +5,5 @@ weave = false
 
 # Notes Overview
 
-- [1. Topology](/notes/lecture01/)
+- [Topology](/notes/topology/)
+<!-- - [Completeness](/notes/completeness/) -->

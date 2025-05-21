@@ -7,4 +7,4 @@ weave = false
 
 <!-- TODO check how to do a TOC -->
 
-{{ insert ../latex/notes01/chap1.html }}
+{{ insert ../latex/topology/chap1.html }}
