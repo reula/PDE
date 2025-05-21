@@ -1,5 +1,5 @@
 +++
-title = "Lab 2 "
+title = "Lab 1 Ordinary Differential Equations"
 weave = true
 +++
 

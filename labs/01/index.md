@@ -1,7 +1,7 @@
 +++
-title = "Lab 1 Ordinary Differential Equations"
+title = "Lab 1 Logistic Map"
 weave = true
 +++
 
-{{ insert ../weave/lab01/lab1.html }}
+{{ insert ../weave/lab01/logistic_map.html }}
 
