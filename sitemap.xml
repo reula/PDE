@@ -74,7 +74,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/template/README/index.html</loc>
+    <loc>https://oreula.github.io/PDE/labs/02-we/index.html</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -87,6 +87,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/homework/03/index.html</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/template/README/index.html</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -123,6 +129,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/homework/index.html</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/labs/02/index.html</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -212,7 +224,19 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/weave/lab02/waveequation/</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/bibliography/bib/</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/weave/lab02/lab2/</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

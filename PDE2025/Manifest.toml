@@ -2,7 +2,7 @@
 
 julia_version = "1.11.5"
 manifest_format = "2.0"
-project_hash = "d65f419ff5e705dfe6dde793dffdbf0d1e4d66ce"
+project_hash = "7c816485d55e8b66ec7c3e6f66fa5bc9f4db37bc"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "e2478490447631aedba0823d4d7a80b2cc8cdb32"
@@ -116,6 +116,20 @@ weakdeps = ["SparseArrays"]
 [[deps.Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 version = "1.11.0"
+
+[[deps.BandedMatrices]]
+deps = ["ArrayLayouts", "FillArrays", "LinearAlgebra", "PrecompileTools"]
+git-tree-sha1 = "e35c672b239c5105f597963c33e740eeb46cf0ab"
+uuid = "aae01518-5342-5314-be14-df237901396f"
+version = "1.9.4"
+
+    [deps.BandedMatrices.extensions]
+    BandedMatricesSparseArraysExt = "SparseArrays"
+    CliqueTreesExt = "CliqueTrees"
+
+    [deps.BandedMatrices.weakdeps]
+    CliqueTrees = "60701a23-6482-424a-84db-faee86b9b1f8"
+    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[deps.Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
@@ -1141,6 +1155,7 @@ deps = ["ADTypes", "Adapt", "ArrayInterface", "CommonSolve", "Compat", "Concrete
 git-tree-sha1 = "df412bac2b517411eabb42c78ff234b01eb3e95b"
 uuid = "be0214bd-f91f-a760-ac4e-3421ce2b2da0"
 version = "1.9.0"
+weakdeps = ["BandedMatrices", "DiffEqBase", "ForwardDiff", "LineSearch", "LinearSolve", "SparseArrays", "SparseMatrixColorings"]
 
     [deps.NonlinearSolveBase.extensions]
     NonlinearSolveBaseBandedMatricesExt = "BandedMatrices"
@@ -1150,15 +1165,6 @@ version = "1.9.0"
     NonlinearSolveBaseLinearSolveExt = "LinearSolve"
     NonlinearSolveBaseSparseArraysExt = "SparseArrays"
     NonlinearSolveBaseSparseMatrixColoringsExt = "SparseMatrixColorings"
-
-    [deps.NonlinearSolveBase.weakdeps]
-    BandedMatrices = "aae01518-5342-5314-be14-df237901396f"
-    DiffEqBase = "2b5f629d-d688-5b77-993f-72d75c75574e"
-    ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
-    LineSearch = "87fe0de2-c867-4266-b59a-2f0a94fc965b"
-    LinearSolve = "7ed4a6bd-45f5-4d41-b270-4a48e9bafcae"
-    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
-    SparseMatrixColorings = "0a514795-09f3-496d-8182-132a7b665d35"
 
 [[deps.NonlinearSolveFirstOrder]]
 deps = ["ADTypes", "ArrayInterface", "CommonSolve", "ConcreteStructs", "DiffEqBase", "FiniteDiff", "ForwardDiff", "LineSearch", "LinearAlgebra", "LinearSolve", "MaybeInplace", "NonlinearSolveBase", "PrecompileTools", "Reexport", "SciMLBase", "SciMLJacobianOperators", "Setfield", "StaticArraysCore"]
