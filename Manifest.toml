@@ -391,9 +391,9 @@ version = "0.10.12"
 
 [[deps.YAML]]
 deps = ["Base64", "Dates", "Printf", "StringEncodings"]
-git-tree-sha1 = "b46894beba6c05cd185d174654479aaec09ea6b1"
+git-tree-sha1 = "2f58ac39f64b41fb812340347525be3b590cce3b"
 uuid = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
-version = "0.4.13"
+version = "0.4.14"
 
 [[deps.Zlib_jll]]
 deps = ["Libdl"]
