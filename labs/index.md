@@ -10,3 +10,5 @@ weave = false
   - [Stability Region](/labs/02-sr) _(supplementary)_
 - [Lab 3: Hyperbolic Equations](/labs/03)
   - [Wave Equation](/labs/03-we) _(supplementary)_
+- [Lab 4: Boundary conditions using SAT](/labs/04)
+  - [SAT method](/labs/04-SAT) _(supplementary)_
