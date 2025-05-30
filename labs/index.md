@@ -12,3 +12,4 @@ weave = false
   - [Wave Equation](/labs/03-we) _(supplementary)_
 - [Lab 4: Boundary conditions using SAT](/labs/04)
   - [SAT method](/labs/04-SAT) _(supplementary)_
+- [Lab 5: Parabolic Equations](/labs/05)
