@@ -74,7 +74,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://oreula.github.io/PDE/template/README/index.html</loc>
+    <loc>https://oreula.github.io/PDE/labs/05/index.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -99,6 +99,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/labs/03-we/index.html</loc>
+    <lastmod>2025-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/template/README/index.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
