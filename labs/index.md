@@ -13,3 +13,5 @@ weave = false
 - [Lab 4: Boundary conditions using SAT](/labs/04)
   - [SAT method](/labs/04-SAT) _(supplementary)_
 - [Lab 5: Parabolic Equations](/labs/05)
+- [Lab 6: Conservative schemes](/labs/06)
+  - [Conservative schemes](/labs/06-CST) _(supplementary)_
