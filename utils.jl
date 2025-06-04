@@ -1,6 +1,7 @@
 using Weave
 using Highlights
 using Printf
+using Pkg
 
 function hfun_bar(vname)
   val = Meta.parse(vname[1])
@@ -24,7 +25,9 @@ end
 
 Weave all lecture notes in the `weave` directory. Run from site root.
 """
-function weaveall()
+function weaveall(; instantiate = true)
+    Pkg.activate("PDE2025")
+    instantiate ? Pkg.instantiate() : nothing
     for (root, _, files) in walkdir("weave")
         for file in files
             if endswith(file, ".ipynb")
