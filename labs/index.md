@@ -14,4 +14,4 @@ weave = false
   - [SAT method](/labs/04-SAT) _(supplementary)_
 - [Lab 5: Parabolic Equations](/labs/05)
 - [Lab 6: Conservative schemes](/labs/06)
-  - [Conservative schemes](/labs/06-CST) _(supplementary)_
+  - [Conservative schemes](/labs/06-CS) _(supplementary)_

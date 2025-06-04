@@ -7,10 +7,10 @@ weave = true
 
 **Authors:** Pablo Montes, Oscar Reula, Joaquin Pelle
 
-### Important 1: ###
+### Important 1:
 This notebook is designed to run in Julia.
 
-### Important 2: ###
+### Important 2:
 
 Rename the file as: 
 `group_name_assignment_6.ipynb`
