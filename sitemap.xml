@@ -104,6 +104,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/labs/06/index.html</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/template/README/index.html</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -117,6 +123,12 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/schedule/index.html</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://oreula.github.io/PDE/labs/06-CS/index.html</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -266,6 +278,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://oreula.github.io/PDE/weave/lab06/Conservative_schemes/</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://oreula.github.io/PDE/weave/lab03/waveequation/</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -279,12 +297,6 @@
 </url>
 <url>
     <loc>https://oreula.github.io/PDE/weave/lab03/lab3/</loc>
-    <lastmod>2025-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://oreula.github.io/PDE/weave/lab03/waveequation-myfix/</loc>
     <lastmod>2025-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
