@@ -15,3 +15,4 @@ weave = false
 - [Lab 5: Parabolic Equations](/labs/05)
 - [Lab 6: Conservative schemes](/labs/06)
   - [Conservative schemes](/labs/06-CS) _(supplementary)_
+  - [Auxiliary functions](/labs/06-SU) _(supplementary)_
