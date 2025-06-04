@@ -1,14 +1,3 @@
-+++
-title = "Auxiliary functions"
-hascode = true
-weave = false
-+++
-
-# Auxiliary functions
-
-- [Click here to download this file](shocks_utils.jl)
-
-```julia
 @inline function mysign_zero(a)
     return (1.0.*(a .> 0.0) + (-1.0).* (a .< 0.0))
 end
@@ -392,4 +381,4 @@ function wenoz!(dfields, fields, par, t) # j is the grid position
         @. dfields[idx, :] = -h*(H_p - H_m)
     end
 end
-```
+
