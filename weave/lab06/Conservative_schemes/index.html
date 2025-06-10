@@ -123,9 +123,14 @@ false
 </span><span class='hljl-n'>auxvectorsMP5</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>createMP5auxvectors</span><span class='hljl-p'>(</span><span class='hljl-n'>N_FIELDS</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-n'>parMP5</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>eqpars</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>h</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>N</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>N_FIELDS</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>Flux_x!</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>SpeedMax</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>auxvectorsMP5</span><span class='hljl-p'>)</span>
 </pre> <pre class=output >
-&#40;false, 15.915494309189533, 100, 1, Main.burgers&#33;, Main.burgersspeed, &#40;&#91;0.0
-&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0
-.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;&#41;&#41;
+&#40;false, 15.915494309189533, 100, 1, Main.burgers&#33;, Main.burgersspeed, &#40;&#91;6.9
+114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114
+679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679
+697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697
+904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904
+e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-3
+10&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;, &#91;6.9114679697904e-310&#93;
+, &#91;6.9114679697904e-310&#93;&#41;&#41;
 </pre> <p>The solution is a matrix of size <code>N x N_Fields</code>. For scalar problems, this essentially means it&#39;s a vector with a single column, but you can try it with systems of equations and it will work the same. Remember that for convergence analysis, it is convenient to use initial data that is smooth and piecewise polynomial.</p> <p>Now we are ready to define the problems, choose integrators, and set their behavior. Here it is important to choose a stable integrator, i.e., one whose stability region includes part of the imaginary axis, and preferably one that is TVD &#40;Total Variation Diminishing&#41;. In our case, we will choose the Runge-Kutta integrator <code>SSPRK33</code>, which is third-order in time and is TVD.</p> <pre class='hljl'>
 <span class='hljl-n'>probKT</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>ODEProblem</span><span class='hljl-p'>(</span><span class='hljl-n'>KT!</span><span class='hljl-p'>,</span><span class='hljl-n'>u</span><span class='hljl-p'>,</span><span class='hljl-n'>tspan</span><span class='hljl-p'>,</span><span class='hljl-n'>parKT</span><span class='hljl-p'>);</span><span class='hljl-t'>
 </span><span class='hljl-n'>probWENOZ</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>ODEProblem</span><span class='hljl-p'>(</span><span class='hljl-n'>wenoz!</span><span class='hljl-p'>,</span><span class='hljl-n'>u</span><span class='hljl-p'>,</span><span class='hljl-n'>tspan</span><span class='hljl-p'>,</span><span class='hljl-n'>parWENOZ</span><span class='hljl-p'>);</span><span class='hljl-t'>
@@ -161,4 +166,4 @@ false
 QKT &#40;generic function with 1 method&#41;
 </pre> <pre class='hljl'>
 
-</pre> <footer> <p> Published from <a href=Conservative_schemes.ipynb >Conservative_schemes.ipynb</a> using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.12 on 2025-06-04. </p> </footer> </div>
+</pre> <footer> <p> Published from <a href=Conservative_schemes.ipynb >Conservative_schemes.ipynb</a> using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.12 on 2025-06-10. </p> </footer> </div>
