@@ -92,7 +92,7 @@ function make_model(grid_type,p)
 
         gmsh.model.geo.addCurveLoop([5, 6, 7, 8], 12) #the circle
         gmsh.model.geo.synchronize()
-
+        
         gmsh.model.geo.addPhysicalGroup(1, [5, 6, 7, 8], 12 )
         gmsh.model.setPhysicalName(1, 12, "circle")
         gmsh.model.geo.synchronize()
