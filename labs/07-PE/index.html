@@ -1,4 +1,4 @@
-<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/bibliography.css"> <link rel=icon  href="/PDE/assets/favicon.png"> <link rel=stylesheet  href="/PDE/css/weave.css"> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, TeX: { equationNumbers: { autoNumber: "AMS" } } }); </script> <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> <title>Poisson example</title> <div id=layout > <div id=menu > <ul> <li><a style="font-size:larger;" href="/PDE/">Home</a> <li><a style="font-size:larger;" href="/PDE/schedule/">Schedule</a> <li><a style="font-size:larger;" href="/PDE/homework/">Homework</a> <li><a style="font-size:larger;" href="/PDE/labs/">Labs</a> <li><a style="font-size:larger;" href="/PDE/notes/">Notes</a> <li><a style="font-size:larger;" href="/PDE/bibliography/">Bibliography</a> </ul> </div> <div id=main > <div class=franklin-content > <!DOCTYPE html> <html lang=en > <meta charset=UTF-8 > <title></title> <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/weave.css"> <style> </style> <script> window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } }; </script> <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script> <div class=franklin-content > <ul> <li><p><a href="/PDE/weave/lab07/Poisson_example.ipynb">Click here to download this notebook</a></p> </ul> <h2>Example of approximations to the Poisson problem with different boundary conditions</h2> <p>The problem to solve is: </p> <p>\begin&#123;align&#125; -\Delta u &amp;&#61; f \;\;\;\;\; \text&#123;in &#125; \Omega \ u &amp;&#61; g \;\;\;\;\; \text&#123;in &#125; \partial \Omega<em>&#123;int&#125; \ \hat&#123;n&#125; \cdot \nabla u &amp;&#61; h \;\;\;\;\; \text&#123;in &#125; \partial \Omega</em>&#123;ext&#125; \ \end&#123;align&#125;</p> <p>For that we impose the weak version of it:</p> <p>Find <span class=math >$u$</span> in <span class=math >$V = H^1(\Omega, f) \cap H^1_0(\Omega, \partial \Omega_{int})$</span> &#40;that is with elements vanishing at <span class=math >$\partial \Omega_{int}$</span>&#41; such that:,</p> <p class=math >\[ \int_{\Omega} \nabla v \cdot \nabla u \; d\Omega - \int_{\Omega} v \; f \; d\Omega - \oint_{\partial \Omega_{ext}} v \; h \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in V \]</p> <p>If we obtain a solution <span class=math >$u$</span> and it is sufficiently smooth, we can integrate by parts the first term and obtain: </p> <p class=math >\[ \int_{\Omega} v \; (-\Delta u - f) \; d\Omega + \oint_{\partial \Omega_{ext}} v \; (\hat{n} \cdot \nabla u - h) \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in V \]</p> <p>Taking <span class=math >$v$</span> arbitrary but of compact support inside <span class=math >$Ω$</span> we see that <span class=math >$u$</span> must satisfy:</p> <p class=math >\[ -\Delta u = f \;\;\;\;\; \text{in } \Omega, \]</p> <p>taking now <span class=math >$v$</span> arbitrary but different from zero in a neighborhood of the exterior boundary, we see that it must satisfy also the Neumann condition:</p> <p class=math >\[ \hat{n} \cdot \nabla u = h \;\;\;\;\; \text{in } \partial \Omega_{ext}. \]</p> <p>The Dirichlet condition is automatic for this choice of functional space.</p> <p>To solve the problem we shall use the a Julia package <code>Gridap.jl</code>. This example is a mixture of several examples in the Gridap tutorial.</p> <pre class='hljl'>
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/bibliography.css"> <link rel=icon  href="/PDE/assets/favicon.png"> <link rel=stylesheet  href="/PDE/css/weave.css"> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, TeX: { equationNumbers: { autoNumber: "AMS" } } }); </script> <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> <title>Poisson example</title> <div id=layout > <div id=menu > <ul> <li><a style="font-size:larger;" href="/PDE/">Home</a> <li><a style="font-size:larger;" href="/PDE/schedule/">Schedule</a> <li><a style="font-size:larger;" href="/PDE/homework/">Homework</a> <li><a style="font-size:larger;" href="/PDE/labs/">Labs</a> <li><a style="font-size:larger;" href="/PDE/notes/">Notes</a> <li><a style="font-size:larger;" href="/PDE/bibliography/">Bibliography</a> </ul> </div> <div id=main > <div class=franklin-content > <!DOCTYPE html> <html lang=en > <meta charset=UTF-8 > <title></title> <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/weave.css"> <style> </style> <script> window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } }; </script> <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script> <div class=franklin-content > <ul> <li><p><a href="/PDE/weave/lab07/Poisson_example.ipynb">Click here to download this notebook</a></p> </ul> <h2>Example of approximations to the Poisson problem with different boundary conditions</h2> <p>The problem to solve is: </p> <p class=math >\[ \begin{align} -\Delta u &= f \;\;\;\;\; \text{in } \Omega \\ u &= g \;\;\;\;\; \text{in } \partial \Omega_{int} \\ \hat{n} \cdot \nabla u &= h \;\;\;\;\; \text{in } \partial \Omega_{ext} \\ \end{align} \]</p> <p>For that we impose the weak version of it:</p> <p>Find <span class=math >$u$</span> in <span class=math >$V = H^1(\Omega, f) \cap H^1_0(\Omega, \partial \Omega_{int})$</span> &#40;that is with elements vanishing at <span class=math >$\partial \Omega_{int}$</span>&#41; such that:,</p> <p class=math >\[ \int_{\Omega} \nabla v \cdot \nabla u \; d\Omega - \int_{\Omega} v \; f \; d\Omega - \oint_{\partial \Omega_{ext}} v \; h \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in V \]</p> <p>If we obtain a solution <span class=math >$u$</span> and it is sufficiently smooth, we can integrate by parts the first term and obtain: </p> <p class=math >\[ \int_{\Omega} v \; (-\Delta u - f) \; d\Omega + \oint_{\partial \Omega_{ext}} v \; (\hat{n} \cdot \nabla u - h) \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in V \]</p> <p>Taking <span class=math >$v$</span> arbitrary but of compact support inside <span class=math >$Ω$</span> we see that <span class=math >$u$</span> must satisfy:</p> <p class=math >\[ -\Delta u = f \;\;\;\;\; \text{in } \Omega, \]</p> <p>taking now <span class=math >$v$</span> arbitrary but different from zero in a neighborhood of the exterior boundary, we see that it must satisfy also the Neumann condition:</p> <p class=math >\[ \hat{n} \cdot \nabla u = h \;\;\;\;\; \text{in } \partial \Omega_{ext}. \]</p> <p>The Dirichlet condition is automatic for this choice of functional space.</p> <p>To solve the problem we shall use the a Julia package <code>Gridap.jl</code>. This example is a mixture of several examples in the Gridap tutorial.</p> <pre class='hljl'>
 <span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Gridap</span><span class='hljl-t'>
 </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>GridapGmsh</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#import Gmsh: gmsh # NEVER use #using Gmsh</span><span class='hljl-t'>
@@ -12,8 +12,70 @@
     </span><span class='hljl-n'>GLMakie</span><span class='hljl-oB'>.</span><span class='hljl-nf'>activate!</span><span class='hljl-p'>(</span><span class='hljl-n'>inline</span><span class='hljl-oB'>=</span><span class='hljl-kc'>true</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># For windows on the notebook itself. Comment out if you want the as pop-out plots.</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
 </pre> <pre class=julia-error >
-ERROR: ArgumentError: Package GridapMakie not found in current path.
-- Run &#96;import Pkg; Pkg.add&#40;&quot;GridapMakie&quot;&#41;&#96; to install the GridapMakie package.
+ERROR: The following 1 direct dependency failed to precompile:
+
+GLMakie 
+
+Failed to precompile GLMakie &#91;e9467ef8-e4e7-5192-8a1a-b1aee30e663a&#93; to &quot;/home/runner/.julia/compiled/v1.11/GLMakie/jl_mWWLYr&quot;.
+┌ Warning:     OpenGL/GLFW wasn&#39;t loaded correctly or couldn&#39;t be initialized.
+│     This likely means, you&#39;re on a headless server without having OpenGL support setup correctly.
+│     Have a look at the troubleshooting section in the readme:
+│     https://github.com/MakieOrg/Makie.jl/tree/master/GLMakie#troubleshooting-opengl.
+└ @ GLMakie ~/.julia/packages/GLMakie/1dQSN/src/gl_backend.jl:4
+ERROR: LoadError: InitError: Exception&#91;GLFW.GLFWError&#40;65550, &quot;X11: The DISPLAY environment variable is missing&quot;&#41;, ErrorException&#40;&quot;glfwInit failed&quot;&#41;&#93;
+Stacktrace:
+  &#91;1&#93; __init__&#40;&#41;
+    @ GLFW ~/.julia/packages/GLFW/a10jC/src/GLFW.jl:69
+  &#91;2&#93; run_module_init&#40;mod::Module, i::Int64&#41;
+    @ Base ./loading.jl:1378
+  &#91;3&#93; register_restored_modules&#40;sv::Core.SimpleVector, pkg::Base.PkgId, path::String&#41;
+    @ Base ./loading.jl:1366
+  &#91;4&#93; _include_from_serialized&#40;pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector&#123;Any&#125;, ignore_native::Nothing; register::Bool&#41;
+    @ Base ./loading.jl:1254
+  &#91;5&#93; _include_from_serialized &#40;repeats 2 times&#41;
+    @ ./loading.jl:1210 &#91;inlined&#93;
+  &#91;6&#93; _require_search_from_serialized&#40;pkg::Base.PkgId, sourcepath::String, build_id::UInt128, stalecheck::Bool; reasons::Dict&#123;String, Int64&#125;, DEPOT_PATH::Vector&#123;String&#125;&#41;
+    @ Base ./loading.jl:2057
+  &#91;7&#93; _require&#40;pkg::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2527
+  &#91;8&#93; __require_prelocked&#40;uuidkey::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2388
+  &#91;9&#93; #invoke_in_world#3
+    @ ./essentials.jl:1089 &#91;inlined&#93;
+ &#91;10&#93; invoke_in_world
+    @ ./essentials.jl:1086 &#91;inlined&#93;
+ &#91;11&#93; _require_prelocked&#40;uuidkey::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2375
+ &#91;12&#93; macro expansion
+    @ ./loading.jl:2314 &#91;inlined&#93;
+ &#91;13&#93; macro expansion
+    @ ./lock.jl:273 &#91;inlined&#93;
+ &#91;14&#93; __require&#40;into::Module, mod::Symbol&#41;
+    @ Base ./loading.jl:2271
+ &#91;15&#93; #invoke_in_world#3
+    @ ./essentials.jl:1089 &#91;inlined&#93;
+ &#91;16&#93; invoke_in_world
+    @ ./essentials.jl:1086 &#91;inlined&#93;
+ &#91;17&#93; require&#40;into::Module, mod::Symbol&#41;
+    @ Base ./loading.jl:2260
+ &#91;18&#93; top-level scope
+    @ ~/.julia/packages/GLMakie/1dQSN/src/gl_backend.jl:2
+ &#91;19&#93; include&#40;mod::Module, _path::String&#41;
+    @ Base ./Base.jl:557
+ &#91;20&#93; include&#40;x::String&#41;
+    @ GLMakie ~/.julia/packages/GLMakie/1dQSN/src/GLMakie.jl:1
+ &#91;21&#93; top-level scope
+    @ ~/.julia/packages/GLMakie/1dQSN/src/GLMakie.jl:87
+ &#91;22&#93; include
+    @ ./Base.jl:557 &#91;inlined&#93;
+ &#91;23&#93; include_package_for_output&#40;pkg::Base.PkgId, input::String, depot_path::Vector&#123;String&#125;, dl_load_path::Vector&#123;String&#125;, load_path::Vector&#123;String&#125;, concrete_deps::Vector&#123;Pair&#123;Base.PkgId, UInt128&#125;&#125;, source::Nothing&#41;
+    @ Base ./loading.jl:2881
+ &#91;24&#93; top-level scope
+    @ stdin:6
+during initialization of module GLFW
+in expression starting at /home/runner/.julia/packages/GLMakie/1dQSN/src/gl_backend.jl:1
+in expression starting at /home/runner/.julia/packages/GLMakie/1dQSN/src/GLMakie.jl:1
+in expression starting at stdin:
 </pre> <p>We will use a mesh previously built with the <code>gmsh</code> library. In the <code>models</code> directory you will find a <em>script</em> with the <code>.geo</code> extension &#40;<code>rectangle_hole.geo</code>&#41;, which was used to build the example. Based on this script, and following the <code>gmsh</code> tutorial, you can build different meshes. Other libraries can also be used to build meshes. These are imported into the <strong>Gridap</strong> infrastructure, and with them the triangulation to be used is constructed. Note that in the script, the two boundaries are named: the external &#40;rectangular&#41; one as <code>&quot;ext&quot;</code> and the internal &#40;circle&#41; one as <code>&quot;int&quot;</code>.</p> <pre class='hljl'>
 <span class='hljl-cs'>#model = GmshDiscreteModel(&quot;models/rectangle_hole_fine.msh&quot;)</span><span class='hljl-t'>
 </span><span class='hljl-n'>model</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>GmshDiscreteModel</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;models/rectangle_hole_coarse.msh&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
@@ -147,6 +209,7 @@ Suggestion: check for spelling errors or missing imports.
 </pre> <pre class=julia-error >
 ERROR: UndefVarError: &#96;NoShading&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
+Hint: a global variable of this name may be made accessible by importing Makie in the current active module Main
 </pre> <pre class='hljl'>
 <span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>full_dirichlet</span><span class='hljl-t'>
     </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/solución_dir&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;uh_dir&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>uh</span><span class='hljl-p'>])</span><span class='hljl-t'>
@@ -174,6 +237,7 @@ Suggestion: check for spelling errors or missing imports.
 </pre> <pre class=julia-error >
 ERROR: UndefVarError: &#96;NoShading&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
+Hint: a global variable of this name may be made accessible by importing Makie in the current active module Main
 </pre> <pre class='hljl'>
 <span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>full_dirichlet</span><span class='hljl-t'>
     </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/error_dir&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;e_dir&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>e</span><span class='hljl-p'>])</span><span class='hljl-t'>
