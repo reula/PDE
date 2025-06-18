@@ -16,3 +16,6 @@ weave = false
 - [Lab 6: Conservative schemes](/labs/06)
   - [Conservative schemes](/labs/06-CS) _(supplementary)_
   - [Auxiliary functions](/labs/06-SU) _(supplementary)_
+- [Lab 7: Finite elements](/labs/07)
+  - [Poisson example](/labs/07-PE) _(supplementary)_
+  - [Calculating capacitances](/labs/07-CAP) _(supplementary)_
