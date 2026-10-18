@@ -5,6 +5,7 @@ weave = false
 
 # Labs Overview
 
+- [Julia tutorial](/labs/Tutorial_Julia_español/) _(notebooks in Spanish)_
 - [Lab 1: The Logistic Map](/labs/01/)
 - [Lab 2: Ordinary Differential Equations](/labs/02/)
   - [Stability Region](/labs/02-sr) _(supplementary)_
@@ -19,3 +20,5 @@ weave = false
 - [Lab 7: Finite elements](/labs/07)
   - [Poisson example](/labs/07-PE) _(supplementary)_
   - [Calculating capacitances](/labs/07-CAP) _(supplementary)_
+- [Lab 8: Evolution problems with finite elements](/labs/08-Evol/)
+- [Lab 9: Eigenvalue problems](/labs/09-Eigen/)

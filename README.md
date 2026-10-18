@@ -31,3 +31,9 @@ The book is built with the [Franklin.jl](https://github.com/tlienart/Franklin.jl
 
 In the [Franklin.jl documentation](https://franklinjl.org/) you can find a quick start guide on how to render the site locally.
 In the [template website](https://tlienart.github.io/FranklinTemplates.jl/templates/tufte/) you can find some tips on how to write in markdown and how to use the Franklin.jl package.
+
+### Things to know when adding material
+
+- The notebooks in `weave/` are **executed** by the CI (`weaveall()` in `utils.jl`, using the `PDE2025` environment) and their output is inserted in the pages. They must run from their own folder: any mesh or helper file they read must be in that folder of `weave/`. The CI has no display, so plotting code that uses `GLMakie` should switch to `CairoMakie` when `ENV["CI"] == "true"` (see `weave/lab07/Poisson_example.ipynb`).
+- Franklin does not copy files whose name ends in `utils.jl` (that name is reserved for the site's own `utils.jl`), so such files cannot be downloaded from the site. Use another name (e.g. `shocks_tools.jl`).
+- The homework pages 1–3 are generated from the markdown cells of their notebooks: when a sheet changes, change the notebook and regenerate the page so the two do not drift apart.

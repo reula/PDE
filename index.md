@@ -1,8 +1,7 @@
 @def title = "PDE Course Book"
 @def weave = false
-@def tags = ["syntax", "code"]
 
-# Partial Differential Equations: Analyitical and Numerical Methods
+# Partial Differential Equations: Analytical and Numerical Methods
 
 This book contains the material for the course "Partial Differential Equations: Analytical and Numerical Methods" taught at ICTP–SAIFR in May 2025.
 
@@ -17,3 +16,39 @@ There are many excellent books on PDEs. Some focus on their analytical aspects, 
 Here, perhaps at the expense of some depth, we propose a comprehensive survey of the different types of PDEs. We will not only study their analytical properties, but also explore their numerical approximations, which will, in turn, help us visualize these properties and behaviors more clearly. To this end, we will delve into fundamental analytical tools that are essential not only for demonstrating the existence, uniqueness, and stability of solutions for a given type of problem, but also for establishing the convergence of the numerical approximations we will be producing.
 
 Ultimately, the aim of this book is to provide a balanced understanding of both the theory and practical techniques for solving PDEs. By combining analytical and numerical approaches, we seek to equip the reader with the tools necessary for addressing real-world problems and advancing their study of these powerful equations.
+
+## Contents
+
+The course is organized in units. Each unit pairs an analytical part with a numerical one, and comes with a homework sheet and one or more computational labs. The [schedule](/schedule/) gives the detailed list of topics for each class.
+
+**Getting started.** [Julia tutorial](/labs/Tutorial_Julia_español/) _(notebooks in Spanish)_.
+
+1. **Topology and linear algebra**
+   - Notes: [Topology](/notes/topology/)
+   - [Homework 1: Linear Algebra](/homework/01/) · [Homework 2: Topology](/homework/02/)
+   - [Lab 1: The logistic map](/labs/01/)
+2. **Functional analysis and Fourier theory**
+   - [Homework 3: Functional Analysis](/homework/03/) · [Homework 4: Fourier Analysis](/homework/04/)
+3. **Ordinary differential equations: analytical and numerical studies**
+   - Notes: [Ordinary differential equations](/notes/lecture05/) _(in Spanish)_
+   - [Homework 5: Ordinary Differential Equations](/homework/05/)
+   - [Lab 2: Ordinary differential equations](/labs/02/) · [Stability regions](/labs/02-sr/) _(supplementary)_
+4. **Evolution equations: the periodic case**
+   - [Homework 6: Hyperbolic Equations](/homework/06/)
+   - [Lab 3: Hyperbolic equations](/labs/03/) · [The wave equation](/labs/03-we/) _(supplementary)_
+5. **Evolution equations: boundary conditions**
+   - [Homework 7: Boundary Values](/homework/07/)
+   - [Lab 4: Boundary conditions using SAT](/labs/04/) · [The SAT method](/labs/04-SAT/) _(supplementary)_
+6. **Other evolution equations: parabolic and Schrödinger**
+   - [Homework 9: Parabolic Equations](/homework/09/)
+   - [Lab 5: Parabolic equations](/labs/05/)
+   - [Lab 8: Evolution problems with finite elements](/labs/08-Evol/)
+7. **Non-linear theory, weak solutions and shocks**
+   - [Homework 8: Shocks](/homework/08/)
+   - [Lab 6: Conservative schemes](/labs/06/) · [Conservative schemes](/labs/06-CS/) · [Auxiliary functions](/labs/06-SU/) _(supplementary)_
+8. **Stationary equations: elliptic problems and finite elements**
+   - [Homework 10: Elliptic Equations](/homework/10/)
+   - [Lab 7: Finite elements](/labs/07/) · [Poisson example](/labs/07-PE/) · [Calculating capacitances](/labs/07-CAP/) _(supplementary)_
+   - [Lab 9: Eigenvalue problems](/labs/09-Eigen/)
+
+See also the [bibliography](/bibliography/).

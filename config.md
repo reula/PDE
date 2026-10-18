@@ -13,13 +13,13 @@ mintoclevel = 2
 # these files might be copied and, if markdown, processed by Franklin which
 # you might not want. Indicate directories by ending the name with a `/`.
 # Base files such as LICENSE.md and README.md are ignored by default.
-ignore = ["node_modules/", "franklin", "franklin.pub"]
+ignore = ["node_modules/", "franklin", "franklin.pub", "template/", ".vscode/", "labs/.vscode/", "labs/07/.vscode/", "notes/completeness/", "Readme_español.md"]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
 generate_rss = true
 website_title = "PDE Course"
 website_descr = "Course Notes on Partial Differential Equations: Analytical and Numerical Methods"
-website_url   = "https://oreula.github.io/PDE/"
+website_url   = "https://reula.github.io/PDE/"
 prepath = "PDE"
 weave = false
 +++
