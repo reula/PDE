@@ -1,4 +1,4 @@
-Sitemap: https://oreula.github.io/PDE/sitemap.xml
+Sitemap: https://reula.github.io/PDE/sitemap.xml
 
 User-agent: *
 Disallow:

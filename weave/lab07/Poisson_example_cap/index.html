@@ -1,23 +1,31 @@
-<!DOCTYPE html> <html lang=en > <meta charset=UTF-8 > <title></title> <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/weave.css"> <style> </style> <script> window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } }; </script> <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script> <div class=franklin-content > <ul> <li><p><a href="/PDE/weave/lab07/Poisson_example_cap.ipynb">Click here to download this notebook</a></p> </ul> <h1>Example of solving the Poisson problem with different boundary conditions and manipulation of the solution for the capacitance calculation problem</h1> <p>The problem to be solved is:</p> <p class=math >\[ \begin{align} -\Delta u &= f \;\;\;\;\; \text{in } \Omega \\ u &= g \;\;\;\;\; \text{in } \partial \Omega_{int} \\ \hat{n} \cdot \nabla u &= h \;\;\;\;\; \text{in } \partial \Omega_{ext} \\ \end{align} \]</p> <p>To do this, we will impose its weak form:</p> <p>Find <span class=math >$u$</span> in <span class=math >$H^1(\Omega, f))$</span> &#40;that is, with Dirichlet boundary conditions on <span class=math >$\partial \Omega_{int}$</span>&#41; such that,</p> <p class=math >\[ \int_{\Omega} \nabla v \cdot \nabla u \; d\Omega - \int_{\Omega} v \; f \; d\Omega - \oint_{\partial \Omega_{ext}} v \; h \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in H^1_0(\Omega) \]</p> <p>If we obtain a <span class=math >$u$</span> satisfying this equation, and it is sufficiently smooth, then we can integrate the first term by parts and obtain:</p> <p class=math >\[ \int_{\Omega} v \; (-\Delta u - f) \; d\Omega + \oint_{\partial \Omega_{ext}} v \; (\hat{n} \cdot \nabla u - h) \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in H^1_0(\Omega) \]</p> <p>Taking <span class=math >$v$</span> arbitrary but with compact support, we see that <span class=math >$u$</span> must satisfy:</p> <p class=math >\[ -\Delta u = f \;\;\;\;\; \text{in } \Omega, \]</p> <p>and taking <span class=math >$v$</span> arbitrary we also see that the Neumann condition must be satisfied,</p> <p class=math >\[ \hat{n} \cdot \nabla u = h \;\;\;\;\; \text{in } \partial \Omega_{ext}. \]</p> <p>The Dirichlet condition is automatic due to the choice of space.</p> <p>We will then use the solution found for a capacitance problem.</p> <p>To solve the problem, we will use the infrastructure of the Julia package <code>Gridap.jl</code>. This example is a compilation of several examples from the package&#39;s tutorial.</p> <pre class='hljl'>
+<!DOCTYPE html> <html lang=en > <meta charset=UTF-8 > <title></title> <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/weave.css"> <style> </style> <script> window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } }; </script> <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script> <div class=franklin-content > <ul> <li><p><a href="/PDE/weave/lab07/Poisson_example_cap.ipynb">Click here to download this notebook</a></p> </ul> <h1>Example of solving the Poisson problem with different boundary conditions and manipulation of the solution for the capacitance calculation problem</h1> <p>The problem to be solved is:</p> <p class=math >\[ \begin{align} -\Delta u &= f \;\;\;\;\; \text{in } \Omega \\ u &= g \;\;\;\;\; \text{in } \partial \Omega_{int} \\ \hat{n} \cdot \nabla u &= h \;\;\;\;\; \text{in } \partial \Omega_{ext} \\ \end{align} \]</p> <p>To do this, we will impose its weak form:</p> <p>Find <span class=math >$u \in H^1(\Omega)$</span> with <span class=math >$u = g$</span> on <span class=math >$\partial \Omega_{int}$</span> such that,</p> <p class=math >\[ \int_{\Omega} \nabla v \cdot \nabla u \; d\Omega - \int_{\Omega} v \; f \; d\Omega - \oint_{\partial \Omega_{ext}} v \; h \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in H^1_0(\Omega, \partial \Omega_{int}) \]</p> <p>If we obtain a <span class=math >$u$</span> satisfying this equation, and it is sufficiently smooth, then we can integrate the first term by parts and obtain:</p> <p class=math >\[ \int_{\Omega} v \; (-\Delta u - f) \; d\Omega + \oint_{\partial \Omega_{ext}} v \; (\hat{n} \cdot \nabla u - h) \; d\Gamma = 0 \;\;\;\;\; \forall v \;\; \in H^1_0(\Omega, \partial \Omega_{int}) \]</p> <p>Taking <span class=math >$v$</span> arbitrary but with compact support, we see that <span class=math >$u$</span> must satisfy:</p> <p class=math >\[ -\Delta u = f \;\;\;\;\; \text{in } \Omega, \]</p> <p>and taking now <span class=math >$v$</span> arbitrary on <span class=math >$\partial \Omega_{ext}$</span> we also see that the Neumann condition must be satisfied,</p> <p class=math >\[ \hat{n} \cdot \nabla u = h \;\;\;\;\; \text{in } \partial \Omega_{ext}. \]</p> <p>The Dirichlet condition is imposed directly on the space where we look for <span class=math >$u$</span>.</p> <p>We will then use the solution found for a capacitance problem.</p> <p>To solve the problem, we will use the infrastructure of the Julia package <code>Gridap.jl</code>. This example is a compilation of several examples from the package&#39;s tutorial.</p> <pre class='hljl'>
 <span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Gridap</span><span class='hljl-t'>
 </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>FileIO</span><span class='hljl-t'> </span><span class='hljl-cs'>#Gráficos y salidas</span><span class='hljl-t'>
 </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>GridapGmsh</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#using gmsh #]add https://github.com/koehlerson/gmsh.jl.git</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#NEVER USE using Gmsh!!!</span><span class='hljl-t'>
-</span><span class='hljl-cs'>#import Gmsh: gmsh</span>
+</span><span class='hljl-cs'>#import Gmsh: gmsh</span><span class='hljl-t'>
+</span><span class='hljl-nf'>mkpath</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;images&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># output folder for the .vtu files</span>
+</pre> <pre class=julia-error >
+ERROR: The following 1 package failed to precompile:
+
+Gridap 
+Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &quot;/home/runner/.julia/compiled/v1.13/Gridap/jl_ukUsr8&quot; &#40;ProcessExited&#40;1&#41;&#41;.
+
 </pre> <pre class='hljl'>
 <span class='hljl-cs'>#plot_s = false #true</span><span class='hljl-t'>
 </span><span class='hljl-n'>plot_s</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-kc'>true</span><span class='hljl-t'>
 </span><span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>plot_s</span><span class='hljl-t'>
     </span><span class='hljl-cs'>#using Pkg; Pkg.activate(&quot;./gridap_makie&quot;)</span><span class='hljl-t'>
     </span><span class='hljl-cs'>#Pkg.add(Pkg.PackageSpec(;name=&quot;Makie&quot;, version=&quot;0.12&quot;))</span><span class='hljl-t'>
-    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Makie</span><span class='hljl-t'>
-    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>GridapMakie</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>GLMakie</span><span class='hljl-t'> </span><span class='hljl-cs'>#Para graficar </span><span class='hljl-t'>
-    </span><span class='hljl-n'>GLMakie</span><span class='hljl-oB'>.</span><span class='hljl-nf'>activate!</span><span class='hljl-p'>(</span><span class='hljl-n'>inline</span><span class='hljl-oB'>=</span><span class='hljl-kc'>true</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># For windows on the notebook itself. Comment out if you want the as pop-out plots.</span><span class='hljl-t'>
+    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>GridapMakie</span><span class='hljl-t'>
+    </span><span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-nf'>get</span><span class='hljl-p'>(</span><span class='hljl-n'>ENV</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;CI&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;false&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;true&quot;</span><span class='hljl-t'>
+        </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>CairoMakie</span><span class='hljl-t'> </span><span class='hljl-cs'># the web page is built on a server without a display</span><span class='hljl-t'>
+    </span><span class='hljl-k'>else</span><span class='hljl-t'>
+        </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>GLMakie</span><span class='hljl-t'>
+        </span><span class='hljl-n'>GLMakie</span><span class='hljl-oB'>.</span><span class='hljl-nf'>activate!</span><span class='hljl-p'>(</span><span class='hljl-n'>inline</span><span class='hljl-oB'>=</span><span class='hljl-kc'>true</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># For windows on the notebook itself. Comment out if you want the as pop-out plots.</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
-</pre> <pre class=julia-error >
-ERROR: ArgumentError: Package Makie not found in current path.
-- Run &#96;import Pkg; Pkg.add&#40;&quot;Makie&quot;&#41;&#96; to install the Makie package.
 </pre> <p>We will use meshes built with the <code>gmsh</code> library, through the script <code>mesh_generator.jl</code>. Note that in the script, the three boundaries are named: the external &#40;rectangular&#41; one as <code>&quot;ext&quot;</code> and the internal ones as <code>&quot;inner_circle&quot;</code> and <code>&quot;inner_square&quot;</code>. Based on the script and following the <code>gmsh</code> tutorial, you can build other meshes as well. Other libraries can also be used to build meshes. These are imported into the <strong>Gridap</strong> infrastructure, and with them the triangulation to be used is constructed.</p> <pre class='hljl'>
 <span class='hljl-n'>create_grid</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-kc'>false</span><span class='hljl-t'>
 
@@ -28,7 +36,8 @@ ERROR: ArgumentError: Package Makie not found in current path.
 </pre> <pre class='hljl'>
 <span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>create_grid</span><span class='hljl-t'>
 
-</span><span class='hljl-nf'>include</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;mesh_generator.jl&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+</span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>GridapGmsh</span><span class='hljl-oB'>:</span><span class='hljl-t'> </span><span class='hljl-n'>gmsh</span><span class='hljl-t'>
+</span><span class='hljl-nf'>include</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;mesh_generator.jl&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># from the Lab 7 folder</span><span class='hljl-t'>
 </span><span class='hljl-n'>grid_type</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;rectangle_hole_square&quot;</span><span class='hljl-t'>
 
 </span><span class='hljl-cs'>#Resoluciones:</span><span class='hljl-t'>
@@ -75,18 +84,21 @@ ERROR: ArgumentError: Package Makie not found in current path.
     </span><span class='hljl-n'>model</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>GmshDiscreteModel</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;models/rectangle_hole_square_coarse.msh&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
 </pre> <pre class=julia-error >
-ERROR: Msh file not found: models/rectangle_hole_square_coarse.msh
+ERROR: UndefVarError: &#96;GmshDiscreteModel&#96; not defined in &#96;Main&#96;
+Suggestion: check for spelling errors or missing imports.
 </pre> <pre class='hljl'>
 <span class='hljl-n'>Ω</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Triangulation</span><span class='hljl-p'>(</span><span class='hljl-n'>model</span><span class='hljl-p'>)</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;model&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;Triangulation&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
+Hint: a global variable of this name also exists in DelaunayTriangulation.
 </pre> <pre class='hljl'>
 <span class='hljl-n'>degree</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
 </span><span class='hljl-n'>dΩ</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Measure</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-n'>degree</span><span class='hljl-p'>)</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;Ω&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;Measure&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
+Hint: a global variable of this name also exists in Measures.
 </pre> <pre class='hljl'>
 <span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>plot_s</span><span class='hljl-t'>
     </span><span class='hljl-n'>fig</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>ax</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>plot</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>)</span><span class='hljl-t'>
@@ -97,8 +109,14 @@ Suggestion: check for spelling errors or missing imports.
 </span><span class='hljl-k'>end</span><span class='hljl-t'>
 </span><span class='hljl-nf'>display</span><span class='hljl-p'>(</span><span class='hljl-n'>fig</span><span class='hljl-p'>)</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;Ω&#96; not defined in &#96;Main&#96;
-Suggestion: check for spelling errors or missing imports.
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main&#96;
+Hint: It looks like two or more modules export different bindings with this name, resulting in ambiguity. Try explicitly importing it from a particular module, or qualifying the name with the module it should come from.
+Hint: a global variable of this name also exists in RecipesBase.
+    - Also exported by Plots.
+Hint: a global variable of this name also exists in Makie.
+    - Also exported by CairoMakie.
+Hint: a global variable of this name also exists in GR.jlgr.
+    - Also exported by GR.
 </pre> <p>We can also plot the different boundaries:</p> <pre class='hljl'>
 <span class='hljl-n'>boundary_tags</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;inner_circle&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;inner_square&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;ext&quot;</span><span class='hljl-p'>]</span><span class='hljl-t'>
 
@@ -113,7 +131,7 @@ Suggestion: check for spelling errors or missing imports.
 </span><span class='hljl-k'>end</span><span class='hljl-t'>
 </span><span class='hljl-nf'>display</span><span class='hljl-p'>(</span><span class='hljl-n'>fig</span><span class='hljl-p'>)</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;model&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;BoundaryTriangulation&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <p>We are going to choose two simple problems to calculate the capacitance matrix of a set of conductors. We will take the conductors as the two bodies: the circle and the square, and we will set constant potential conditions. The external boundary will be considered as <em>infinity</em> and we will always set the potential to zero there.</p> <pre class='hljl'>
 <span class='hljl-n'>capacity_cs</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-kc'>false</span><span class='hljl-t'> </span><span class='hljl-cs'># potencial 1 en el círculo y potencial 0 en el cuadrado.</span><span class='hljl-t'>
@@ -131,7 +149,7 @@ true
 </span><span class='hljl-n'>V</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>TestFESpace</span><span class='hljl-p'>(</span><span class='hljl-n'>model</span><span class='hljl-p'>,</span><span class='hljl-n'>reffe</span><span class='hljl-p'>;</span><span class='hljl-n'>conformity</span><span class='hljl-oB'>=:</span><span class='hljl-n'>H1</span><span class='hljl-p'>,</span><span class='hljl-n'>dirichlet_tags</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>dirichlet_tags</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#V = TestFESpace(model,reffe;conformity=:L2,dirichlet_tags = dirichlet_tags) #no funciona la inversión.</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;model&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;ReferenceFE&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <p>We now assign the boundary values:</p> <pre class='hljl'>
 <span class='hljl-cs'># internal Dirichlet boundary condition</span><span class='hljl-t'>
@@ -142,7 +160,7 @@ Suggestion: check for spelling errors or missing imports.
     </span><span class='hljl-n'>U</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>TrialFESpace</span><span class='hljl-p'>(</span><span class='hljl-n'>V</span><span class='hljl-p'>,[</span><span class='hljl-nfB'>0.0</span><span class='hljl-t'> </span><span class='hljl-n'>g</span><span class='hljl-t'> </span><span class='hljl-nfB'>0.0</span><span class='hljl-p'>])</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;V&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;TrialFESpace&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <p>Next we define the weak problem in abstract form:</p> <pre class='hljl'>
 <span class='hljl-nf'>f</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>0</span><span class='hljl-t'> </span><span class='hljl-cs'># in this case we are taking the source to vanish, but in principle we could put a charge distribution inside.</span><span class='hljl-t'>
@@ -155,19 +173,20 @@ b &#40;generic function with 1 method&#41;
 </pre> <p>From this point on the package <strong>Gridap.jl</strong> generates a system of the form: <span class=math >$Ax=b$</span> and solves it for <span class=math >$u$</span> in the finite element version given. It first computes the matrices:</p> <pre class='hljl'>
 <span class='hljl-n'>op</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>AffineFEOperator</span><span class='hljl-p'>(</span><span class='hljl-n'>a</span><span class='hljl-p'>,</span><span class='hljl-n'>b</span><span class='hljl-p'>,</span><span class='hljl-n'>U</span><span class='hljl-p'>,</span><span class='hljl-n'>V</span><span class='hljl-p'>)</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;U&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;AffineFEOperator&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <p>Then it solves with some of the possible known strategies. Here we give two of them, the first is just an L-U decomposition &#40;Lower triangular Unitary&#41;. The second it the <code>/</code> operator of Julia, which in general would use the most powerful method for the case.</p> <pre class='hljl'>
 <span class='hljl-n'>ls</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>LUSolver</span><span class='hljl-p'>()</span><span class='hljl-t'>
 </span><span class='hljl-n'>lb</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>BackslashSolver</span><span class='hljl-p'>()</span><span class='hljl-t'> </span><span class='hljl-cs'># x = A \ b</span><span class='hljl-t'>
 </span><span class='hljl-n'>solver</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>LinearFESolver</span><span class='hljl-p'>(</span><span class='hljl-n'>lb</span><span class='hljl-p'>)</span>
-</pre> <pre class=output >
-LinearFESolver&#40;&#41;
+</pre> <pre class=julia-error >
+ERROR: UndefVarError: &#96;LUSolver&#96; not defined in &#96;Main&#96;
+Suggestion: check for spelling errors or missing imports.
 </pre> <p>And we solve it. We call the solution <span class=math >$u_h$</span>.</p> <pre class='hljl'>
 <span class='hljl-n'>uh</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>solve</span><span class='hljl-p'>(</span><span class='hljl-n'>solver</span><span class='hljl-p'>,</span><span class='hljl-n'>op</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-cs'>#uh = solve(op)</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;op&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;solver&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <p>Now we can plot the found approximation and also save it in a format that can be given to Paraview or VisIt for ploting and processing.</p> <pre class='hljl'>
 <span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>plot_s</span><span class='hljl-t'> 
@@ -177,26 +196,32 @@ Suggestion: check for spelling errors or missing imports.
     </span><span class='hljl-n'>fig</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;Ω&#96; not defined in &#96;Main&#96;
-Suggestion: check for spelling errors or missing imports.
+ERROR: UndefVarError: &#96;plot&#96; not defined in &#96;Main&#96;
+Hint: It looks like two or more modules export different bindings with this name, resulting in ambiguity. Try explicitly importing it from a particular module, or qualifying the name with the module it should come from.
+Hint: a global variable of this name also exists in RecipesBase.
+    - Also exported by Plots.
+Hint: a global variable of this name also exists in Makie.
+    - Also exported by CairoMakie.
+Hint: a global variable of this name also exists in GR.jlgr.
+    - Also exported by GR.
 </pre> <pre class='hljl'>
 <span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>capacity_cs</span><span class='hljl-t'>
     </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/solucion_cs_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;uh_cs_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>uh</span><span class='hljl-p'>])</span><span class='hljl-t'>
     </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/grad_cs_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;grad_uh_cs_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>∇</span><span class='hljl-p'>(</span><span class='hljl-n'>uh</span><span class='hljl-p'>)])</span><span class='hljl-t'>
 </span><span class='hljl-k'>elseif</span><span class='hljl-t'> </span><span class='hljl-n'>capacity_sc</span><span class='hljl-t'>
     </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/solucion_sc_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;uh_sc_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-n'>uh</span><span class='hljl-p'>])</span><span class='hljl-t'>
-    </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/grad_cs_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;grad_uh_cs_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>∇</span><span class='hljl-p'>(</span><span class='hljl-n'>uh</span><span class='hljl-p'>)])</span><span class='hljl-t'>
+    </span><span class='hljl-nf'>writevtk</span><span class='hljl-p'>(</span><span class='hljl-n'>Ω</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;images/grad_sc_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-p'>,</span><span class='hljl-n'>cellfields</span><span class='hljl-oB'>=</span><span class='hljl-p'>[</span><span class='hljl-s'>&quot;grad_uh_sc_</span><span class='hljl-si'>$res</span><span class='hljl-s'>&quot;</span><span class='hljl-t'> </span><span class='hljl-oB'>=&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>∇</span><span class='hljl-p'>(</span><span class='hljl-n'>uh</span><span class='hljl-p'>)])</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
 </pre> <pre class=julia-error >
 ERROR: UndefVarError: &#96;uh&#96; not defined in &#96;Main&#96;
-Suggestion: check for spelling errors or missing imports.
+Suggestion: add an appropriate import or assignment. This global was declared but not assigned.
 </pre> <p>Once we obtain the approximations we can compute some physical quantities of interest. Like, for instance, the charges on each of the conductors. Here we compute the charge in the exterior and interior. Note the sign change for the interior, this is due to the fact that the package takes alwais the normal pointing to the exterior of the mesh. </p> <p>Recall the charge is defined as: </p> <p>\begin&#123;equation&#125; Q<em>i &#61; \int</em>&#123;\partial \Omega<em>i&#125; \sigma dS &#61; \frac&#123;1&#125;&#123;4\pi&#125;\int</em>&#123;\partial \Omega_i&#125; E \cdot \; dS \end&#123;equation&#125;</p> <p>While the <strong>capacity matrix</strong> as: </p> <p>\begin&#123;equation&#125; Q<em>i &#61; C</em>&#123;ij&#125;V^j \end&#123;equation&#125;</p> <pre class='hljl'>
 <span class='hljl-n'>Γ_ext</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>BoundaryTriangulation</span><span class='hljl-p'>(</span><span class='hljl-n'>model</span><span class='hljl-p'>,</span><span class='hljl-n'>tags</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;ext&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-n'>dΓ_ext</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Measure</span><span class='hljl-p'>(</span><span class='hljl-n'>Γ_ext</span><span class='hljl-p'>,</span><span class='hljl-n'>degree</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-n'>nb_ext</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>get_normal_vector</span><span class='hljl-p'>(</span><span class='hljl-n'>Γ_ext</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># this is the normal to the boundary.</span><span class='hljl-t'>
 </span><span class='hljl-n'>Q_ext</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-nf'>sum</span><span class='hljl-p'>(</span><span class='hljl-nf'>∫</span><span class='hljl-p'>((</span><span class='hljl-n'>nb_ext</span><span class='hljl-t'> </span><span class='hljl-oB'>⋅</span><span class='hljl-t'> </span><span class='hljl-nf'>∇</span><span class='hljl-p'>(</span><span class='hljl-n'>uh</span><span class='hljl-p'>)))</span><span class='hljl-oB'>*</span><span class='hljl-n'>dΓ_ext</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-ni'>4</span><span class='hljl-oB'>/</span><span class='hljl-n'>π</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;model&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;BoundaryTriangulation&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <pre class='hljl'>
 <span class='hljl-n'>Γ_square</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>BoundaryTriangulation</span><span class='hljl-p'>(</span><span class='hljl-n'>model</span><span class='hljl-p'>,</span><span class='hljl-n'>tags</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;inner_square&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
@@ -204,7 +229,7 @@ Suggestion: check for spelling errors or missing imports.
 </span><span class='hljl-n'>nb_square</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>get_normal_vector</span><span class='hljl-p'>(</span><span class='hljl-n'>Γ_square</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-n'>Q_square</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sum</span><span class='hljl-p'>(</span><span class='hljl-nf'>∫</span><span class='hljl-p'>((</span><span class='hljl-n'>nb_square</span><span class='hljl-t'> </span><span class='hljl-oB'>⋅</span><span class='hljl-t'> </span><span class='hljl-nf'>∇</span><span class='hljl-p'>(</span><span class='hljl-n'>uh</span><span class='hljl-p'>)))</span><span class='hljl-oB'>*</span><span class='hljl-n'>dΓ_square</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-ni'>4</span><span class='hljl-oB'>/</span><span class='hljl-n'>π</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;model&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;BoundaryTriangulation&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <pre class='hljl'>
 <span class='hljl-n'>Γ_circle</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>BoundaryTriangulation</span><span class='hljl-p'>(</span><span class='hljl-n'>model</span><span class='hljl-p'>,</span><span class='hljl-n'>tags</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;inner_circle&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
@@ -212,7 +237,7 @@ Suggestion: check for spelling errors or missing imports.
 </span><span class='hljl-n'>nb_circle</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>get_normal_vector</span><span class='hljl-p'>(</span><span class='hljl-n'>Γ_circle</span><span class='hljl-p'>)</span><span class='hljl-t'>
 </span><span class='hljl-n'>Q_circle</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>sum</span><span class='hljl-p'>(</span><span class='hljl-nf'>∫</span><span class='hljl-p'>((</span><span class='hljl-n'>nb_circle</span><span class='hljl-t'> </span><span class='hljl-oB'>⋅</span><span class='hljl-t'> </span><span class='hljl-nf'>∇</span><span class='hljl-p'>(</span><span class='hljl-n'>uh</span><span class='hljl-p'>)))</span><span class='hljl-oB'>*</span><span class='hljl-n'>dΓ_circle</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-ni'>4</span><span class='hljl-oB'>/</span><span class='hljl-n'>π</span>
 </pre> <pre class=julia-error >
-ERROR: UndefVarError: &#96;model&#96; not defined in &#96;Main&#96;
+ERROR: UndefVarError: &#96;BoundaryTriangulation&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <pre class='hljl'>
 <span class='hljl-n'>Q_ext</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-n'>Q_circle</span><span class='hljl-t'> </span><span class='hljl-oB'>-</span><span class='hljl-t'> </span><span class='hljl-n'>Q_square</span><span class='hljl-t'> </span><span class='hljl-cs'># this number should vanish if there are no sources (charges) present.</span>
@@ -221,4 +246,4 @@ ERROR: UndefVarError: &#96;Q_ext&#96; not defined in &#96;Main&#96;
 Suggestion: check for spelling errors or missing imports.
 </pre> <p>We show an image with the program VisIt:</p> <p><img src="images/visit0004.png" alt="Una imagen con visIt" /></p> <pre class='hljl'>
 
-</pre> <footer> <p> Published from <a href=Poisson_example_cap.ipynb >Poisson_example_cap.ipynb</a> using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.12 on 2025-06-18. </p> </footer> </div>
+</pre> <footer> <p> Published from <a href=Poisson_example_cap.ipynb >Poisson_example_cap.ipynb</a> using <a href="http://github.com/JunoLab/Weave.jl">Weave.jl</a> v0.10.12 on 2026-10-18. </p> </footer> </div>

@@ -1,4 +1,4 @@
-<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/bibliography.css"> <link rel=icon  href="/PDE/assets/favicon.png"> <title>Auxiliary functions</title> <div id=layout > <div id=menu > <ul> <li><a style="font-size:larger;" href="/PDE/">Home</a> <li><a style="font-size:larger;" href="/PDE/schedule/">Schedule</a> <li><a style="font-size:larger;" href="/PDE/homework/">Homework</a> <li><a style="font-size:larger;" href="/PDE/labs/">Labs</a> <li><a style="font-size:larger;" href="/PDE/notes/">Notes</a> <li><a style="font-size:larger;" href="/PDE/bibliography/">Bibliography</a> </ul> </div> <div id=main > <div class=franklin-content > <h1 id=auxiliary_functions ><a href="#auxiliary_functions" class=header-anchor >Auxiliary functions</a></h1> <ul> <li><p><a href=shocks_utils.jl >Click here to download this file</a></p> </ul> <pre><code class="julia hljs"><span class=hljs-meta >@inline</span> <span class=hljs-keyword >function</span> mysign_zero(a)
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/PDE/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/PDE/css/franklin.css"> <link rel=stylesheet  href="/PDE/css/tufte.css"> <link rel=stylesheet  href="/PDE/css/latex.css"> <link rel=stylesheet  href="/PDE/css/adjust.css"> <link rel=stylesheet  href="/PDE/css/bibliography.css"> <link rel=icon  href="/PDE/assets/favicon.png"> <title>Auxiliary functions</title> <div id=layout > <div id=menu > <ul> <li><a style="font-size:larger;" href="/PDE/">Home</a> <li><a style="font-size:larger;" href="/PDE/schedule/">Schedule</a> <li><a style="font-size:larger;" href="/PDE/homework/">Homework</a> <li><a style="font-size:larger;" href="/PDE/labs/">Labs</a> <li><a style="font-size:larger;" href="/PDE/notes/">Notes</a> <li><a style="font-size:larger;" href="/PDE/bibliography/">Bibliography</a> </ul> </div> <div id=main > <div class=franklin-content > <h1 id=auxiliary_functions ><a href="#auxiliary_functions" class=header-anchor >Auxiliary functions</a></h1> <ul> <li><p><a href=shocks_tools.jl >Click here to download this file</a></p> </ul> <pre><code class="julia hljs"><span class=hljs-meta >@inline</span> <span class=hljs-keyword >function</span> mysign_zero(a)
     <span class=hljs-keyword >return</span> (<span class=hljs-number >1.0</span>.*(a .&gt; <span class=hljs-number >0.0</span>) + (-<span class=hljs-number >1.0</span>).* (a .&lt; <span class=hljs-number >0.0</span>))
 <span class=hljs-keyword >end</span>
 
@@ -160,6 +160,11 @@
 
     <span class=hljs-comment >#nota: f minuscula o u se usa para hablar de campos, F mayúscula para hablar de Flujos.</span>
     
+    <span class=hljs-comment ># A single splitting speed for the whole grid (global Lax-Friedrichs splitting).</span>
+    <span class=hljs-comment ># With a speed computed cell by cell, the two cells sharing an interface would</span>
+    <span class=hljs-comment ># split its flux differently and the scheme would not be conservative.</span>
+    S_MAX = maximum(Speed_max(view(fields, i, :), par_eq) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:N)
+
     <span class=hljs-keyword >for</span> idx <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:N
         <span class=hljs-comment >#first we defined shifted indices</span>
         idxm3 = mod(((idx-<span class=hljs-number >3</span>) - <span class=hljs-number >1</span>),N) + <span class=hljs-number >1</span>
@@ -178,9 +183,6 @@
         up2 = <span class=hljs-meta >@view</span> fields[idxp2,:]
         up3 = <span class=hljs-meta >@view</span> fields[idxp3,:]
         
-        S_MAX = max(Speed_max(up3, par_eq), Speed_max(um3, par_eq), 
-            Speed_max(up2, par_eq), Speed_max(um2, par_eq), Speed_max(up1, par_eq), 
-            Speed_max(um1, par_eq), Speed_max(u, par_eq)) <span class=hljs-comment >#maximum speed</span>
         
         Fx!(F_Pm3, um3, par_eq)
         Fx!(F_Pm2, um2, par_eq)
@@ -311,6 +313,11 @@
     
     <span class=hljs-comment >#nota: f minuscula o u se usa para hablar de campos, F mayúscula para hablar de Flujos.</span>
     
+    <span class=hljs-comment ># A single splitting speed for the whole grid (global Lax-Friedrichs splitting).</span>
+    <span class=hljs-comment ># With a speed computed cell by cell, the two cells sharing an interface would</span>
+    <span class=hljs-comment ># split its flux differently and the scheme would not be conservative.</span>
+    S_MAX = maximum(Speed_max(view(fields, i, :), par_eq) <span class=hljs-keyword >for</span> i <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:N)
+
     <span class=hljs-keyword >for</span> idx <span class=hljs-keyword >in</span> <span class=hljs-number >1</span>:N
         <span class=hljs-comment >#first we defined shifted indices. The mod function make the indices periodic.</span>
         <span class=hljs-comment >#Primero definimos los indices desplazados. La función mod hace que los índices sean periódicos.</span>
@@ -332,11 +339,6 @@
         up2 = <span class=hljs-meta >@view</span> fields[idxp2,:]
         up3 = <span class=hljs-meta >@view</span> fields[idxp3,:]
         
-        <span class=hljs-comment >#We calculate the maximum propagation speed inside the stencil</span>
-        <span class=hljs-comment >#Calculamos la velocidad de propagación máxima dentro del stencil</span>
-        S_MAX = max(Speed_max(up3, par_eq), Speed_max(um3, par_eq), 
-            Speed_max(up2, par_eq), Speed_max(um2, par_eq), Speed_max(up1, par_eq), 
-            Speed_max(um1, par_eq), Speed_max(u, par_eq)) <span class=hljs-comment >#maximum speed</span>
         
         <span class=hljs-comment >#We calculate the fluxes on each of the points.</span>
         <span class=hljs-comment >#Calculamos los flujos en los puntos</span>
@@ -380,4 +382,4 @@
         <span class=hljs-comment >#Calculamos la derivada temporal</span>
         @. dfields[idx, :] = -h*(H_p - H_m)
     <span class=hljs-keyword >end</span>
-<span class=hljs-keyword >end</span></code></pre> <div class=back-to-top > <span><a href="#" title="Back to Top"><i class="fa fa-chevron-circle-up"></i></a></span> </div> <div class=page-foot > Last modified: June 18, 2025. <br> Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> <script src="/PDE/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
+<span class=hljs-keyword >end</span></code></pre> <div class=back-to-top > <span><a href="#" title="Back to Top"><i class="fa fa-chevron-circle-up"></i></a></span> </div> <div class=page-foot > Last modified: October 18, 2026. <br> Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> <script src="/PDE/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
