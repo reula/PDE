@@ -1,5 +1,5 @@
 +++
-title = "Parabolic equations"
+title = "Lab 5 Parabolic equations"
 weave = true
 +++
 

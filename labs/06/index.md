@@ -1,5 +1,5 @@
 +++
-title = "Conservative methods"
+title = "Lab 6 Conservative schemes"
 weave = true
 +++
 
@@ -26,7 +26,7 @@ Rename the file as:
 
 **1)** In the directory, you will find a notebook with different shock capturing methods. 
 One of second order *KT2* and two of fifth order, *MP5* and WENOZ. 
-Both evolve the advection equation, ($u_t = c u_x$), as well as the Burgers equation, $u_t = \frac{1}{2}(u^2)_x$. They do so in a circle (periodic boundary conditions) of length L.
+All three evolve the advection equation, $u_t + c u_x = 0$, as well as the Burgers equation, $u_t + \frac{1}{2}(u^2)_x = 0$. They do so in a circle (periodic boundary conditions) of length L.
 
 Evolve both (with WENOZ): 
 
@@ -59,6 +59,6 @@ With a recommended value of $\gamma = 1.3$. You must take an initial condition w
 \begin{align}
 \dot{S^x} &= -\partial_x(T^{xx}) = \partial_x(-e + B_x^2) \\
 \dot{S^y} &= -\partial_x(T^{xy}) = \partial_x(B_xB_y) \\
-\dot{B^y} &= \partial_x(v^x B^y + v^y B^x) 
+\dot{B^y} &= \partial_x(v^y B^x - v^x B^y) 
 \end{align}
-Where, $e = \frac{1}{2}(E_z^2 + B_x^2 + B_y^2) = \frac{1}{2}(\frac{S_x^2+S_y^2}{B_x^2+B_y^2}+B_x^2+B_y^2)$ and $v^i = \frac{S^i}{B^2}$. For this equation $B^x$ is a constant *not equal to zero*. Additionally, $S^i$ must be perpendicular $\sum_i S^i B^i = 0$ with $\sum_i (v^i) < 1$.
+Where, $e = \frac{1}{2}(E_z^2 + B_x^2 + B_y^2) = \frac{1}{2}(\frac{S_x^2+S_y^2}{B_x^2+B_y^2}+B_x^2+B_y^2)$ and $v^i = \frac{S^i}{B^2}$. For this equation $B^x$ is a constant *not equal to zero*. Additionally, $S^i$ must be perpendicular $\sum_i S^i B^i = 0$ with $\sum_i (v^i)^2 < 1$.

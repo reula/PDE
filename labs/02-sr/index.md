@@ -1,5 +1,5 @@
 +++
-title = "Lab 1 Ordinary Differential Equations"
+title = "Stability regions"
 weave = true
 +++
 

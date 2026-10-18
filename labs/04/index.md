@@ -1,5 +1,5 @@
 +++
-title = "Boundary conditions using SAT"
+title = "Lab 4 Boundary conditions using SAT"
 weave = true
 +++
 

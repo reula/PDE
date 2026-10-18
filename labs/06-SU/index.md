@@ -6,7 +6,7 @@ weave = false
 
 # Auxiliary functions
 
-- [Click here to download this file](shocks_utils.jl)
+- [Click here to download this file](shocks_tools.jl)
 
 ```julia
 @inline function mysign_zero(a)
@@ -171,6 +171,11 @@ function mp5!(dfields, fields, par, t) # j is the grid position
 
     #nota: f minuscula o u se usa para hablar de campos, F mayúscula para hablar de Flujos.
     
+    # A single splitting speed for the whole grid (global Lax-Friedrichs splitting).
+    # With a speed computed cell by cell, the two cells sharing an interface would
+    # split its flux differently and the scheme would not be conservative.
+    S_MAX = maximum(Speed_max(view(fields, i, :), par_eq) for i in 1:N)
+
     for idx in 1:N
         #first we defined shifted indices
         idxm3 = mod(((idx-3) - 1),N) + 1
@@ -189,9 +194,6 @@ function mp5!(dfields, fields, par, t) # j is the grid position
         up2 = @view fields[idxp2,:]
         up3 = @view fields[idxp3,:]
         
-        S_MAX = max(Speed_max(up3, par_eq), Speed_max(um3, par_eq), 
-            Speed_max(up2, par_eq), Speed_max(um2, par_eq), Speed_max(up1, par_eq), 
-            Speed_max(um1, par_eq), Speed_max(u, par_eq)) #maximum speed
         
         Fx!(F_Pm3, um3, par_eq)
         Fx!(F_Pm2, um2, par_eq)
@@ -322,6 +324,11 @@ function wenoz!(dfields, fields, par, t) # j is the grid position
     
     #nota: f minuscula o u se usa para hablar de campos, F mayúscula para hablar de Flujos.
     
+    # A single splitting speed for the whole grid (global Lax-Friedrichs splitting).
+    # With a speed computed cell by cell, the two cells sharing an interface would
+    # split its flux differently and the scheme would not be conservative.
+    S_MAX = maximum(Speed_max(view(fields, i, :), par_eq) for i in 1:N)
+
     for idx in 1:N
         #first we defined shifted indices. The mod function make the indices periodic.
         #Primero definimos los indices desplazados. La función mod hace que los índices sean periódicos.
@@ -343,11 +350,6 @@ function wenoz!(dfields, fields, par, t) # j is the grid position
         up2 = @view fields[idxp2,:]
         up3 = @view fields[idxp3,:]
         
-        #We calculate the maximum propagation speed inside the stencil
-        #Calculamos la velocidad de propagación máxima dentro del stencil
-        S_MAX = max(Speed_max(up3, par_eq), Speed_max(um3, par_eq), 
-            Speed_max(up2, par_eq), Speed_max(um2, par_eq), Speed_max(up1, par_eq), 
-            Speed_max(um1, par_eq), Speed_max(u, par_eq)) #maximum speed
         
         #We calculate the fluxes on each of the points.
         #Calculamos los flujos en los puntos
