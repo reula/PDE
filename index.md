@@ -28,12 +28,15 @@ The course is organized in units. Each unit pairs an analytical part with a nume
    - [Homework 1: Linear Algebra](/homework/01/) · [Homework 2: Topology](/homework/02/)
    - [Lab 1: The logistic map](/labs/01/)
 2. **Functional analysis and Fourier theory**
+   - Notes (PDF): [Normed vector space completeness](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Banach/completitud.pdf) · [Duality and basic facts about operators](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Duality/duality.pdf) · [Sobolev inequalities](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Continuos_Sobolev.pdf) · [Sobolev compact embeddings](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Compact_Embedings.pdf)
    - [Homework 3: Functional Analysis](/homework/03/) · [Homework 4: Fourier Analysis](/homework/04/)
 3. **Ordinary differential equations: analytical and numerical studies**
    - Notes: [Ordinary differential equations](/notes/lecture05/) _(in Spanish)_
+   - Notes (PDF): [ODE](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODES.pdf) · [ODE fundamental theorem using Euler's method](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_Fundamental_Euler.pdf) · [ODE: introduction to numerics](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODEs_Numerico_intro.pdf) · [ODE: one-step methods](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_one_step.pdf)
    - [Homework 5: Ordinary Differential Equations](/homework/05/)
    - [Lab 2: Ordinary differential equations](/labs/02/) · [Stability regions](/labs/02-sr/) _(supplementary)_
 4. **Evolution equations: the periodic case**
+   - Notes (PDF): [Energy estimates](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Hiperbolicity/Energy-Estimates.pdf) · [Weak existence for hyperbolic systems](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Hiperbolicity/Existencia_debil_SH.pdf) · [Finite differences](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Finite_Diferences/Finite_Differences.pdf) · [Discrete Sobolev inequalities](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Discrete_Sobolev.pdf) · [Stability, consistency and convergence](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Stab-Cons-Conv/Stability_Consistency_Convergence.pdf)
    - [Homework 6: Hyperbolic Equations](/homework/06/)
    - [Lab 3: Hyperbolic equations](/labs/03/) · [The wave equation](/labs/03-we/) _(supplementary)_
 5. **Evolution equations: boundary conditions**
@@ -47,8 +50,11 @@ The course is organized in units. Each unit pairs an analytical part with a nume
    - [Homework 8: Shocks](/homework/08/)
    - [Lab 6: Conservative schemes](/labs/06/) · [Conservative schemes](/labs/06-CS/) · [Auxiliary functions](/labs/06-SU/) _(supplementary)_
 8. **Stationary equations: elliptic problems and finite elements**
+   - Notes (PDF): [Elliptic theory](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Ellipticity/Eliptic_theory.pdf) · [Notes on finite elements](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/FiniteElements/Finite_Elements_English.pdf) · [Notas sobre elementos finitos](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/FiniteElements/intro_FEL.pdf) _(in Spanish)_ · [Saddle point systems](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Saddle-Points/Saddle_points.pdf) · [Conjugate methods](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ConjugateGradient/CG_reula.pdf)
    - [Homework 10: Elliptic Equations](/homework/10/)
    - [Lab 7: Finite elements](/labs/07/) · [Poisson example](/labs/07-PE/) · [Calculating capacitances](/labs/07-CAP/) _(supplementary)_
    - [Lab 9: Eigenvalue problems](/labs/09-Eigen/)
+9. **Further topics: hyperbolic systems and constraints**
+   - Notes (PDF): [Geometrical optics for first-order hyperbolic systems](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Geometrical_optics/geometrical_optics.pdf) · [Constraint dissipation](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Divergence_cleaning/Constraint_Dissipation.pdf) · [Divergence cleaning](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Divergence_cleaning/divergence_cleaning.pdf)
 
 See also the [bibliography](/bibliography/).
