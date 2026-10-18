@@ -26,7 +26,7 @@ jobs:
     - name: Install Julia
       uses: julia-actions/setup-julia@v2
       with:
-        version: '1' # Latest stable Julia release.
+        version: '1.12' # Manifest.toml is resolved with 1.12; Gridap does not precompile on 1.13
     # Caches the Julia package depot between runs (the PDE2025 environment
     # used to weave the notebooks is large: Gridap, Makie, OrdinaryDiffEq...).
     - uses: julia-actions/cache@v2
