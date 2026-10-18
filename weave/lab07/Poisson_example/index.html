@@ -4,11 +4,46 @@
 </span><span class='hljl-cs'>#import Gmsh: gmsh # NEVER use #using Gmsh</span><span class='hljl-t'>
 </span><span class='hljl-nf'>mkpath</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;images&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># output folder for the .vtu files</span>
 </pre> <pre class=julia-error >
-ERROR: The following 1 package failed to precompile:
+ERROR: The following 1 direct dependency failed to precompile:
 
 Gridap 
-Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &quot;/home/runner/.julia/compiled/v1.13/Gridap/jl_EbNULz&quot; &#40;ProcessExited&#40;1&#41;&#41;.
 
+Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &quot;/home/runner/.julia/compiled/v1.12/Gridap/jl_Haq7zz&quot;.
+ERROR: LoadError: UndefVarError: &#96;Object&#96; not defined in &#96;JSON&#96;
+Suggestion: check for spelling errors or missing imports.
+Stacktrace:
+  &#91;1&#93; getproperty&#40;x::Module, f::Symbol&#41;
+    @ Base ./Base_compiler.jl:47
+  &#91;2&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Io/Json.jl:56
+  &#91;3&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+  &#91;4&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Io/Io.jl:31
+  &#91;5&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+  &#91;6&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Gridap.jl:48
+  &#91;7&#93; include&#40;mod::Module, _path::String&#41;
+    @ Base ./Base.jl:306
+  &#91;8&#93; include_package_for_output&#40;pkg::Base.PkgId, input::String, depot_path::Vector&#123;String&#125;, dl_load_path::Vector&#123;String&#125;, load_path::Vector&#123;String&#125;, concrete_deps::Vector&#123;Pair&#123;Base.PkgId, UInt128&#125;&#125;, source::Nothing&#41;
+    @ Base ./loading.jl:3106
+  &#91;9&#93; top-level scope
+    @ stdin:5
+ &#91;10&#93; eval&#40;m::Module, e::Any&#41;
+    @ Core ./boot.jl:489
+ &#91;11&#93; include_string&#40;mapexpr::typeof&#40;identity&#41;, mod::Module, code::String, filename::String&#41;
+    @ Base ./loading.jl:2952
+ &#91;12&#93; include_string
+    @ ./loading.jl:2962 &#91;inlined&#93;
+ &#91;13&#93; exec_options&#40;opts::Base.JLOptions&#41;
+    @ Base ./client.jl:315
+ &#91;14&#93; _start&#40;&#41;
+    @ Base ./client.jl:550
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Io/Json.jl:56
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Io/Io.jl:1
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Gridap.jl:1
+in expression starting at stdin:
 </pre> <pre class='hljl'>
 <span class='hljl-n'>plot_s</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-kc'>true</span><span class='hljl-t'>
 </span><span class='hljl-k'>if</span><span class='hljl-t'> </span><span class='hljl-n'>plot_s</span><span class='hljl-t'>
@@ -22,12 +57,201 @@ Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &q
     </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>FileIO</span><span class='hljl-t'>
 </span><span class='hljl-k'>end</span>
 </pre> <pre class=julia-error >
-ERROR: LoadError: The following 1 package failed to precompile:
+ERROR: The following 3 direct dependencies failed to precompile:
 
 Gridap 
-Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &quot;/home/runner/.julia/compiled/v1.13/Gridap/jl_ZpqlSv&quot; &#40;ProcessExited&#40;1&#41;&#41;.
 
+Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &quot;/home/runner/.julia/compiled/v1.12/Gridap/jl_48p94D&quot;.
+ERROR: LoadError: UndefVarError: &#96;Object&#96; not defined in &#96;JSON&#96;
+Suggestion: check for spelling errors or missing imports.
+Stacktrace:
+  &#91;1&#93; getproperty&#40;x::Module, f::Symbol&#41;
+    @ Base ./Base_compiler.jl:47
+  &#91;2&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Io/Json.jl:56
+  &#91;3&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+  &#91;4&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Io/Io.jl:31
+  &#91;5&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+  &#91;6&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Gridap.jl:48
+  &#91;7&#93; include&#40;mod::Module, _path::String&#41;
+    @ Base ./Base.jl:306
+  &#91;8&#93; include_package_for_output&#40;pkg::Base.PkgId, input::String, depot_path::Vector&#123;String&#125;, dl_load_path::Vector&#123;String&#125;, load_path::Vector&#123;String&#125;, concrete_deps::Vector&#123;Pair&#123;Base.PkgId, UInt128&#125;&#125;, source::Nothing&#41;
+    @ Base ./loading.jl:3106
+  &#91;9&#93; top-level scope
+    @ stdin:5
+ &#91;10&#93; eval&#40;m::Module, e::Any&#41;
+    @ Core ./boot.jl:489
+ &#91;11&#93; include_string&#40;mapexpr::typeof&#40;identity&#41;, mod::Module, code::String, filename::String&#41;
+    @ Base ./loading.jl:2952
+ &#91;12&#93; include_string
+    @ ./loading.jl:2962 &#91;inlined&#93;
+ &#91;13&#93; exec_options&#40;opts::Base.JLOptions&#41;
+    @ Base ./client.jl:315
+ &#91;14&#93; _start&#40;&#41;
+    @ Base ./client.jl:550
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Io/Json.jl:56
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Io/Io.jl:1
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Gridap.jl:1
+in expression starting at stdin:5
+GLMakie 
+
+Failed to precompile GLMakie &#91;e9467ef8-e4e7-5192-8a1a-b1aee30e663a&#93; to &quot;/home/runner/.julia/compiled/v1.12/GLMakie/jl_Z6HR5I&quot;.
+┌ Warning:     OpenGL/GLFW wasn&#39;t loaded correctly or couldn&#39;t be initialized.
+│     This likely means, you&#39;re on a headless server without having OpenGL support setup correctly.
+│     Have a look at the troubleshooting section in the readme:
+│     https://github.com/MakieOrg/Makie.jl/tree/master/GLMakie#troubleshooting-opengl.
+└ @ GLMakie ~/.julia/packages/GLMakie/r7t5p/src/gl_backend.jl:4
+ERROR: LoadError: InitError: Exception&#91;GLFW.GLFWError&#40;65550, &quot;X11: The DISPLAY environment variable is missing&quot;&#41;, ErrorException&#40;&quot;glfwInit failed&quot;&#41;&#93;
+Stacktrace:
+  &#91;1&#93; __init__&#40;&#41;
+    @ GLFW ~/.julia/packages/GLFW/wA4ue/src/GLFW.jl:69
+  &#91;2&#93; run_module_init&#40;mod::Module, i::Int64&#41;
+    @ Base ./loading.jl:1445
+  &#91;3&#93; register_restored_modules&#40;sv::Core.SimpleVector, pkg::Base.PkgId, path::String&#41;
+    @ Base ./loading.jl:1433
+  &#91;4&#93; _include_from_serialized&#40;pkg::Base.PkgId, path::String, ocachepath::String, depmods::Vector&#123;Any&#125;; register::Bool&#41;
+    @ Base ./loading.jl:1321
+  &#91;5&#93; _include_from_serialized
+    @ ./loading.jl:1276 &#91;inlined&#93;
+  &#91;6&#93; _require_search_from_serialized&#40;pkg::Base.PkgId, sourcepath::String, build_id::UInt128, stalecheck::Bool; reasons::Dict&#123;String, Int64&#125;, DEPOT_PATH::Vector&#123;String&#125;&#41;
+    @ Base ./loading.jl:2182
+  &#91;7&#93; _require_search_from_serialized
+    @ ./loading.jl:2076 &#91;inlined&#93;
+  &#91;8&#93; __require_prelocked&#40;pkg::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2695
+  &#91;9&#93; _require_prelocked&#40;uuidkey::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2560
+ &#91;10&#93; macro expansion
+    @ ./loading.jl:2488 &#91;inlined&#93;
+ &#91;11&#93; macro expansion
+    @ ./lock.jl:376 &#91;inlined&#93;
+ &#91;12&#93; __require&#40;into::Module, mod::Symbol&#41;
+    @ Base ./loading.jl:2453
+ &#91;13&#93; require&#40;into::Module, mod::Symbol&#41;
+    @ Base ./loading.jl:2429
+ &#91;14&#93; top-level scope
+    @ ~/.julia/packages/GLMakie/r7t5p/src/gl_backend.jl:2
+ &#91;15&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+ &#91;16&#93; top-level scope
+    @ ~/.julia/packages/GLMakie/r7t5p/src/GLMakie.jl:89
+ &#91;17&#93; include&#40;mod::Module, _path::String&#41;
+    @ Base ./Base.jl:306
+ &#91;18&#93; include_package_for_output&#40;pkg::Base.PkgId, input::String, depot_path::Vector&#123;String&#125;, dl_load_path::Vector&#123;String&#125;, load_path::Vector&#123;String&#125;, concrete_deps::Vector&#123;Pair&#123;Base.PkgId, UInt128&#125;&#125;, source::Nothing&#41;
+    @ Base ./loading.jl:3106
+ &#91;19&#93; top-level scope
+    @ stdin:5
+ &#91;20&#93; eval&#40;m::Module, e::Any&#41;
+    @ Core ./boot.jl:489
+ &#91;21&#93; include_string&#40;mapexpr::typeof&#40;identity&#41;, mod::Module, code::String, filename::String&#41;
+    @ Base ./loading.jl:2952
+ &#91;22&#93; include_string
+    @ ./loading.jl:2962 &#91;inlined&#93;
+ &#91;23&#93; exec_options&#40;opts::Base.JLOptions&#41;
+    @ Base ./client.jl:315
+ &#91;24&#93; _start&#40;&#41;
+    @ Base ./client.jl:550
+during initialization of module GLFW
+in expression starting at /home/runner/.julia/packages/GLMakie/r7t5p/src/gl_backend.jl:1
+in expression starting at /home/runner/.julia/packages/GLMakie/r7t5p/src/GLMakie.jl:1
+in expression starting at stdin:5
+
+GridapMakie 
+
+Failed to precompile GridapMakie &#91;41f30b06-6382-4b60-a5f7-79d86b35bf5d&#93; to &quot;/home/runner/.julia/compiled/v1.12/GridapMakie/jl_KbhUG9&quot;.
+ERROR: LoadError: UndefVarError: &#96;Object&#96; not defined in &#96;JSON&#96;
+Suggestion: check for spelling errors or missing imports.
+Stacktrace:
+  &#91;1&#93; getproperty&#40;x::Module, f::Symbol&#41;
+    @ Base ./Base_compiler.jl:47
+  &#91;2&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Io/Json.jl:56
+  &#91;3&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+  &#91;4&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Io/Io.jl:31
+  &#91;5&#93; include&#40;mapexpr::Function, mod::Module, _path::String&#41;
+    @ Base ./Base.jl:307
+  &#91;6&#93; top-level scope
+    @ ~/.julia/packages/Gridap/vuv4v/src/Gridap.jl:48
+  &#91;7&#93; include&#40;mod::Module, _path::String&#41;
+    @ Base ./Base.jl:306
+  &#91;8&#93; include_package_for_output&#40;pkg::Base.PkgId, input::String, depot_path::Vector&#123;String&#125;, dl_load_path::Vector&#123;String&#125;, load_path::Vector&#123;String&#125;, concrete_deps::Vector&#123;Pair&#123;Base.PkgId, UInt128&#125;&#125;, source::String&#41;
+    @ Base ./loading.jl:3106
+  &#91;9&#93; top-level scope
+    @ stdin:5
+ &#91;10&#93; eval&#40;m::Module, e::Any&#41;
+    @ Core ./boot.jl:489
+ &#91;11&#93; include_string&#40;mapexpr::typeof&#40;identity&#41;, mod::Module, code::String, filename::String&#41;
+    @ Base ./loading.jl:2952
+ &#91;12&#93; include_string
+    @ ./loading.jl:2962 &#91;inlined&#93;
+ &#91;13&#93; exec_options&#40;opts::Base.JLOptions&#41;
+    @ Base ./client.jl:315
+ &#91;14&#93; _start&#40;&#41;
+    @ Base ./client.jl:550
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Io/Json.jl:56
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Io/Io.jl:1
+in expression starting at /home/runner/.julia/packages/Gridap/vuv4v/src/Gridap.jl:1
+in expression starting at stdin:5
+ERROR: LoadError: Failed to precompile Gridap &#91;56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e&#93; to &quot;/home/runner/.julia/compiled/v1.12/Gridap/jl_crvx3K&quot;.
+Stacktrace:
+  &#91;1&#93; error&#40;s::String&#41;
+    @ Base ./error.jl:44
+  &#91;2&#93; compilecache&#40;pkg::Base.PkgId, path::String, internal_stderr::IO, internal_stdout::IO, keep_loaded_modules::Bool; flags::Cmd, cacheflags::Base.CacheFlags, reasons::Dict&#123;String, Int64&#125;, loadable_exts::Nothing&#41;
+    @ Base ./loading.jl:3393
+  &#91;3&#93; &#40;::Base.var&quot;#__require_prelocked##0#__require_prelocked##1&quot;&#123;Base.PkgId, String, Dict&#123;String, Int64&#125;, Base.RefValue&#123;Bool&#125;&#125;&#41;&#40;&#41;
+    @ Base ./loading.jl:2761
+  &#91;4&#93; mkpidlock&#40;f::Base.var&quot;#__require_prelocked##0#__require_prelocked##1&quot;&#123;Base.PkgId, String, Dict&#123;String, Int64&#125;, Base.RefValue&#123;Bool&#125;&#125;, at::String, pid::Int32; kwopts::@Kwargs&#123;stale_age::Int64, wait::Bool&#125;&#41;
+    @ FileWatching.Pidfile /opt/hostedtoolcache/julia/1.12.7/x64/share/julia/stdlib/v1.12/FileWatching/src/pidfile.jl:96
+  &#91;5&#93; #mkpidlock#7
+    @ /opt/hostedtoolcache/julia/1.12.7/x64/share/julia/stdlib/v1.12/FileWatching/src/pidfile.jl:91 &#91;inlined&#93;
+  &#91;6&#93; trymkpidlock&#40;::Function, ::Vararg&#123;Any&#125;; kwargs::@Kwargs&#123;stale_age::Int64&#125;&#41;
+    @ FileWatching.Pidfile /opt/hostedtoolcache/julia/1.12.7/x64/share/julia/stdlib/v1.12/FileWatching/src/pidfile.jl:117
+  &#91;7&#93; #invokelatest_gr#239
+    @ ./reflection.jl:1297 &#91;inlined&#93;
+  &#91;8&#93; invokelatest_gr
+    @ ./reflection.jl:1289 &#91;inlined&#93;
+  &#91;9&#93; maybe_cachefile_lock&#40;f::Base.var&quot;#__require_prelocked##0#__require_prelocked##1&quot;&#123;Base.PkgId, String, Dict&#123;String, Int64&#125;, Base.RefValue&#123;Bool&#125;&#125;, pkg::Base.PkgId, srcpath::String; stale_age::Int64&#41;
+    @ Base ./loading.jl:3964
+ &#91;10&#93; maybe_cachefile_lock
+    @ ./loading.jl:3961 &#91;inlined&#93;
+ &#91;11&#93; __require_prelocked&#40;pkg::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2735
+ &#91;12&#93; _require_prelocked&#40;uuidkey::Base.PkgId, env::String&#41;
+    @ Base ./loading.jl:2560
+ &#91;13&#93; macro expansion
+    @ ./loading.jl:2488 &#91;inlined&#93;
+ &#91;14&#93; macro expansion
+    @ ./lock.jl:376 &#91;inlined&#93;
+ &#91;15&#93; __require&#40;into::Module, mod::Symbol&#41;
+    @ Base ./loading.jl:2453
+ &#91;16&#93; require&#40;into::Module, mod::Symbol&#41;
+    @ Base ./loading.jl:2429
+ &#91;17&#93; top-level scope
+    @ ~/.julia/packages/GridapMakie/XfuEJ/src/GridapMakie.jl:3
+ &#91;18&#93; include&#40;mod::Module, _path::String&#41;
+    @ Base ./Base.jl:306
+ &#91;19&#93; include_package_for_output&#40;pkg::Base.PkgId, input::String, depot_path::Vector&#123;String&#125;, dl_load_path::Vector&#123;String&#125;, load_path::Vector&#123;String&#125;, concrete_deps::Vector&#123;Pair&#123;Base.PkgId, UInt128&#125;&#125;, source::Nothing&#41;
+    @ Base ./loading.jl:3106
+ &#91;20&#93; top-level scope
+    @ stdin:5
+ &#91;21&#93; eval&#40;m::Module, e::Any&#41;
+    @ Core ./boot.jl:489
+ &#91;22&#93; include_string&#40;mapexpr::typeof&#40;identity&#41;, mod::Module, code::String, filename::String&#41;
+    @ Base ./loading.jl:2952
+ &#91;23&#93; include_string
+    @ ./loading.jl:2962 &#91;inlined&#93;
+ &#91;24&#93; exec_options&#40;opts::Base.JLOptions&#41;
+    @ Base ./client.jl:315
+ &#91;25&#93; _start&#40;&#41;
+    @ Base ./client.jl:550
 in expression starting at /home/runner/.julia/packages/GridapMakie/XfuEJ/src/GridapMakie.jl:1
+in expression starting at stdin:5
 </pre> <p>We will use a mesh previously built with the <code>gmsh</code> library. In the <code>models</code> directory you will find a <em>script</em> with the <code>.geo</code> extension &#40;<code>rectangle_hole.geo</code>&#41;, which was used to build the example. Based on this script, and following the <code>gmsh</code> tutorial, you can build different meshes. Other libraries can also be used to build meshes. These are imported into the <strong>Gridap</strong> infrastructure, and with them the triangulation to be used is constructed. Note that in the script, the two boundaries are named: the external &#40;rectangular&#41; one as <code>&quot;ext&quot;</code> and the internal &#40;circle&#41; one as <code>&quot;int&quot;</code>.</p> <pre class='hljl'>
 <span class='hljl-cs'>#model = GmshDiscreteModel(&quot;models/rectangle_hole_fine.msh&quot;)</span><span class='hljl-t'>
 </span><span class='hljl-n'>model</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>GmshDiscreteModel</span><span class='hljl-p'>(</span><span class='hljl-s'>&quot;models/rectangle_hole_coarse.msh&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
