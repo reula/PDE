@@ -5,7 +5,7 @@ weave = false
 
 # Homework 08
 
-- [Click here to download this notebook](Shocks.ipynb.ipynb)
+- [Click here to download this notebook](Shocks.ipynb)
   
 <!-- - \textinput{homeworks/Shocks.md} -->
 
@@ -17,7 +17,7 @@ $$
     u_t + \frac{1}{2}(u^2)_x = 0,
 $$
 
-a.- Find analytically the time and position of the first singularity, that is the time and position of the appearance of the shock. 
+a.- For smooth initial data $u_0$, find analytically the time and position of the first singularity, that is the time and position of the appearance of the shock. 
 
 b.- With the initial conditions
 $$
@@ -29,7 +29,7 @@ u(x,0) =
     \end{cases}
 $$
 
-1. Find the time \( t \) when the shock first forms.
+1. Find the time $t$ when the shock first forms.
 2. Determine the shock speed using the Rankine-Hugoniot condition.
 3. Sketch the characteristic curves and shock location.
 
@@ -90,7 +90,7 @@ $$
 
 **Exercise 3. Weak Solutions**
 
-Show that any integrable function $u(t,x) = f(t+x)$ is a weak solution (a distributional solution) of 
+Show that any locally integrable function $u(t,x) = f(t+x)$ is a weak solution (a distributional solution) of 
 
 $$
 u_t = u_x
@@ -118,6 +118,7 @@ $$
     (\rho_R, 0, p_R) & \text{if } x > 0.
     \end{cases}
 $$
+where, for an ideal gas, $E = \frac{1}{2}\rho u^2 + \frac{p}{\gamma - 1}$.
 
 a.- Describe the wave structure (shock, rarefaction, contact discontinuity).
 
@@ -125,13 +126,13 @@ b.- State the Rankine-Hugoniot conditions for this system. (*typical structure:*
 
 **Exercise 5. Viscous Shocks (Vanishing Viscosity)**
 
-Study the traveling wave solution (namely a solution that moves without changing its form, that is a solution with in some referential is stationary) to:
+Study the traveling wave solution (namely a solution that moves without changing its form, that is, a solution that is stationary in some reference frame) to:
 $$
     u_t + u u_x = \epsilon u_{xx},
 $$
 with boundary conditions:
 $$
-    u(-\infty) = u_L, \quad u(+\infty) = u_R.
+    u(-\infty) = u_L, \quad u(+\infty) = u_R, \qquad u_L > u_R.
 $$
 
 1. Derive the ODE for the traveling wave profile $U(x - st)$. Hint: the solution involves a $tanh$

@@ -7,7 +7,7 @@ weave = false
 
 - [Homework 1: Linear Algebra](/homework/01/)
 - [Homework 2: Topology](/homework/02/)
-- [Homework 3: Functional Spaces](/homework/03/)
+- [Homework 3: Functional Analysis](/homework/03/)
 - [Homework 4: Fourier Analysis](/homework/04/)
 - [Homework 5: Ordinary Differential Equations](/homework/05/)
 - [Homework 6: Hyperbolic Equations](/homework/06/)

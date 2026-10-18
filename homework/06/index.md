@@ -1,6 +1,6 @@
 +++
 title = "Homework 06 Hyperbolic Equations"
-weave = true
+weave = false
 +++
 
   
@@ -12,22 +12,23 @@ weave = true
 
 ### Student Name:
 
-**Exercise 1. Burger's Equations** 
+**Exercise 1. Burgers' Equation** 
 
-a.- Find an infinite number of conserved quantities for Burger's equations, $u_t = u * u_x$.
+a.- Find an infinite number of conserved quantities for Burgers' equation, $u_t = u\, u_x$.
 
-b.- Let the initial data for Burger's equation be: $u_0(x) = heaviside(x)*heaviside(1-x)$. Draw the characteristic surfaces for that data. 
+b.- Let the initial data for Burgers' equation be: $u_0(x) = \chi_{[0,1]}(x)$ (the characteristic function of $[0,1]$). Draw the characteristic surfaces for that data. 
 
 c.- Use the equation and integration by parts to get an estimate of the form:
 
 $$
-\frac{d \mathcal{E}}{dt} \leq \max{|u_x|} \mathcal{E}
+\frac{d \mathcal{E}}{dt} \leq C \max{|u_x|}\, \mathcal{E}
 $$
 where
 
 $$
 \mathcal{E} := \int [u^2 + u_x^2 + u_{xx}^2]\;dx
 $$
+and $C$ is a constant (find it).
 
 **Exercise 2. Propagation Cones** 
 
@@ -39,7 +40,7 @@ l_2^a \nabla_a \phi_2 &= F_2(\phi_1,\phi_2,\phi_3) \\
 l_3^a \nabla_a \phi_3 &= F_3(\phi_1,\phi_2,\phi_3)
 \end{align*}
 where the three vectors are linearly independent. 
-What that condition on $n_a$ geometrically means? Find the Cones and Propagation Cones. 
+What does that condition on $n_a$ mean geometrically? Find the Cones and Propagation Cones. 
 Understand geometrically both constructions. 
 
 b.- How many cones and co-cones can you construct by multiplying some of the equations by $-1$?
@@ -48,7 +49,7 @@ c.- Find the cones and co-cones for the fluid equations:
 
 \begin{align*}
 \rho_t &= -(\rho u)_x \;\;\;\;\; \text{particle number conservation}\\
-(\rho u)_t &= -(\frac{1}{2}\rho u^2 + p)_x\;\;\;\; \text{momentum conservation}
+(\rho u)_t &= -(\rho u^2 + p)_x\;\;\;\; \text{momentum conservation}
 \end{align*}
 where $p = p(\rho)$ is the pressure, $\rho$ the density and $u$ the fluid velocity.
 
@@ -72,5 +73,5 @@ is conserved.
 
 
 
-The covariant treatment, including constraints, can be see from the example given in page 34 of Geroch article: https://arxiv.org/abs/gr-qc/9602055.
+The covariant treatment, including constraints, can be seen from the example given in page 34 of Geroch article: https://arxiv.org/abs/gr-qc/9602055.
 There a generic hyperbolization is found for Electromagnetism in terms of the Faraday tensor $F_{ab}$.

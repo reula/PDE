@@ -13,11 +13,12 @@ Consider the advection equation:
 \begin{align*}
 u_t + a u_x = 0,
 \end{align*}  
-for $x \in (0,1),\ t > 0$ and $a \in \mathbb{R} \setminus \{0\}$ with initial condition $u(x,0) = u_0(x)$.
+for $x \in (0,1),\ t > 0$ and $a > 0$ with initial condition $u(x,0) = u_0(x)$.
 
 1. Sketch the characteristics in the $(x, t)$ plane.
 2. Explain why a boundary condition is required at $x=0$ but not at $x=1$.
 3. What happens if you impose a boundary condition at $x=1$?
+4. What changes if $a < 0$?
 
 
 **Exercise 2: First-Order Hyperbolic System and Incoming Characteristics**

@@ -11,15 +11,15 @@ weave = false
 
 **Exercise 1. Maximum Principle Theorem**
 
-Let $u \in C^1[0,T] \times C^2(Ω)$, satisfying $\partial_t - \Delta u > 0$.
+Let $u \in C^1[0,T] \times C^2(Ω)$, satisfying $\partial_t u - \Delta u < 0$.
 
 a.- Show that,
 
 $$
-\max{u}_{[0,T] \times \Omega} = \max{u}_{\partial([0,T] \times \Omega)}.
+\max{u}_{[0,T] \times \Omega} = \max{u}_{(\{0\} \times \Omega) \cup ([0,T] \times \partial\Omega)}.
 $$
 
-b.- Extend to the case $\partial_t - \Delta u > 0$.
+b.- Extend to the case $\partial_t u - \Delta u \leq 0$.
 
 c.- What does it say physically for the case of the heat equation?
 
@@ -27,15 +27,15 @@ d.- Solve the heat equation in the interval $[0,L]$ with homogeneous Dirichlet b
 
 **Exercise 2. Solving using Fourier Series**
 
-a.- Solve the heat equation in the unit circle using Fourier Transform. 
+a.- Solve the heat equation in the unit circle using Fourier series. 
 
 b.- Using as initial data $u(x,t=0) = x*(1-x)$ find the maximum and its location for each time and check the validity of the maximum principle theorem of Exercise 1.
 
-**Exercise 4. Sources**
+**Exercise 3. Sources**
 
 a.- Using a base of eigenfunctions solve for arbitrary sources the heat equation on the unit circle.
 
-b.- Check that the solution belongs to arbitrary Sobolev spaces in space for any $t>0$ even when it only belonged to $L^2$ at $t=0$. What does that say about the differentiability of the solution in space? And in time?
+b.- Check that, for zero source, the solution belongs to arbitrary Sobolev spaces in space for any $t>0$ even when it only belonged to $L^2$ at $t=0$. What does that say about the differentiability of the solution in space? And in time?
 
 **Exercise 4. Boundary Conditions**
 
@@ -73,4 +73,4 @@ b.- Show that the solution is smooth in both $x$ and $t$ for all $t>0$ and that 
 
 c.- Argue that even when the initial data is of compact support the solution extends to infinity for any $t>0$.
 
-d.- The solution decays exponentially fast as $|x| \to ∞$.
+d.- Show that if $u_0$ has compact support the solution decays like $e^{-x^2/(4\alpha t)}$ as $|x| \to ∞$.

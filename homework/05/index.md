@@ -28,12 +28,12 @@ b. Verify that given any (constant) vector $\vec{c}$, then
    $F(\vec{x},\vec{p}) := \vec{c}\cdot(\vec{x}\wedge \vec{p})$,
    where $\vec{p} := \frac{d\vec{x}}{dt}$, is a first integral.
 
-**Exercise 3. Fundametal theorem**
+**Exercise 3. Fundamental theorem**
 
 a. If $M$ is a compact manifold (example: a sphere
 or a torus), it can be proven using the second corollary of the Fundamental Theorem that all 
 its phase curves are defined for all $t$. 
-However, there are some that might not
+However, some of them need not be
 closed, give an example.
 Consider the equation:
 \begin{equation}
@@ -51,15 +51,15 @@ c. Conclude that the solutions of this system exist for all time.
 Consider the system:
 
 \begin{align*}
-  \dot{x}_1 &=& (a-bx_2)x_1  \\
-  \dot{x}_2 &=& -(c-f x_1)x_2,
+  \dot{x}_1 &= (a-bx_2)x_1  \\
+  \dot{x}_2 &= -(c-f x_1)x_2,
 \end{align*}
-$a, b, c, f \geq 0$.
+$a, b, c, f > 0$.
 
 a. Perform a coordinate and time transformation to bring it to the form,
 \begin{align*}
-  \dot{x}_1 &=& (1 - x_2)x_1  \\
-  \dot{x}_2 &=& -(e - x_1)x_2
+  \dot{x}_1 &= (1 - x_2)x_1  \\
+  \dot{x}_2 &= -(e - x_1)x_2
 \end{align*}
 
 b. Plot the vector field and see that there are no non-trivial first integrals in the quadrants where at least one of the coordinates is negative.
@@ -74,7 +74,7 @@ quadrant the trajectories remain in bounded regions.
 
 e. Examine the linearized equations around the equilibrium solution in the positive quadrant and determine the frequency of oscillations of the variations near equilibrium that the system would have.
 
-Note, this equation describes the population of two competing species.
+Note, this equation describes the populations of a predator and its prey.
 What we have just seen is that the species do not grow indefinitely nor
 disappear. This last point tells us that the approximation is not
 very good...
@@ -87,8 +87,8 @@ the prey $x_1$ for its subsistence, since if the prey becomes extinct, the preda
 If in the previous system the species have other alternative means of
 subsistence then the resulting equations are:
 \begin{align*}
-  \dot{x}_1 &=& (1 -x_1 - ax_2)x_1 \\
-  \dot{x}_2 &=& (1 -x_2 + bx_1)x_2
+  \dot{x}_1 &= (1 -x_1 - ax_2)x_1 \\
+  \dot{x}_2 &= (1 -x_2 + bx_1)x_2
 \end{align*}
 
 where another parameterization has been used.
@@ -120,7 +120,7 @@ b. Show that the planes $x_3=0$ and $x_3 = 1$ are invariant sets,
 
 c. Consider the invariant set $x_3 = 1$ and see if it has periodic solutions.
 
-**Excercise 5 Limit Cycle**
+**Exercise 5 Limit Cycle**
 
 Consider the system:
 \begin{align*}
