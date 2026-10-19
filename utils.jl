@@ -28,14 +28,19 @@ Weave all lecture notes in the `weave` directory. Run from site root.
 function weaveall(; instantiate = true)
     Pkg.activate("PDE2025")
     instantiate ? Pkg.instantiate() : nothing
-    for (root, _, files) in walkdir("weave")
-        for file in files
-            if endswith(file, ".ipynb")
-                @info "Weaving Document: $(joinpath(root, file))"
-                weave(joinpath(root, file); out_path=:doc, mod=Main, template = "weave.tpl")
-            end
-        end
+    # Collect the notebooks first and return to the site root before each one:
+    # gmsh changes the working directory to that of the mesh file it opens.
+    # Each notebook runs in its own new module (mod = nothing), so that names from
+    # one notebook (Plots' `plot`) do not clash with another's (Makie's `plot`).
+    site = pwd()
+    notebooks = [joinpath(site, root, file) for (root, _, files) in walkdir("weave")
+                 for file in files if endswith(file, ".ipynb")]
+    for nb in notebooks
+        cd(site)
+        @info "Weaving Document: $(relpath(nb, site))"
+        weave(nb; out_path=:doc, mod=nothing, template = "weave.tpl")
     end
+    cd(site)
 end
 
 
