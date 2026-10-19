@@ -6,7 +6,7 @@ weave = false
 # Notes Overview
 
 - [Topology](/notes/topology/)
-- [Ordinary differential equations](/notes/lecture05/) _(in Spanish)_
+- [Ordinary differential equations](/notes/lecture05/) _(notebook, in English and Spanish)_
 <!-- - [Completeness](/notes/completeness/) -->
 
 ## Notes in PDF

@@ -24,14 +24,14 @@ The course is organized in units. Each unit pairs an analytical part with a nume
 **Getting started.** [Julia tutorial](/labs/Tutorial_Julia_español/) _(notebooks in Spanish)_.
 
 1. **Topology and linear algebra**
-   - Notes: [Topology](/notes/topology/)
+   - Notes: [Topology](/notes/topology/) · Chapter 1 of [_Mathematical Methods of Physics_ (PDF)](https://github.com/reula/libro_metodos/blob/master/Current_garamond/book_methods_gar.pdf)
    - [Homework 1: Linear Algebra](/homework/01/) · [Homework 2: Topology](/homework/02/)
    - [Lab 1: The logistic map](/labs/01/)
 2. **Functional analysis and Fourier theory**
    - Notes (PDF): [Normed vector space completeness](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Banach/completitud.pdf) · [Duality and basic facts about operators](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Duality/duality.pdf) · [Sobolev inequalities](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Continuos_Sobolev.pdf) · [Sobolev compact embeddings](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Compact_Embedings.pdf)
    - [Homework 3: Functional Analysis](/homework/03/) · [Homework 4: Fourier Analysis](/homework/04/)
 3. **Ordinary differential equations: analytical and numerical studies**
-   - Notes: [Ordinary differential equations](/notes/lecture05/) _(in Spanish)_
+   - Notes: [Ordinary differential equations](/notes/lecture05/) _(notebook, in English and Spanish)_
    - Notes (PDF): [ODE](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODES.pdf) · [ODE fundamental theorem using Euler's method](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_Fundamental_Euler.pdf) · [ODE: introduction to numerics](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODEs_Numerico_intro.pdf) · [ODE: one-step methods](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_one_step.pdf)
    - [Homework 5: Ordinary Differential Equations](/homework/05/)
    - [Lab 2: Ordinary differential equations](/labs/02/) · [Stability regions](/labs/02-sr/) _(supplementary)_
