@@ -31,7 +31,7 @@ The course is organized in units. Each unit pairs an analytical part with a nume
    - Notes (PDF): [Normed vector space completeness](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Banach/completitud.pdf) · [Duality and basic facts about operators](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Duality/duality.pdf) · [Sobolev inequalities](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Continuos_Sobolev.pdf) · [Sobolev compact embeddings](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/Sobolev/Compact_Embedings.pdf)
    - [Homework 3: Functional Analysis](/homework/03/) · [Homework 4: Fourier Analysis](/homework/04/)
 3. **Ordinary differential equations: analytical and numerical studies**
-   - Notes: [Ordinary differential equations](/notes/lecture05/) _(notebook, in English and Spanish)_
+   - Notes: [Ordinary differential equations](/notes/lecture05/) _(notebook, in English and Spanish)_ · [Auto-oscillations](/notes/lecture05/#auto-oscillations)
    - Notes (PDF): [ODE](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODES.pdf) · [ODE fundamental theorem using Euler's method](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_Fundamental_Euler.pdf) · [ODE: introduction to numerics](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODEs_Numerico_intro.pdf) · [ODE: one-step methods](https://gitlab.com/oreula/pde/-/blob/master/Apuntes_varios/ODES/ODE_one_step.pdf)
    - [Homework 5: Ordinary Differential Equations](/homework/05/)
    - [Lab 2: Ordinary differential equations](/labs/02/) · [Stability regions](/labs/02-sr/) _(supplementary)_
