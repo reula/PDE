@@ -3526,9 +3526,9 @@ version = "17.7.0+0"
 
 [[deps.s2n_tls_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "d6cfe0874f96962fe4b20ed8bdb71c467e09c2c6"
+git-tree-sha1 = "6f9611b1b99beb089154f19a4031579f3a818cbd"
 uuid = "cddc5d3d-934d-5d3a-9747-62fc12ea3f48"
-version = "1.7.11+0"
+version = "1.7.12+0"
 
 [[deps.x264_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
