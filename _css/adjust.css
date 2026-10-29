@@ -86,3 +86,57 @@
 @media (min-width: 1000px) {
   .franklin-content { width: 660px; }
 }
+
+/* ==================================================================
+    HOME PAGE: hero image and image strip
+================================================================== */
+
+.franklin-content .home-hero {
+  max-width: none;
+  float: right;
+  width: 38%;
+  margin: 0 0 1em 1.5em;
+  text-align: center;
+}
+.franklin-content .home-hero img,
+.franklin-content .home-strip img {
+  width: 100%;
+  padding-left: 0;
+}
+.franklin-content .home-hero figcaption,
+.franklin-content .home-strip figcaption {
+  font-size: 0.75em;
+  line-height: 1.3;
+  color: #555;
+  margin-top: 0.3em;
+  text-align: center;
+  float: none;
+  clear: none;
+  max-width: none;
+  width: 100%;
+  position: static;
+}
+.franklin-content .home-strip {
+  clear: both;
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1.5em 0 0.5em 0;
+}
+.franklin-content .home-strip figure {
+  flex: 1 1 0;
+  margin: 0;
+  max-width: none;
+}
+.franklin-content .home-credit {
+  font-size: 0.7em;
+  color: #777;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+@media (max-width: 600px) {
+  .franklin-content .home-hero { float: none; width: 70%; margin: 0 auto 1em auto; }
+  .franklin-content .home-strip { flex-direction: column; align-items: center; }
+  .franklin-content .home-strip figure { width: 80%; }
+}

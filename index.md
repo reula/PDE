@@ -3,9 +3,34 @@
 
 # Partial Differential Equations: Analytical and Numerical Methods
 
+~~~
+<figure class="home-hero">
+  <img src="/assets/images/home/jupiter.png" alt="A ring of vorticity on a rotating sphere breaking up into a crown of cyclones">
+  <figcaption>A ring of vorticity on a rotating sphere breaks up into a crown of cyclones, like those at Jupiter's poles.</figcaption>
+</figure>
+~~~
+
 This book contains the material for the course "Partial Differential Equations: Analytical and Numerical Methods" taught at ICTP–SAIFR in May 2025.
 
 If you come across any errors or have suggestions for improving the book's structure, please don't hesitate to contact the authors. Your feedback is greatly appreciated.
+
+~~~
+<div class="home-strip">
+  <figure>
+    <img src="/assets/images/home/vortex.png" alt="Velocity field of a fluid on a rotating sphere, with a cluster of vortices">
+    <figcaption>Vortices in a fluid on a rotating sphere.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/home/bhns.png" alt="Magnetic field lines between a neutron star and a black hole">
+    <figcaption>Magnetic field lines between a neutron star and a black hole.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/home/jets.png" alt="Jets around a black hole">
+    <figcaption>Jets around a black hole.</figcaption>
+  </figure>
+</div>
+<p class="home-credit">Images: simulations by Oscar Reula and collaborators.</p>
+~~~
 
 ## Introduction and motivation
 
