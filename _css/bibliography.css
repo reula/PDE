@@ -56,3 +56,24 @@
     text-decoration: underline;
   }
   
+  /* Book entries with a small cover thumbnail */
+  ul.books {
+    list-style: none;
+    padding-left: 0;
+  }
+  li.book {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+    margin: 1em 0;
+  }
+  li.book img.cover {
+    flex: none;
+    width: 70px;
+    height: auto;
+    padding-left: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+  @media (max-width: 600px) {
+    li.book img.cover { width: 50px; }
+  }
