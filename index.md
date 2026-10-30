@@ -5,8 +5,11 @@
 
 ~~~
 <figure class="home-hero">
-  <img src="/assets/images/home/jupiter.png" alt="A ring of vorticity on a rotating sphere breaking up into a crown of cyclones">
-  <figcaption>A ring of vorticity on a rotating sphere breaks up into a crown of cyclones, like those at Jupiter's poles.</figcaption>
+  <div class="home-pair">
+    <img src="/assets/images/home/jupiter.png" alt="Vorticity of a fluid on a rotating sphere: a ring breaking up into a crown of cyclones">
+    <img src="/assets/images/home/vortex.png" alt="Velocity field of the same fluid on a rotating sphere, with a cluster of vortices">
+  </div>
+  <figcaption>A ring of vorticity on a rotating sphere breaks up into a crown of cyclones, like those at Jupiter's poles. Left: the vorticity; right: the velocity field.</figcaption>
 </figure>
 ~~~
 
@@ -16,10 +19,6 @@ If you come across any errors or have suggestions for improving the book's struc
 
 ~~~
 <div class="home-strip">
-  <figure>
-    <img src="/assets/images/home/vortex.png" alt="Velocity field of a fluid on a rotating sphere, with a cluster of vortices">
-    <figcaption>Vortices in a fluid on a rotating sphere.</figcaption>
-  </figure>
   <figure>
     <img src="/assets/images/home/bhns.png" alt="Magnetic field lines between a neutron star and a black hole">
     <figcaption>Magnetic field lines between a neutron star and a black hole.</figcaption>

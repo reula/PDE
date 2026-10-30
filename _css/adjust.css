@@ -93,10 +93,18 @@
 
 .franklin-content .home-hero {
   max-width: none;
-  float: right;
-  width: 38%;
-  margin: 0 0 1em 1.5em;
+  width: 85%;
+  margin: 0 auto 1.5em auto;
   text-align: center;
+}
+.franklin-content .home-pair {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+.franklin-content .home-pair img {
+  flex: 1 1 0;
+  min-width: 0;
 }
 .franklin-content .home-hero img,
 .franklin-content .home-strip img {
@@ -136,7 +144,7 @@
   margin-bottom: 1.5em;
 }
 @media (max-width: 600px) {
-  .franklin-content .home-hero { float: none; width: 70%; margin: 0 auto 1em auto; }
+  .franklin-content .home-hero { width: 100%; }
   .franklin-content .home-strip { flex-direction: column; align-items: center; }
-  .franklin-content .home-strip figure { width: 80%; }
+  .franklin-content .home-strip figure { width: 80%; flex: none; }
 }
